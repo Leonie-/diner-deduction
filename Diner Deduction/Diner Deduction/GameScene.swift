@@ -86,8 +86,11 @@ class GameScene: SKScene {
     
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-		
-//        selectedNode.position
+        resetIngredientNode()
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+
     }
     
     func selectNodeForTouch(_ touchLocation : CGPoint) {
@@ -106,6 +109,12 @@ class GameScene: SKScene {
         
         if selectedNode.name as String? == "ingredient" {
             selectedNode.position = CGPoint(x: position.x + positionToMoveTo.x, y: position.y + positionToMoveTo.y)
+        }
+    }
+    
+    func resetIngredientNode() {
+        if selectedNode.name as String? == "ingredient" {
+            selectedNode.position = selectedNode.userData?.value(forKey: "initialPosition") as! CGPoint
         }
     }
     

@@ -11,15 +11,16 @@ import SpriteKit
 class Sprite {
     
     var sprite: SKSpriteNode
-    var originalPosition: CGPoint
     
     init(name:String, image:String, size:CGSize, positionX: CGFloat, positionY: CGFloat) {
-        
-        originalPosition = CGPoint(x: positionX, y: positionY)
         
         sprite = SKSpriteNode(imageNamed: image)
         sprite.name = name
         sprite.size = size
-        sprite.position = originalPosition
+        sprite.position = CGPoint(x: positionX, y: positionY)
+        
+        let initialPosition = NSValue.init(cgPoint: sprite.position)
+        
+        sprite.userData = ["initialPosition": initialPosition]
     }
 }
