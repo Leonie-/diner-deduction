@@ -55,6 +55,18 @@ class GameScene: SKScene {
         )
         self.addChild(pizza.sprite)
     }
+    
+    func createSubmitButton() {
+        let submitButton = Sprite(
+            name: "submit",
+            image: "submit-button",
+            size: CGSize(width: 142, height: 38),
+            positionX: self.frame.width - 100,
+            positionY: 40
+        )
+        self.addChild(submitButton.sprite)
+    }
+
 
     override func didMove(to view: SKView) {
         //position to lower left
@@ -63,6 +75,7 @@ class GameScene: SKScene {
         createBackground()
         createPizza()
       	createIngredients()
+        createSubmitButton()
     }
 
     
@@ -109,6 +122,7 @@ class GameScene: SKScene {
         
         if selectedNode.name as String? == "ingredient" {
             selectedNode.position = CGPoint(x: position.x + positionToMoveTo.x, y: position.y + positionToMoveTo.y)
+            selectedNode.zPosition = 1
         }
     }
     
