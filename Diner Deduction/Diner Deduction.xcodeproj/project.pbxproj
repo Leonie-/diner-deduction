@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32202E941F65404F008C967A /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202E931F65404F008C967A /* Pizza.swift */; };
 		323978931F4855DE0084F88B /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323978921F4855DE0084F88B /* GameSprite.swift */; };
 		323978951F48567B0084F88B /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323978941F48567B0084F88B /* Ingredient.swift */; };
 		32E739EC1F4839B000140FC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E739EB1F4839B000140FC4 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32202E931F65404F008C967A /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 		323978921F4855DE0084F88B /* GameSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
 		323978941F48567B0084F88B /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		32E739E81F4839B000140FC4 /* Diner Deduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diner Deduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				32E739FD1F4839B000140FC4 /* Info.plist */,
 				323978921F4855DE0084F88B /* GameSprite.swift */,
 				323978941F48567B0084F88B /* Ingredient.swift */,
+				32202E931F65404F008C967A /* Pizza.swift */,
 			);
 			path = "Diner Deduction";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32202E941F65404F008C967A /* Pizza.swift in Sources */,
 				323978931F4855DE0084F88B /* GameSprite.swift in Sources */,
 				32E739F21F4839B000140FC4 /* GameScene.swift in Sources */,
 				323978951F48567B0084F88B /* Ingredient.swift in Sources */,

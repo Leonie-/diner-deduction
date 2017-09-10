@@ -9,7 +9,10 @@
 import SpriteKit
 import GameplayKit
 
+
 class GameScene: SKScene {
+    
+    var selectedNode = SKSpriteNode()
     
     func createBackground() {
         let background = SKSpriteNode(imageNamed: "background-game.png")
@@ -28,22 +31,21 @@ class GameScene: SKScene {
         
         for (type, offsetX) in ingredients {
             createIngredient(ingredient: type, offsetX: offsetX)
-//      	self.addChild(Ingredient(spriteName: type, offsetX: offsetX))
-
         }
     }
     
     func createIngredient(ingredient: String, offsetX: Int) {
         let thisIngredient = SKSpriteNode(imageNamed: ingredient)
         thisIngredient.size = CGSize(width:50, height:50)
-        thisIngredient.position = CGPoint(x: offsetX, y: 150)
+        thisIngredient.position = CGPoint(x: offsetX, y: 40)
+        thisIngredient.name = "ingredient"
         self.addChild(thisIngredient)
     }
     
     func createPizza() {
-        let pizza = SKSpriteNode(imageNamed: "pizza")
-        pizza.size = CGSize(width:100, height:100)
-        pizza.position = CGPoint(x: 300, y: 300)
+		let pizza = SKSpriteNode(imageNamed: "pizza")
+        pizza.size = CGSize(width: 250, height: 250)
+        pizza.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.addChild(pizza)
     }
 
@@ -57,28 +59,50 @@ class GameScene: SKScene {
     }
 
     
-    // Touch handling
-    
-    var touchLocation = CGPoint(x: 0, y:0)
-    var nrTouches = 0
+	// Touch handling
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        touchLocation = touch.location(in: self)
-        nrTouches += touches.count
+        let positionInScene = touch.location(in: self)
+        
+        selectNodeForTouch(positionInScene)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        touchLocation = touch.location(in: self)
+        let currentPosition = touch.location(in: self)
+        let previousPosition = touch.previousLocation(in: self)
+        let positionToMoveTo = CGPoint(x: currentPosition.x - previousPosition.x, y: currentPosition.y - previousPosition.y)
+        
+        moveIngredientNode(positionToMoveTo)
     }
+    
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        nrTouches -= touches.count
+		
+        
     }
     
-    //Update function
+    func selectNodeForTouch(_ touchLocation : CGPoint) {
+        let touchedNode = self.atPoint(touchLocation)
+        
+        if touchedNode is SKSpriteNode {
+            if !selectedNode.isEqual(touchedNode) {
+                selectedNode.removeAllActions()
+                selectedNode = touchedNode as! SKSpriteNode
+            }
+        }
+    }
     
+    func moveIngredientNode(_ positionToMoveTo : CGPoint) {
+        let position = selectedNode.position
+        
+        if selectedNode.name as String? == "ingredient" {
+            selectedNode.position = CGPoint(x: position.x + positionToMoveTo.x, y: position.y + positionToMoveTo.y)
+        }
+    }
+    
+
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
