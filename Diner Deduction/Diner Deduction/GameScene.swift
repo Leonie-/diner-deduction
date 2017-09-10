@@ -8,7 +8,7 @@
 
 import SpriteKit
 import GameplayKit
-
+import SpriteKitEasingSwift
 
 class GameScene: SKScene {
     
@@ -90,7 +90,7 @@ class GameScene: SKScene {
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+		resetIngredientNode()
     }
     
     func selectNodeForTouch(_ touchLocation : CGPoint) {
@@ -114,7 +114,14 @@ class GameScene: SKScene {
     
     func resetIngredientNode() {
         if selectedNode.name as String? == "ingredient" {
-            selectedNode.position = selectedNode.userData?.value(forKey: "initialPosition") as! CGPoint
+            let originalPosition = selectedNode.userData?.value(forKey: "initialPosition") as! CGPoint
+            selectedNode.run(SKEase.move(
+                easeFunction: .curveTypeQuintic,
+                easeType: EaseType.easeTypeOut,
+                time: 0.5,
+                from: selectedNode.position,
+                to: originalPosition
+            ))
         }
     }
     

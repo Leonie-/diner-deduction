@@ -1,0 +1,6 @@
+framework module Pods_Diner_Deduction {
+  umbrella header "Pods-Diner Deduction-umbrella.h"
+
+  export *
+  module * { export * }
+}

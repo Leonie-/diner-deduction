@@ -1,0 +1,18 @@
+platform :ios, '9.0'
+
+target 'Diner Deduction' do
+  use_frameworks!
+
+  pod 'SpriteKitEasingSwift'    
+
+  target 'Diner DeductionTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Diner DeductionUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
