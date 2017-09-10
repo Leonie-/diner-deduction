@@ -23,10 +23,10 @@ class GameScene: SKScene {
 
     func createIngredients() {
         let ingredients = [
-            (type: "tomato", offsetX: 150),
-            (type: "olive", offsetX: 250),
-            (type: "mushroom", offsetX: 350),
-            (type: "pepperoni", offsetX: 450)
+            (type: "tomato", offsetX: 150 as CGFloat),
+            (type: "olive", offsetX: 250 as CGFloat),
+            (type: "mushroom", offsetX: 350 as CGFloat),
+            (type: "pepperoni", offsetX: 450 as CGFloat)
         ];
         
         for (type, offsetX) in ingredients {
@@ -34,19 +34,26 @@ class GameScene: SKScene {
         }
     }
     
-    func createIngredient(ingredient: String, offsetX: Int) {
-        let thisIngredient = SKSpriteNode(imageNamed: ingredient)
-        thisIngredient.size = CGSize(width:50, height:50)
-        thisIngredient.position = CGPoint(x: offsetX, y: 40)
-        thisIngredient.name = "ingredient"
-        self.addChild(thisIngredient)
+    func createIngredient(ingredient: String, offsetX: CGFloat) {
+        let thisIngredient = Sprite(
+            name: "ingredient",
+            image: ingredient,
+            size: CGSize(width:50, height:50),
+            positionX: offsetX,
+            positionY: 40
+        )
+        self.addChild(thisIngredient.sprite)
     }
     
     func createPizza() {
-		let pizza = SKSpriteNode(imageNamed: "pizza")
-        pizza.size = CGSize(width: 250, height: 250)
-        pizza.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        self.addChild(pizza)
+        let pizza = Sprite(
+            name: "pizza",
+            image: "pizza",
+            size: CGSize(width: 250, height: 250),
+            positionX: self.frame.midX,
+            positionY: self.frame.midY
+        )
+        self.addChild(pizza.sprite)
     }
 
     override func didMove(to view: SKView) {
@@ -80,7 +87,7 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		
-        
+//        selectedNode.position
     }
     
     func selectNodeForTouch(_ touchLocation : CGPoint) {
