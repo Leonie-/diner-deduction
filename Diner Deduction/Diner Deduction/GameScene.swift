@@ -102,18 +102,13 @@ class GameScene: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectedNode.onDrop()
+        selectedNode = GameSpriteNull()
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in (touches) {
-            let location = touch.location(in: self)
-            let nodeTouched = atPoint(location)
 
-            
-            if let gameSprite = nodeTouched as? GameSprite {
-                gameSprite.onDrop()
-            }
-        }
+        selectedNode.onDrop()
+        selectedNode = GameSpriteNull()
     }
     
 
