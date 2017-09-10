@@ -12,7 +12,7 @@ import SpriteKitEasingSwift
 
 class GameScene: SKScene {
     
-    var selectedNode = SKSpriteNode()
+    var selectedNode:GameSprite = GameSpriteNull()
     
     func createBackground() {
         let background = SKSpriteNode(imageNamed: "background-game.png")
@@ -35,14 +35,14 @@ class GameScene: SKScene {
     }
     
     func createIngredient(ingredient: String, offsetX: CGFloat) {
-        let thisIngredient = Sprite(
+        let ingredient = Ingredient(
             name: "ingredient",
             image: ingredient,
             size: CGSize(width:50, height:50),
             positionX: offsetX,
             positionY: 40
         )
-        self.addChild(thisIngredient.sprite)
+        self.addChild(ingredient)
     }
     
     func createPizza() {
@@ -67,7 +67,6 @@ class GameScene: SKScene {
         self.addChild(submitButton.sprite)
     }
 
-
     override func didMove(to view: SKView) {
         //position to lower left
         self.anchorPoint = .zero
@@ -77,65 +76,43 @@ class GameScene: SKScene {
       	createIngredients()
         createSubmitButton()
     }
-
     
 	// Touch handling
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let positionInScene = touch.location(in: self)
-        
-        selectNodeForTouch(positionInScene)
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let currentPosition = touch.location(in: self)
-        let previousPosition = touch.previousLocation(in: self)
-        let positionToMoveTo = CGPoint(x: currentPosition.x - previousPosition.x, y: currentPosition.y - previousPosition.y)
-        
-        moveIngredientNode(positionToMoveTo)
-    }
-    
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        resetIngredientNode()
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-		resetIngredientNode()
+        for touch in (touches) {
+    		let positionInScene = touch.location(in: self)
+            selectNodeForTouch(positionInScene)
+        }
     }
     
     func selectNodeForTouch(_ touchLocation : CGPoint) {
         let touchedNode = self.atPoint(touchLocation)
         
-        if touchedNode is SKSpriteNode {
-            if !selectedNode.isEqual(touchedNode) {
-                selectedNode.removeAllActions()
-                selectedNode = touchedNode as! SKSpriteNode
+        if touchedNode is GameSprite {
+            selectedNode = touchedNode as! GameSprite
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in (touches) {
+            selectedNode.onDrag(touch: touch)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        selectedNode.onDrop()
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in (touches) {
+            let location = touch.location(in: self)
+            let nodeTouched = atPoint(location)
+
+            
+            if let gameSprite = nodeTouched as? GameSprite {
+                gameSprite.onDrop()
             }
-        }
-    }
-    
-    func moveIngredientNode(_ positionToMoveTo : CGPoint) {
-        let position = selectedNode.position
-        
-        if selectedNode.name as String? == "ingredient" {
-            selectedNode.position = CGPoint(x: position.x + positionToMoveTo.x, y: position.y + positionToMoveTo.y)
-            selectedNode.zPosition = 1
-        }
-    }
-    
-    func resetIngredientNode() {
-        if selectedNode.name as String? == "ingredient" {
-            let originalPosition = selectedNode.userData?.value(forKey: "initialPosition") as! CGPoint
-            selectedNode.run(SKEase.move(
-                easeFunction: .curveTypeQuintic,
-                easeType: EaseType.easeTypeOut,
-                time: 0.5,
-                from: selectedNode.position,
-                to: originalPosition
-            ))
         }
     }
     
