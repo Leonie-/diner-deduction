@@ -77,20 +77,13 @@ class GameScene: SKScene {
         createSubmitButton()
     }
     
-	// Touch handling
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in (touches) {
     		let positionInScene = touch.location(in: self)
-            selectNodeForTouch(positionInScene)
-        }
-    }
-    
-    func selectNodeForTouch(_ touchLocation : CGPoint) {
-        let touchedNode = self.atPoint(touchLocation)
-        
-        if touchedNode is GameSprite {
-            selectedNode = touchedNode as! GameSprite
+            let touchedNode = self.atPoint(positionInScene)
+            if touchedNode is GameSprite {
+                selectedNode = touchedNode as! GameSprite
+            }
         }
     }
     
@@ -106,12 +99,10 @@ class GameScene: SKScene {
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-
         selectedNode.onDrop()
         selectedNode = GameSpriteNull()
     }
     
-
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
