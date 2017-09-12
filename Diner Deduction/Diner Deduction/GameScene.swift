@@ -46,14 +46,14 @@ class GameScene: SKScene {
     }
     
     func createPizza() {
-        let pizza = Sprite(
+        let pizza = Pizza(
             name: "pizza",
             image: "pizza",
             size: CGSize(width: 250, height: 250),
             positionX: self.frame.midX,
             positionY: self.frame.midY
         )
-        self.addChild(pizza.sprite)
+        self.addChild(pizza)
     }
     
     func createSubmitButton() {
