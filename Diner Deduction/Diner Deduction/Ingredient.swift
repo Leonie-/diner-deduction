@@ -10,17 +10,14 @@ import SpriteKit
 import SpriteKitEasingSwift
 
 class Ingredient : SKSpriteNode, GameSprite {
-    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "Ingredients")
     var originalPosition:CGPoint = CGPoint(x: 0, y: 0)
 
     init(name: String, image: String, size: CGSize, positionX: CGFloat, positionY: CGFloat) {
-        let imageName = SKTexture(imageNamed: image)
         
         self.originalPosition = CGPoint(x: positionX, y: positionY)
-
         
         // Call the init function on the base class (SKSpriteNode)
-        super.init(texture: imageName, color: UIColor.clear, size: size)
+        super.init(texture: SKTexture(imageNamed: image), color: UIColor.clear, size: size)
         
         self.size = size
         self.position = CGPoint(x: positionX, y: positionY)

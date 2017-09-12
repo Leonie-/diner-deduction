@@ -9,7 +9,6 @@
 import SpriteKit
 
 protocol GameSprite {
-    var textureAtlas:SKTextureAtlas { get set }
     func onTouch()
     func onDrag(touch:UITouch)
     func onDrop()

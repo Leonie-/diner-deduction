@@ -7,31 +7,19 @@
 //
 
 import SpriteKit
-import SpriteKitEasingSwift
 
-class Pizza : SKSpriteNode, GameSprite {
-    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
-    var originalPosition:CGPoint = CGPoint(x: 0, y: 0)
-    
-    init(name: String, image: String, size: CGSize, positionX: CGFloat, positionY: CGFloat) {
-        let imageName = SKTexture(imageNamed: image)
-        
-        self.originalPosition = CGPoint(x: positionX, y: positionY)
-        
+class Pizza : SKSpriteNode, GameSprite {    
+    init(positionX: CGFloat, positionY: CGFloat) {
         // Call the init function on the base class (SKSpriteNode)
-        super.init(texture: imageName, color: UIColor.clear, size: size)
-        
-        self.size = size
+        super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 250, height: 250))
         self.position = CGPoint(x: positionX, y: positionY)
     }
-    
     
     func onTouch() {}
     
     func onDrag(touch: UITouch) {}
     
     func onDrop() {}
-    
     
     // Satisfy the NSCoder required init:
     required init?(coder aDecoder: NSCoder) {

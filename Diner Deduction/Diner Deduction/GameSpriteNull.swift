@@ -6,14 +6,10 @@
 //  Copyright © 2017 Leonie Kenyon. All rights reserved.
 //
 
-
 import SpriteKit
-import SpriteKitEasingSwift
 
 class GameSpriteNull : SKSpriteNode, GameSprite {
-    
-    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "Ingredients")
-    
+
     init() {
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 0, height: 0))
     }

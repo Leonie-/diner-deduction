@@ -47,9 +47,6 @@ class GameScene: SKScene {
     
     func createPizza() {
         let pizza = Pizza(
-            name: "pizza",
-            image: "pizza",
-            size: CGSize(width: 250, height: 250),
             positionX: self.frame.midX,
             positionY: self.frame.midY
         )
