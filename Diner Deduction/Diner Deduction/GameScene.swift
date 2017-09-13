@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import SpriteKitEasingSwift
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var selectedNode:GameSprite = GameSpriteNull()
     
@@ -19,6 +19,14 @@ class GameScene: SKScene {
         background.zPosition = 0
         self.addChild(background)
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
+    }
+    
+    func createPizza() {
+        let pizza = Pizza(
+            positionX: self.frame.midX,
+            positionY: self.frame.midY
+        )
+        self.addChild(pizza)
     }
 
     func createIngredients() {
@@ -45,14 +53,6 @@ class GameScene: SKScene {
         self.addChild(ingredient)
     }
     
-    func createPizza() {
-        let pizza = Pizza(
-            positionX: self.frame.midX,
-            positionY: self.frame.midY
-        )
-        self.addChild(pizza)
-    }
-    
     func createSubmitButton() {
         let submitButton = Sprite(
             name: "submit",
@@ -72,6 +72,39 @@ class GameScene: SKScene {
         createPizza()
       	createIngredients()
         createSubmitButton()
+        
+        //Handle contact in the scene
+        self.physicsWorld.contactDelegate = self
+        
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        let firstBody: SKPhysicsBody
+        let secondBody:SKPhysicsBody
+
+        let ingredientMask = PhysicsCategory.ingredient.rawValue
+
+        if (contact.bodyA.categoryBitMask & ingredientMask) > 0 {
+//            print("Ingredient is body A")
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        }
+        else {
+//            print("Ingredient is body B")
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if (secondBody.categoryBitMask == PhysicsCategory.pizza.rawValue) {
+            if let pizza = secondBody.node as? Pizza {
+                pizza.addIngredient()
+            }
+            if let ingredient = firstBody.node as? Ingredient {
+                ingredient.addToPizza()
+            }
+        }
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -103,4 +136,10 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+    
+}
+
+enum PhysicsCategory:UInt32 {
+    case ingredient = 1
+    case pizza = 2
 }
