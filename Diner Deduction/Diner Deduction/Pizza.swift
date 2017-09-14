@@ -16,7 +16,8 @@ class Pizza : SKSpriteNode, GameSprite {
         super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 250, height: 250))
         self.position = CGPoint(x: positionX, y: positionY)
         
-        self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
+        let bodyTexture = textureAtlas.textureNamed("pizza")
+        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.collisionBitMask = 0
@@ -26,6 +27,11 @@ class Pizza : SKSpriteNode, GameSprite {
     func addIngredient() {
         print("Ingredient added to Pizza class")
     }
+    
+    func removeIngredient() {
+        print("Ingredient removed from Pizza class")
+    }
+
     
     func onTouch() {}
     

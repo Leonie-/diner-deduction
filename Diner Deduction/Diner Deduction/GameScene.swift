@@ -79,11 +79,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        
         let firstBody: SKPhysicsBody
         let secondBody:SKPhysicsBody
-
         let ingredientMask = PhysicsCategory.ingredient.rawValue
+        let pizzaMask = PhysicsCategory.pizza.rawValue
 
         if (contact.bodyA.categoryBitMask & ingredientMask) > 0 {
 //            print("Ingredient is body A")
@@ -96,7 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
-        if (secondBody.categoryBitMask == PhysicsCategory.pizza.rawValue) {
+        if (secondBody.categoryBitMask == pizzaMask) {
             if let pizza = secondBody.node as? Pizza {
                 pizza.addIngredient()
             }
@@ -105,6 +104,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
 
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        let firstBody: SKPhysicsBody
+        let secondBody:SKPhysicsBody
+        let ingredientMask = PhysicsCategory.ingredient.rawValue
+        let pizzaMask = PhysicsCategory.pizza.rawValue
+        
+        if (contact.bodyA.categoryBitMask & ingredientMask) > 0 {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        }
+        else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+
+        if (secondBody.categoryBitMask == pizzaMask) {
+            let overlap = (firstBody.node?.contains((secondBody.node?.position)!))! || (secondBody.node?.contains((firstBody.node?.position)!))!
+            print(overlap)
+            if let ingredient = firstBody.node as? Ingredient {
+                if (!overlap) {
+                    ingredient.removeFromPizza()
+                }
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -33,9 +33,12 @@ class Ingredient : SKSpriteNode, GameSprite {
     }
     
     func addToPizza() {
-        print("Ingredient class received onPizza event")
         isOnPizza = true
-        self.physicsBody?.categoryBitMask = 0
+//        self.physicsBody?.categoryBitMask = 0
+    }
+    
+    func removeFromPizza() {
+        isOnPizza = false
     }
     
     
