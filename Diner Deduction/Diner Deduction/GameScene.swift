@@ -54,14 +54,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createSubmitButton() {
-        let submitButton = Sprite(
-            name: "submit",
-            image: "submit-button",
-            size: CGSize(width: 142, height: 38),
+        let submitButton = SubmitButton(
             positionX: self.frame.width - 100,
             positionY: 40
         )
-        self.addChild(submitButton.sprite)
+        self.addChild(submitButton)
     }
 
     override func didMove(to view: SKView) {
@@ -95,6 +92,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
+
         if (secondBody.categoryBitMask == pizzaMask) {
             if let pizza = secondBody.node as? Pizza {
                 pizza.addIngredient()
@@ -137,6 +135,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let touchedNode = self.atPoint(positionInScene)
             if touchedNode is GameSprite {
                 selectedNode = touchedNode as! GameSprite
+                selectedNode.onTouch()
             }
         }
     }
