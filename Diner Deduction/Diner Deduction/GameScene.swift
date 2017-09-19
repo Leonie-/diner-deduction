@@ -13,6 +13,7 @@ import SpriteKitEasingSwift
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var selectedNode:GameSprite = GameSpriteNull()
+    var notifications = NotificationCenter.default
     
     func createBackground() {
         let background = SKSpriteNode(imageNamed: "background-game.png")
@@ -94,9 +95,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
         if (secondBody.categoryBitMask == pizzaMask) {
-            if let pizza = secondBody.node as? Pizza {
-                pizza.addIngredient()
-            }
+//            if let pizza = secondBody.node as? Pizza {
+//                pizza.addIngredient()
+//            }
             if let ingredient = firstBody.node as? Ingredient {
                 ingredient.addToPizza()
             }

@@ -10,7 +10,7 @@ import SpriteKit
 
 class Pizza : SKSpriteNode, GameSprite {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
-    
+    private var ingredients = Set<String>()
 
     init(positionX: CGFloat, positionY: CGFloat) {
         // Call the init function on the base class (SKSpriteNode)
@@ -22,16 +22,28 @@ class Pizza : SKSpriteNode, GameSprite {
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.collisionBitMask = 0
-
-    }
-    
-    func addIngredient() {
-//        print("Ingredient added to Pizza class")
         
+		NotificationCenter.default.addObserver(self, selector: #selector(submitPizza), name:Notification.Name("PizzaSubmitted"),  object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addIngredient), name:Notification.Name("IngredientAdded"),  object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeIngredient), name:Notification.Name("IngredientRemoved"),  object: nil)
     }
     
-    func removeIngredient() {
-//        print("Ingredient removed from Pizza class")
+    func submitPizza() {
+        print("Pizza was submitted")
+    }
+    
+    func addIngredient(_ notification: NSNotification) {
+        if let ingredient = notification.userInfo?["ingredient"] as? String {
+            ingredients.insert(ingredient)
+            print(ingredients)
+        }
+    }
+    
+    func removeIngredient(_ notification: NSNotification) {
+        if let ingredient = notification.userInfo?["ingredient"] as? String {
+        	ingredients.remove(ingredient)
+        	print(ingredients)
+        }
     }
 
     

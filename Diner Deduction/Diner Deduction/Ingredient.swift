@@ -35,13 +35,17 @@ class Ingredient : SKSpriteNode, GameSprite {
     }
     
     func addToPizza() {
-        print ("Ingredient is on pizza:", ingredientName)
         isOnPizza = true
+        print ("Ingredient is on pizza:", ingredientName)
+        NotificationCenter.default.post(name:Notification.Name("IngredientAdded"), object: nil, userInfo: ["ingredient": ingredientName])
+        
     }
     
     func removeFromPizza() {
-        print ("Ingredient is removed from pizza:", ingredientName)
         isOnPizza = false
+        print ("Ingredient is removed from pizza:", ingredientName)
+        NotificationCenter.default.post(name:Notification.Name("IngredientRemoved"), object: nil, userInfo: ["ingredient": ingredientName])
+        
     }
     
     func springBackToOriginalPosition() {
