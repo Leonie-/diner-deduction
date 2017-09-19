@@ -10,6 +10,7 @@ import SpriteKit
 
 class Pizza : SKSpriteNode, GameSprite {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
+    
 
     init(positionX: CGFloat, positionY: CGFloat) {
         // Call the init function on the base class (SKSpriteNode)
@@ -25,11 +26,12 @@ class Pizza : SKSpriteNode, GameSprite {
     }
     
     func addIngredient() {
-        print("Ingredient added to Pizza class")
+//        print("Ingredient added to Pizza class")
+        
     }
     
     func removeIngredient() {
-        print("Ingredient removed from Pizza class")
+//        print("Ingredient removed from Pizza class")
     }
 
     

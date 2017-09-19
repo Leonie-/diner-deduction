@@ -122,8 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
 
         if (secondBody.categoryBitMask == pizzaMask) {
-            let overlap = (firstBody.node?.contains((secondBody.node?.position)!))! || (secondBody.node?.contains((firstBody.node?.position)!))!
-            print(overlap)
+            let overlap = (secondBody.node?.contains((firstBody.node?.position)!))!
             if let ingredient = firstBody.node as? Ingredient {
                 if (!overlap) {
                     ingredient.removeFromPizza()

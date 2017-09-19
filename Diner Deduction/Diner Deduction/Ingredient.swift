@@ -13,6 +13,7 @@ class Ingredient : SKSpriteNode, GameSprite {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"Ingredients")
     var originalPosition:CGPoint = CGPoint(x: 0, y: 0)
     var isOnPizza = false
+    var ingredientName = ""
 
     init(name: String, image: String, size: CGSize, positionX: CGFloat, positionY: CGFloat) {
 
@@ -24,6 +25,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         self.originalPosition = CGPoint(x: positionX, y: positionY)
         
         let bodyTexture = textureAtlas.textureNamed(image)
+        ingredientName = image
         self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsCategory.ingredient.rawValue
@@ -33,12 +35,23 @@ class Ingredient : SKSpriteNode, GameSprite {
     }
     
     func addToPizza() {
+        print ("Ingredient is on pizza:", ingredientName)
         isOnPizza = true
-//        self.physicsBody?.categoryBitMask = 0
     }
     
     func removeFromPizza() {
+        print ("Ingredient is removed from pizza:", ingredientName)
         isOnPizza = false
+    }
+    
+    func springBackToOriginalPosition() {
+        self.run(SKEase.move(
+            easeFunction: .curveTypeQuintic,
+            easeType: EaseType.easeTypeOut,
+            time: 0.5,
+            from: self.position,
+            to: self.originalPosition
+        ))
     }
     
     
@@ -54,18 +67,8 @@ class Ingredient : SKSpriteNode, GameSprite {
     }
     
     func onDrop() {
-        if (isOnPizza) {
-            print("Ingredient is on pizza")
-            //do nothing
-        }
-        else {
-            self.run(SKEase.move(
-                easeFunction: .curveTypeQuintic,
-                easeType: EaseType.easeTypeOut,
-                time: 0.5,
-                from: self.position,
-                to: self.originalPosition
-            ))
+        if (!isOnPizza) {
+            springBackToOriginalPosition()
         }
     }
 
