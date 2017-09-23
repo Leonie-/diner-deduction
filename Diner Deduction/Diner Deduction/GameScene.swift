@@ -16,16 +16,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     static var customer:Customer? = nil
     
     func createBackground() {
-        let background = SKSpriteNode(imageNamed: "background-game.png")
-        background.zPosition = 0
-        self.addChild(background)
+//        let background = SKSpriteNode(texture: "background-game.png")
+//        background.zPosition = 0
+//        self.addChild(background)
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
+        
+        
     }
     
-    func createPizza() {
+    func createNotificationBar() {
+        let notificationBar = NotificationBar()
+        self.addChild(notificationBar.bar)
+    }
+    
+    func createPizza(totalIngredients: Int) {
         let pizza = Pizza(
             positionX: self.frame.midX,
-            positionY: self.frame.midY
+            positionY: self.frame.midY,
+            totalIngredients: totalIngredients
         )
         self.addChild(pizza)
     }
@@ -59,6 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //position to lower left
         self.anchorPoint = .zero
         
+        let totalIngredients = 3
         let ingredients = [
             (type: "tomato", offsetX: 150 as CGFloat),
             (type: "olive", offsetX: 250 as CGFloat),
@@ -66,10 +75,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             (type: "pepperoni", offsetX: 450 as CGFloat)
         ];
 
-        GameScene.customer = Customer(ingredients: ingredients, totalIngredients: 3, arrayShuffler: ArrayShuffler())
+        GameScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
         
         createBackground()
-        createPizza()
+        createNotificationBar()
+        createPizza(totalIngredients: totalIngredients)
         createIngredients(ingredients: ingredients)
         createSubmitButton()
         

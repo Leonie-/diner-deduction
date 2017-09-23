@@ -38,9 +38,11 @@ class Customer {
         if let ingredientsToCheck = notification.userInfo?["currentIngredients"] as? Set<String> {
             print(ingredientsToCheck)
             if ingredientsToCheck == correctIngredients {
-                print("Game won");
+                NotificationCenter.default.post(name:Notification.Name("GameWon"), object: nil)
             }
-            
+            else {
+                NotificationCenter.default.post(name:Notification.Name("GameFailed"), object: nil)
+            }
         }
     }
 }

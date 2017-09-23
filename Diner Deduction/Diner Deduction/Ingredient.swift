@@ -58,15 +58,14 @@ class Ingredient : SKSpriteNode, GameSprite {
     func onDrop() {
         let bodies = self.physicsBody?.allContactedBodies()
         if (bodies?.isEmpty)! {
-            print("no contact")
             springBackToOriginalPosition()
             NotificationCenter.default.post(name:Notification.Name("IngredientRemoved"), object: nil, userInfo: ["ingredient": self.name!])
         }
         else {
             for body : AnyObject in bodies! {
                 if body.node??.name == "pizza" {
-                    print("touching pizza")
                     NotificationCenter.default.post(name:Notification.Name("IngredientAdded"), object: nil, userInfo: ["ingredient": self.name!])
+                    break
                 }
             }
         }

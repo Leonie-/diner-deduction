@@ -12,7 +12,7 @@ class Pizza : SKSpriteNode, GameSprite {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     private var ingredients = Set<String>()
 
-    init(positionX: CGFloat, positionY: CGFloat) {
+    init(positionX: CGFloat, positionY: CGFloat, totalIngredients:Int) {
         // Call the init function on the base class (SKSpriteNode)
         super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 210, height: 210))
         self.position = CGPoint(x: positionX, y: positionY)
@@ -32,10 +32,10 @@ class Pizza : SKSpriteNode, GameSprite {
     
     func submitPizza() {
         if (ingredients.count < 3) {
-            print("Not enough ingredients!")
+            NotificationCenter.default.post(name:Notification.Name("NotEnoughIngredients"), object: nil)
         }
         else if (ingredients.count > 3) {
-            print("Too many ingredients!")
+            NotificationCenter.default.post(name:Notification.Name("TooManyIngredients"), object: nil)
         }
         else {
         	NotificationCenter.default.post(name:Notification.Name("PizzaSubmitted"), object: nil, userInfo: ["currentIngredients": ingredients])
