@@ -13,7 +13,7 @@ import SpriteKitEasingSwift
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var selectedNode:GameSprite = GameSpriteNull()
-    
+    static var customer:Customer? = nil
     
     func createBackground() {
         let background = SKSpriteNode(imageNamed: "background-game.png")
@@ -66,7 +66,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             (type: "pepperoni", offsetX: 450 as CGFloat)
         ];
 
-        CoreGameLogic(ingredients: ingredients, totalIngredients: 3, arrayShuffler: ArrayShuffler())
+        GameScene.customer = Customer(ingredients: ingredients, totalIngredients: 3, arrayShuffler: ArrayShuffler())
         createBackground()
         createPizza()
         createIngredients(ingredients: ingredients)

@@ -14,9 +14,8 @@
 		32202EA01F658128008C967A /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202E9F1F658128008C967A /* GameSprite.swift */; };
 		32202EA21F65A074008C967A /* GameSpriteNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202EA11F65A074008C967A /* GameSpriteNull.swift */; };
 		324BD99F1F67E66A003E1E3C /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324BD99E1F67E66A003E1E3C /* Pizza.swift */; };
-		3277EA871F7596D5000B4114 /* IngredientsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3277EA861F7596D5000B4114 /* IngredientsArray.swift */; };
 		32C06CF11F71A91A003E71E8 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C06CF01F71A91A003E71E8 /* SubmitButton.swift */; };
-		32C06CF91F71D4D1003E71E8 /* CoreGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C06CF81F71D4D1003E71E8 /* CoreGameLogic.swift */; };
+		32C06CF91F71D4D1003E71E8 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C06CF81F71D4D1003E71E8 /* Customer.swift */; };
 		32DBD9531F769332003BA20F /* ArrayShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBD9521F769332003BA20F /* ArrayShuffler.swift */; };
 		32E739EC1F4839B000140FC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E739EB1F4839B000140FC4 /* AppDelegate.swift */; };
 		32E739EE1F4839B000140FC4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E739ED1F4839B000140FC4 /* GameScene.sks */; };
@@ -58,9 +57,8 @@
 		32202E9F1F658128008C967A /* GameSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
 		32202EA11F65A074008C967A /* GameSpriteNull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSpriteNull.swift; sourceTree = "<group>"; };
 		324BD99E1F67E66A003E1E3C /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
-		3277EA861F7596D5000B4114 /* IngredientsArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsArray.swift; sourceTree = "<group>"; };
 		32C06CF01F71A91A003E71E8 /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
-		32C06CF81F71D4D1003E71E8 /* CoreGameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGameLogic.swift; sourceTree = "<group>"; };
+		32C06CF81F71D4D1003E71E8 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		32DBD9521F769332003BA20F /* ArrayShuffler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayShuffler.swift; sourceTree = "<group>"; };
 		32E739E81F4839B000140FC4 /* Diner Deduction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diner Deduction.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E739EB1F4839B000140FC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,8 +154,7 @@
 				32202EA11F65A074008C967A /* GameSpriteNull.swift */,
 				324BD99E1F67E66A003E1E3C /* Pizza.swift */,
 				32C06CF01F71A91A003E71E8 /* SubmitButton.swift */,
-				32C06CF81F71D4D1003E71E8 /* CoreGameLogic.swift */,
-				3277EA861F7596D5000B4114 /* IngredientsArray.swift */,
+				32C06CF81F71D4D1003E71E8 /* Customer.swift */,
 				32DBD9521F769332003BA20F /* ArrayShuffler.swift */,
 			);
 			path = "Diner Deduction";
@@ -507,7 +504,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DBD9531F769332003BA20F /* ArrayShuffler.swift in Sources */,
-				3277EA871F7596D5000B4114 /* IngredientsArray.swift in Sources */,
 				32E739F21F4839B000140FC4 /* GameScene.swift in Sources */,
 				32C06CF11F71A91A003E71E8 /* SubmitButton.swift in Sources */,
 				32202E961F655D29008C967A /* Ingredient.swift in Sources */,
@@ -515,7 +511,7 @@
 				32E739F41F4839B000140FC4 /* GameViewController.swift in Sources */,
 				324BD99F1F67E66A003E1E3C /* Pizza.swift in Sources */,
 				32202E981F655EF8008C967A /* Sprite.swift in Sources */,
-				32C06CF91F71D4D1003E71E8 /* CoreGameLogic.swift in Sources */,
+				32C06CF91F71D4D1003E71E8 /* Customer.swift in Sources */,
 				32202EA21F65A074008C967A /* GameSpriteNull.swift in Sources */,
 				32E739EC1F4839B000140FC4 /* AppDelegate.swift in Sources */,
 			);

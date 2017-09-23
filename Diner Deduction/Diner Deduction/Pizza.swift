@@ -23,24 +23,24 @@ class Pizza : SKSpriteNode, GameSprite {
         self.physicsBody?.categoryBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.collisionBitMask = 0
         
-		NotificationCenter.default.addObserver(self, selector: #selector(submitPizza), name:Notification.Name("PizzaSubmitted"),  object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(submitPizza), name:Notification.Name("SubmitButtonPressed"),  object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addIngredient), name:Notification.Name("IngredientAdded"),  object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeIngredient), name:Notification.Name("IngredientRemoved"),  object: nil)
     }
     
     func submitPizza() {
-        if (ingredients.count < 4) {
+        if (ingredients.count < 3) {
             print("Not enough ingredients!")
         }
-        else if (ingredients.count > 4) {
+        else if (ingredients.count > 3) {
             print("Too many ingredients!")
         }
         else {
-        	print("Pizza was submitted")
+        	NotificationCenter.default.post(name:Notification.Name("PizzaSubmitted"), object: nil, userInfo: ["currentIngredients": ingredients])
         }
     }
     
-    func addIngredient(_ notification: NSNotification) {
+    func addIngredient(_ notification: Notification) {
         if let ingredient = notification.userInfo?["ingredient"] as? String {
             ingredients.insert(ingredient)
             print(ingredients)

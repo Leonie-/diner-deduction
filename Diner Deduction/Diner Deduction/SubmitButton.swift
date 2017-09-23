@@ -16,8 +16,7 @@ class SubmitButton : SKSpriteNode, GameSprite {
     }
     
     func onTouch() {
-    	print("Submit pizza")
-        NotificationCenter.default.post(name:Notification.Name("PizzaSubmitted"), object: nil)
+        NotificationCenter.default.post(name:Notification.Name("SubmitButtonPressed"), object: nil)
     }
     
     func onDrag(touch: UITouch) {}
