@@ -67,6 +67,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ];
 
         GameScene.customer = Customer(ingredients: ingredients, totalIngredients: 3, arrayShuffler: ArrayShuffler())
+        
         createBackground()
         createPizza()
         createIngredients(ingredients: ingredients)
@@ -74,64 +75,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Handle contact in the scene
         self.physicsWorld.contactDelegate = self
-        
-    }
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-        let firstBody: SKPhysicsBody
-        let secondBody:SKPhysicsBody
-        let ingredientMask = PhysicsCategory.ingredient.rawValue
-        let pizzaMask = PhysicsCategory.pizza.rawValue
-
-        if (contact.bodyA.categoryBitMask & ingredientMask) > 0 {
-//            print("Ingredient is body A")
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        }
-        else {
-//            print("Ingredient is body B")
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-        
-
-        if (secondBody.categoryBitMask == pizzaMask) {
-            if let ingredient = firstBody.node as? Ingredient {
-            	NotificationCenter.default.post(name:Notification.Name("IngredientAdded"), object: nil, userInfo: ["ingredient": ingredient.name!])
-//            if let pizza = secondBody.node as? Pizza {
-//                pizza.addIngredient()
-//            }
-//            if let ingredient = firstBody.node as? Ingredient {
-//                ingredient.addToPizza()
-//            }
-            }
-        }
-
-    }
-    
-    func didEnd(_ contact: SKPhysicsContact) {
-        let firstBody: SKPhysicsBody
-        let secondBody:SKPhysicsBody
-        let ingredientMask = PhysicsCategory.ingredient.rawValue
-        let pizzaMask = PhysicsCategory.pizza.rawValue
-        
-        if (contact.bodyA.categoryBitMask & ingredientMask) > 0 {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
-        }
-        else {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-
-        if (secondBody.categoryBitMask == pizzaMask) {
-            let overlap = (secondBody.node?.contains((firstBody.node?.position)!))!
-            if let ingredient = firstBody.node as? Ingredient {
-                if (!overlap) {
-                    NotificationCenter.default.post(name:Notification.Name("IngredientRemoved"), object: nil, userInfo: ["ingredient": ingredient.name!])
-                }
-            }
-        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

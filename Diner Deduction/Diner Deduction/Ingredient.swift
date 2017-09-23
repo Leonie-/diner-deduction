@@ -12,8 +12,6 @@ import SpriteKitEasingSwift
 class Ingredient : SKSpriteNode, GameSprite {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"Ingredients")
     var originalPosition:CGPoint = CGPoint(x: 0, y: 0)
-    var isOnPizza = false
-    var ingredientName = ""
 
     init(name: String, image: String, size: CGSize, positionX: CGFloat, positionY: CGFloat) {
 
@@ -26,32 +24,14 @@ class Ingredient : SKSpriteNode, GameSprite {
         self.originalPosition = CGPoint(x: positionX, y: positionY)
         
         let bodyTexture = textureAtlas.textureNamed(image)
-        ingredientName = image
         self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
         self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.categoryBitMask = PhysicsCategory.ingredient.rawValue
         self.physicsBody?.collisionBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.contactTestBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.collisionBitMask = 0
         
-        NotificationCenter.default.addObserver(self, selector: #selector(addToPizza), name:Notification.Name("IngredientAdded"),  object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(removeFromPizza), name:Notification.Name("IngredientRemoved"),  object: nil)
-    }
-    
-    func addToPizza(_ notification: NSNotification) {
-        if let ingredient = notification.userInfo?["ingredient"] as? String {
-            if (ingredient == self.name) {
-                isOnPizza = true
-            }
-        }
-    }
-    
-    func removeFromPizza(_ notification: NSNotification) {
-        if let ingredient = notification.userInfo?["ingredient"] as? String {
-            if (ingredient == self.name) {
-                isOnPizza = false
-            }
-        }
     }
     
     func springBackToOriginalPosition() {
@@ -63,7 +43,6 @@ class Ingredient : SKSpriteNode, GameSprite {
             to: self.originalPosition
         ))
     }
-    
     
     func onTouch() {}
     
@@ -77,8 +56,19 @@ class Ingredient : SKSpriteNode, GameSprite {
     }
     
     func onDrop() {
-        if (!isOnPizza) {
+        let bodies = self.physicsBody?.allContactedBodies()
+        if (bodies?.isEmpty)! {
+            print("no contact")
             springBackToOriginalPosition()
+            NotificationCenter.default.post(name:Notification.Name("IngredientRemoved"), object: nil, userInfo: ["ingredient": self.name!])
+        }
+        else {
+            for body : AnyObject in bodies! {
+                if body.node??.name == "pizza" {
+                    print("touching pizza")
+                    NotificationCenter.default.post(name:Notification.Name("IngredientAdded"), object: nil, userInfo: ["ingredient": self.name!])
+                }
+            }
         }
     }
 

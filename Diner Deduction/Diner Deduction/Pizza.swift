@@ -16,10 +16,12 @@ class Pizza : SKSpriteNode, GameSprite {
         // Call the init function on the base class (SKSpriteNode)
         super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 210, height: 210))
         self.position = CGPoint(x: positionX, y: positionY)
+        self.name = "pizza"
         
         let bodyTexture = textureAtlas.textureNamed("pizza")
-        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
+        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: CGSize(width: 170, height: 170))
         self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.categoryBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.collisionBitMask = 0
         
@@ -43,14 +45,14 @@ class Pizza : SKSpriteNode, GameSprite {
     func addIngredient(_ notification: Notification) {
         if let ingredient = notification.userInfo?["ingredient"] as? String {
             ingredients.insert(ingredient)
-            print(ingredients)
+            print("ingredient added", ingredients)
         }
     }
     
     func removeIngredient(_ notification: NSNotification) {
         if let ingredient = notification.userInfo?["ingredient"] as? String {
         	ingredients.remove(ingredient)
-        	print(ingredients)
+            print("ingredient removed", ingredients)
         }
     }
     
