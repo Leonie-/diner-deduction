@@ -12,7 +12,7 @@ class SubmitButton : SKSpriteNode, GameSprite {
     }
     
     func hideSubmitButton() {
-        
+
     }
     
     func onTouch() {

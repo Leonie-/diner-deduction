@@ -1,11 +1,13 @@
 
 import SpriteKit
+import SpriteKitEasingSwift
 
 class NotificationBar {
     
     var bar: SKSpriteNode
     var message: SKLabelNode
-    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
+    var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "GameItems")
+    var messagePositionLower: CGPoint
     
     private let messageDictionary:[String: String]
     
@@ -31,6 +33,7 @@ class NotificationBar {
         message.text = messageDictionary["Default"]
         message.fontSize = 25
         message.position = CGPoint(x:40, y: frameHeight - 45)
+        messagePositionLower = CGPoint(x:40, y: frameHeight - 55)
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("GameWon"),  object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("GameFailed"),  object: nil)
@@ -46,6 +49,13 @@ class NotificationBar {
         else {
             message.text = messageDictionary[newMessage]
         }
+        message.run(SKEase.move(
+            easeFunction: .curveTypeBounce,
+            easeType: EaseType.easeTypeIn,
+            time: 0.2,
+            from: messagePositionLower,
+            to: message.position
+        ))
     }
     
 }

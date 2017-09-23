@@ -33,9 +33,9 @@ class Ingredient : SKSpriteNode, GameSprite {
     
     func springBackToOriginalPosition() {
         self.run(SKEase.move(
-            easeFunction: .curveTypeQuintic,
+            easeFunction: .curveTypeElastic,
             easeType: EaseType.easeTypeOut,
-            time: 0.5,
+            time: 0.7,
             from: self.position,
             to: self.originalPosition
         ))

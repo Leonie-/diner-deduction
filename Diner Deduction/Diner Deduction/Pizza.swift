@@ -22,6 +22,7 @@ class Pizza : SKSpriteNode, GameSprite {
 		NotificationCenter.default.addObserver(self, selector: #selector(submitPizza), name:Notification.Name("SubmitButtonPressed"),  object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(addIngredient), name:Notification.Name("IngredientAdded"),  object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeIngredient), name:Notification.Name("IngredientRemoved"),  object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeAllIngredients), name:Notification.Name("GameFailed"),  object: nil)
     }
     
     func submitPizza() {
@@ -48,6 +49,11 @@ class Pizza : SKSpriteNode, GameSprite {
         	ingredients.remove(ingredient)
             print("ingredient removed", ingredients)
         }
+    }
+    
+    func removeAllIngredients(_ notification: NSNotification) {
+        ingredients.removeAll()
+        print("ALL ingredient cleared", ingredients)
     }
     
     func onTouch() {}
