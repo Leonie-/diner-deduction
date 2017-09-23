@@ -9,9 +9,11 @@
 import SpriteKit
 
 class Customer {
-    private var correctIngredients: Array<Any>
+    private var correctIngredients: Set<String>
     
     init(ingredients: Array<(String,CGFloat)>, totalIngredients: Int, arrayShuffler: ArrayShufflerProtocol) {
+        
+        let totalIngredients = totalIngredients - 1
         
         if (totalIngredients > ingredients.count) {
             print("Number to select was longer than the total list of ingredients")
@@ -21,14 +23,11 @@ class Customer {
             return type
         }
         
-        let shuffledIngredientsByType = arrayShuffler.shuffle(array: ingredients.map(getIngredientType))
-        let ingredientsSlice = shuffledIngredientsByType[0...totalIngredients]
-        correctIngredients = Array(ingredientsSlice)
-        
-        
-        
-//        correctIngredients = Set(correctIngredientsArray.map { $0 })
-        
+	    let ingredientsByType = ingredients.map(getIngredientType)
+        let shuffledIngredientsByType = arrayShuffler.shuffle(array: ingredientsByType) as! Array<String>
+        let ingredientsSlice:ArraySlice<String> = shuffledIngredientsByType[0...totalIngredients]
+        correctIngredients = Set<String>(ingredientsSlice)
+
         print("correctIngredients")
         print(correctIngredients)
 
@@ -36,13 +35,11 @@ class Customer {
     }
     
     @objc func checkIngredients(_ notification: Notification) {
-        print("Checking...")
         if let ingredientsToCheck = notification.userInfo?["currentIngredients"] as? Set<String> {
             print(ingredientsToCheck)
-            
-//            if ingredientsToCheck == correctIngredients {
-//                print("Game won");
-//            }
+            if ingredientsToCheck == correctIngredients {
+                print("Game won");
+            }
             
         }
     }
