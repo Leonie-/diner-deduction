@@ -19,7 +19,7 @@ class Pizza : SKSpriteNode, GameSprite {
         self.name = "pizza"
         
         let bodyTexture = textureAtlas.textureNamed("pizza")
-        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: CGSize(width: 170, height: 170))
+        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: CGSize(width: 105, height: 105))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.categoryBitMask = PhysicsCategory.pizza.rawValue
