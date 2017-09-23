@@ -30,8 +30,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(pizza)
     }
 
-    func createIngredients(ingredients: IngredientsArray) {
-        for (type, offsetX) in ingredients.ingredientsList {
+    func createIngredients(ingredients: Array<(String,CGFloat)>) {
+        for (type, offsetX) in ingredients {
             createIngredient(ingredient: type, offsetX: offsetX)
         }
     }
@@ -59,14 +59,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //position to lower left
         self.anchorPoint = .zero
         
-        let ingredients = IngredientsArray(ingredientsArray: [
+        let ingredients = [
             (type: "tomato", offsetX: 150 as CGFloat),
             (type: "olive", offsetX: 250 as CGFloat),
             (type: "mushroom", offsetX: 350 as CGFloat),
             (type: "pepperoni", offsetX: 450 as CGFloat)
-        ]);
+        ];
 
-        CoreGameLogic(ingredients: ingredients, totalIngredients: 3)
+        CoreGameLogic(ingredients: ingredients, totalIngredients: 3, arrayShuffler: ArrayShuffler())
         createBackground()
         createPizza()
         createIngredients(ingredients: ingredients)

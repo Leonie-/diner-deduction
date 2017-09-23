@@ -14,7 +14,7 @@ class Pizza : SKSpriteNode, GameSprite {
 
     init(positionX: CGFloat, positionY: CGFloat) {
         // Call the init function on the base class (SKSpriteNode)
-        super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 250, height: 250))
+        super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 210, height: 210))
         self.position = CGPoint(x: positionX, y: positionY)
         
         let bodyTexture = textureAtlas.textureNamed("pizza")

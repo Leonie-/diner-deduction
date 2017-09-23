@@ -10,15 +10,16 @@ import SpriteKit
 
 class CoreGameLogic {
     
-    var correctIngredients: IngredientsArray
+    private var correctIngredients: ArraySlice<(String,CGFloat)>
     
-    init(ingredients: IngredientsArray, totalIngredients: Int) {
+    init(ingredients: Array<(String,CGFloat)>, totalIngredients: Int, arrayShuffler: ArrayShufflerProtocol) {
         
-        correctIngredients = ingredients
+        if (totalIngredients > ingredients.count) {
+            print("Number to select was longer than the total list of ingredients")
+        }
         
-    }
-    
-    func createCorrectIngredients() {
-        
+        let shuffledIngredients = arrayShuffler.shuffle(array: ingredients)
+        let selectionOfIngredients:Array<(String, CGFloat)> = shuffledIngredients as! Array<(String, CGFloat)>
+        correctIngredients = selectionOfIngredients[0...totalIngredients]
     }
 }
