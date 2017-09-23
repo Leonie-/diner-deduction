@@ -1,10 +1,3 @@
-//
-//  GameScene.swift
-//  Diner Deduction
-//
-//  Created by Leonie Kenyon on 19/08/2017.
-//  Copyright © 2017 Leonie Kenyon. All rights reserved.
-//
 
 import SpriteKit
 import GameplayKit
@@ -17,16 +10,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     static var notificationBar:NotificationBar? = nil
     
     func createBackground() {
-//        let background = SKSpriteNode(texture: "background-game.png")
-//        background.zPosition = 0
+//        let textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
+//        let bodyTexture = textureAtlas.textureNamed("background-game")
+//        let background = SKSpriteNode(
+//            texture: bodyTexture,
+//            color: UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0),
+//            size:CGSize(width: self.frame.width, height: self.frame.height)
+//        )
+//        background.zPosition = 1
+//        background.anchorPoint = CGPoint(x:0, y: 1)
+//        background.position = CGPoint(x: 0, y: self.frame.height)
 //        self.addChild(background)
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
-        
     }
     
     func createNotificationBar(totalIngredients: Int) {
-        GameScene.notificationBar = NotificationBar(frame: self.frame, totalIngredients: totalIngredients)
-//        self.addChild(notificationBar.bar)
+        GameScene.notificationBar = NotificationBar(frameWidth: self.frame.width, frameHeight: self.frame.height, totalIngredients: totalIngredients)
+        self.addChild((GameScene.notificationBar?.message)!)
+        self.addChild((GameScene.notificationBar?.bar)!)
     }
     
     func createPizza(totalIngredients: Int) {
@@ -75,10 +76,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             (type: "pepperoni", offsetX: 450 as CGFloat)
         ];
 
-        GameScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
-        
-        
         createBackground()
+        GameScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
+
         createNotificationBar(totalIngredients: totalIngredients)
         createPizza(totalIngredients: totalIngredients)
         createIngredients(ingredients: ingredients)

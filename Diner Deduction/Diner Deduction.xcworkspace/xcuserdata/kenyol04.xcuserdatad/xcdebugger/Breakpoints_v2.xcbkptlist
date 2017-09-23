@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diner Deduction/GameSprite.swift"
-            timestampString = "527874367.554065"
+            timestampString = "527893503.897966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
             landmarkName = "GameSprite"
             landmarkType = "5">
          </BreakpointContent>

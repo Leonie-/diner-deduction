@@ -1,10 +1,3 @@
-//
-//  Ingredient.swift
-//  Diner Deduction
-//
-//  Created by Leonie Kenyon on 10/09/2017.
-//  Copyright © 2017 Leonie Kenyon. All rights reserved.
-//
 
 import SpriteKit
 import SpriteKitEasingSwift
@@ -20,8 +13,10 @@ class Ingredient : SKSpriteNode, GameSprite {
         
         self.name = name
         self.size = size
+        self.zPosition = 3
         self.position = CGPoint(x: positionX, y: positionY)
         self.originalPosition = CGPoint(x: positionX, y: positionY)
+        
         
         let bodyTexture = textureAtlas.textureNamed(image)
         self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: self.size)
@@ -54,7 +49,6 @@ class Ingredient : SKSpriteNode, GameSprite {
         let positionToMoveTo = CGPoint(x: currentPosition.x - previousPosition.x, y: currentPosition.y - previousPosition.y)
         
         self.position = CGPoint(x: self.position.x + positionToMoveTo.x, y: self.position.y + positionToMoveTo.y)
-        self.zPosition = 1
     }
     
     func onDrop() {

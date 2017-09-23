@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Diner Deduction
-//
-//  Created by Leonie Kenyon on 19/08/2017.
-//  Copyright © 2017 Leonie Kenyon. All rights reserved.
-//
 
 import UIKit
 
