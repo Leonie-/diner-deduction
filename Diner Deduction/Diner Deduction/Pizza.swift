@@ -29,7 +29,15 @@ class Pizza : SKSpriteNode, GameSprite {
     }
     
     func submitPizza() {
-        print("Pizza was submitted")
+        if (ingredients.count < 4) {
+            print("Not enough ingredients!")
+        }
+        else if (ingredients.count > 4) {
+            print("Too many ingredients!")
+        }
+        else {
+        	print("Pizza was submitted")
+        }
     }
     
     func addIngredient(_ notification: NSNotification) {
@@ -45,7 +53,6 @@ class Pizza : SKSpriteNode, GameSprite {
         	print(ingredients)
         }
     }
-
     
     func onTouch() {}
     

@@ -12,8 +12,8 @@ import SpriteKitEasingSwift
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    var selectedNode:GameSprite = GameSpriteNull()
-    var notifications = NotificationCenter.default
+    private var selectedNode:GameSprite = GameSpriteNull()
+    
     
     func createBackground() {
         let background = SKSpriteNode(imageNamed: "background-game.png")
@@ -30,22 +30,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(pizza)
     }
 
-    func createIngredients() {
-        let ingredients = [
-            (type: "tomato", offsetX: 150 as CGFloat),
-            (type: "olive", offsetX: 250 as CGFloat),
-            (type: "mushroom", offsetX: 350 as CGFloat),
-            (type: "pepperoni", offsetX: 450 as CGFloat)
-        ];
-        
-        for (type, offsetX) in ingredients {
+    func createIngredients(ingredients: IngredientsArray) {
+        for (type, offsetX) in ingredients.ingredientsList {
             createIngredient(ingredient: type, offsetX: offsetX)
         }
     }
     
     func createIngredient(ingredient: String, offsetX: CGFloat) {
         let ingredient = Ingredient(
-            name: "ingredient",
+            name: ingredient,
             image: ingredient,
             size: CGSize(width:50, height:50),
             positionX: offsetX,
@@ -65,10 +58,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         //position to lower left
         self.anchorPoint = .zero
-    
+        
+        let ingredients = IngredientsArray(ingredientsArray: [
+            (type: "tomato", offsetX: 150 as CGFloat),
+            (type: "olive", offsetX: 250 as CGFloat),
+            (type: "mushroom", offsetX: 350 as CGFloat),
+            (type: "pepperoni", offsetX: 450 as CGFloat)
+        ]);
+
+        CoreGameLogic(ingredients: ingredients, totalIngredients: 3)
         createBackground()
         createPizza()
-      	createIngredients()
+        createIngredients(ingredients: ingredients)
         createSubmitButton()
         
         //Handle contact in the scene
@@ -95,11 +96,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
         if (secondBody.categoryBitMask == pizzaMask) {
+            if let ingredient = firstBody.node as? Ingredient {
+            	NotificationCenter.default.post(name:Notification.Name("IngredientAdded"), object: nil, userInfo: ["ingredient": ingredient.name!])
 //            if let pizza = secondBody.node as? Pizza {
 //                pizza.addIngredient()
 //            }
-            if let ingredient = firstBody.node as? Ingredient {
-                ingredient.addToPizza()
+//            if let ingredient = firstBody.node as? Ingredient {
+//                ingredient.addToPizza()
+//            }
             }
         }
 
@@ -124,7 +128,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let overlap = (secondBody.node?.contains((firstBody.node?.position)!))!
             if let ingredient = firstBody.node as? Ingredient {
                 if (!overlap) {
-                    ingredient.removeFromPizza()
+                    NotificationCenter.default.post(name:Notification.Name("IngredientRemoved"), object: nil, userInfo: ["ingredient": ingredient.name!])
                 }
             }
         }

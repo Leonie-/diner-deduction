@@ -20,6 +20,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         // Call the init function on the base class (SKSpriteNode)
         super.init(texture: SKTexture(imageNamed: image), color: UIColor.clear, size: size)
         
+        self.name = name
         self.size = size
         self.position = CGPoint(x: positionX, y: positionY)
         self.originalPosition = CGPoint(x: positionX, y: positionY)
@@ -32,20 +33,25 @@ class Ingredient : SKSpriteNode, GameSprite {
         self.physicsBody?.collisionBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.contactTestBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.collisionBitMask = 0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(addToPizza), name:Notification.Name("IngredientAdded"),  object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(removeFromPizza), name:Notification.Name("IngredientRemoved"),  object: nil)
     }
     
-    func addToPizza() {
-        isOnPizza = true
-        print ("Ingredient is on pizza:", ingredientName)
-        NotificationCenter.default.post(name:Notification.Name("IngredientAdded"), object: nil, userInfo: ["ingredient": ingredientName])
-        
+    func addToPizza(_ notification: NSNotification) {
+        if let ingredient = notification.userInfo?["ingredient"] as? String {
+            if (ingredient == self.name) {
+                isOnPizza = true
+            }
+        }
     }
     
-    func removeFromPizza() {
-        isOnPizza = false
-        print ("Ingredient is removed from pizza:", ingredientName)
-        NotificationCenter.default.post(name:Notification.Name("IngredientRemoved"), object: nil, userInfo: ["ingredient": ingredientName])
-        
+    func removeFromPizza(_ notification: NSNotification) {
+        if let ingredient = notification.userInfo?["ingredient"] as? String {
+            if (ingredient == self.name) {
+                isOnPizza = false
+            }
+        }
     }
     
     func springBackToOriginalPosition() {
