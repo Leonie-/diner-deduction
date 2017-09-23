@@ -28,19 +28,20 @@ class Customer {
         let ingredientsSlice:ArraySlice<String> = shuffledIngredientsByType[0...totalIngredients]
         correctIngredients = Set<String>(ingredientsSlice)
 
-        print("correctIngredients")
-        print(correctIngredients)
+        print("The desired ingredients are...", correctIngredients)
 
         NotificationCenter.default.addObserver(self, selector: #selector(checkIngredients), name:Notification.Name("PizzaSubmitted"), object: nil)
     }
     
     @objc func checkIngredients(_ notification: Notification) {
         if let ingredientsToCheck = notification.userInfo?["currentIngredients"] as? Set<String> {
-            print(ingredientsToCheck)
+            print("Ingredients you picked are...", ingredientsToCheck)
             if ingredientsToCheck == correctIngredients {
+                print("Game won")
                 NotificationCenter.default.post(name:Notification.Name("GameWon"), object: nil)
             }
             else {
+                print("Game failed")
                 NotificationCenter.default.post(name:Notification.Name("GameFailed"), object: nil)
             }
         }

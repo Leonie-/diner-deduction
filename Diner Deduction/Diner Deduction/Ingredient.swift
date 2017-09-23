@@ -32,6 +32,8 @@ class Ingredient : SKSpriteNode, GameSprite {
         self.physicsBody?.contactTestBitMask = PhysicsCategory.pizza.rawValue
         self.physicsBody?.collisionBitMask = 0
         
+        NotificationCenter.default.addObserver(self, selector: #selector(springBackToOriginalPosition), name:Notification.Name("GameFailed"),  object: nil)
+    
     }
     
     func springBackToOriginalPosition() {
@@ -59,6 +61,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         let bodies = self.physicsBody?.allContactedBodies()
         if (bodies?.isEmpty)! {
             springBackToOriginalPosition()
+            //This does fire every time you move an ingredient around
             NotificationCenter.default.post(name:Notification.Name("IngredientRemoved"), object: nil, userInfo: ["ingredient": self.name!])
         }
         else {
@@ -70,7 +73,6 @@ class Ingredient : SKSpriteNode, GameSprite {
             }
         }
     }
-
     
     // Satisfy the NSCoder required init:
     required init?(coder aDecoder: NSCoder) {

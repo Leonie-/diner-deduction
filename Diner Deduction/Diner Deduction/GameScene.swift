@@ -14,6 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var selectedNode:GameSprite = GameSpriteNull()
     static var customer:Customer? = nil
+    static var notificationBar:NotificationBar? = nil
     
     func createBackground() {
 //        let background = SKSpriteNode(texture: "background-game.png")
@@ -21,12 +22,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        self.addChild(background)
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
         
-        
     }
     
-    func createNotificationBar() {
-        let notificationBar = NotificationBar()
-        self.addChild(notificationBar.bar)
+    func createNotificationBar(totalIngredients: Int) {
+        GameScene.notificationBar = NotificationBar(frame: self.frame, totalIngredients: totalIngredients)
+//        self.addChild(notificationBar.bar)
     }
     
     func createPizza(totalIngredients: Int) {
@@ -77,8 +77,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         GameScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
         
+        
         createBackground()
-        createNotificationBar()
+        createNotificationBar(totalIngredients: totalIngredients)
         createPizza(totalIngredients: totalIngredients)
         createIngredients(ingredients: ingredients)
         createSubmitButton()
