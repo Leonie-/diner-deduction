@@ -5,9 +5,10 @@ import SpriteKitEasingSwift
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    private var selectedNode:GameSprite = GameSpriteNull()
-    static var customer:Customer? = nil
-    static var notificationBar:NotificationBar? = nil
+    private var selectedNode: GameSprite = GameSpriteNull()
+    static var customer: Customer? = nil
+    static var notificationBar: NotificationBar? = nil
+    static var previousGuesses: PreviousGuesses? = nil
     
     func createBackground() {
 //        let textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
@@ -22,12 +23,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        background.position = CGPoint(x: 0, y: self.frame.height)
 //        self.addChild(background)
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
+        
+    }
+    
+    func createPreviousGuessesTab(frameWidth: CGFloat, frameHeight: CGFloat) {
+        GameScene.previousGuesses = PreviousGuesses(frameWidth: self.frame.width, frameHeight: self.frame.height)
+        self.addChild((GameScene.previousGuesses?.label)!)
+        self.addChild((GameScene.previousGuesses?.tab)!)
     }
     
     func createNotificationBar(totalIngredients: Int) {
         GameScene.notificationBar = NotificationBar(frameWidth: self.frame.width, frameHeight: self.frame.height, totalIngredients: totalIngredients)
-        self.addChild((GameScene.notificationBar?.message)!)
         self.addChild((GameScene.notificationBar?.bar)!)
+        self.addChild((GameScene.notificationBar?.message)!)
+        
     }
     
     func createPizza(totalIngredients: Int) {
@@ -78,7 +87,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         createBackground()
         GameScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
-
+        
+        createPreviousGuessesTab(frameWidth: self.frame.width, frameHeight: self.frame.height)
         createNotificationBar(totalIngredients: totalIngredients)
         createPizza(totalIngredients: totalIngredients)
         createIngredients(ingredients: ingredients)
