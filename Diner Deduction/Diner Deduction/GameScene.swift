@@ -13,7 +13,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var titleScreen = SKSpriteNode(imageNamed:"spr_title")
     
     func createBackground() {
-        let background = Background(textureName: "game-bg", frameWidth: self.frame.width, frameHeight: self.frame.height)
+        let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
+        let background = Background(textureName: "game-bg", frameSize: frameSize)
         self.addChild(background.sprite)
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
     }
@@ -58,9 +59,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createSubmitButton() {
-        let submitButton = SubmitButton(
-            positionX: self.frame.width - 100,
-            positionY: 40
+        let submitButton = Button(
+            imageName: "submit-btn",
+            notificationAction: "SubmitButtonPressed",
+            size: CGSize(width: 142, height: 38),
+            position: CGPoint(x: self.frame.width-100, y: 40)
         )
         self.addChild(submitButton)
     }

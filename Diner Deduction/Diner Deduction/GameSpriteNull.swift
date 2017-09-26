@@ -2,7 +2,7 @@
 import SpriteKit
 
 class GameSpriteNull : SKSpriteNode, GameSprite {
-
+    
     init() {
         super.init(texture: nil, color: UIColor.clear, size: CGSize(width: 0, height: 0))
     }

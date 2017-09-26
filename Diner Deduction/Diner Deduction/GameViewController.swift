@@ -8,30 +8,36 @@ class GameViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                // Size our scene to fit the view exactly:
-                scene.size = view.bounds.size
-                // Show the new scene:
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
-        }
+        let menuScene = MenuScene()
+        let view = self.view as! SKView
+        // Ignore drawing order of child nodes to increase performance
+        view.ignoresSiblingOrder = true
+        view.showsFPS = true
+        view.showsNodeCount = true
+        
+        menuScene.size = view.bounds.size
+        view.presentScene(menuScene)
+        
+//        let musicPath = Bundle.main.path(forResource: "Sound/BackgroundMusic.m4a", ofType: nil)!
+//        let url = URL(fileURLWithPath: musicPath)
+        
+//        if let view = self.view as! SKView? {
+//            // Load the SKScene from 'GameScene.sks'
+//            if let scene = SKScene(fileNamed: "GameScene") {
+//                // Set the scale mode to scale to fit the window
+//                scene.scaleMode = .aspectFill
+//                // Size our scene to fit the view exactly:
+//                scene.size = view.bounds.size
+//                // Show the new scene:
+//                view.presentScene(scene)
+//            }
+//            
+//            view.ignoresSiblingOrder = true
+//            view.showsFPS = true
+//            view.showsNodeCount = true
+//        }
     }
-    
-    
-//    override func viewDidLoad() {
-//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//        backgroundImage.image = UIImage(named: "bg.png")
-//        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
-//        self.view.insertSubview(backgroundImage, at: 0)
-//    }
+
 
     override var shouldAutorotate: Bool {
         return true
