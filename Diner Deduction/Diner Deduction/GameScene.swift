@@ -25,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        background.position = CGPoint(x: 0, y: self.frame.height)
 //        self.addChild(background)
 //        self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
-        self.backgroundColor = UIColor(patternImage: UIImage(named: "bg.png")!)
+        self.backgroundColor = UIColor(patternImage: UIImage(named: "game-bg.png")!)
 //        self.view.backgroundColor = [UIColor, colorWithPatternImage,:[UIImage imageNamed:@"bg"]];
         
     }
