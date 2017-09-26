@@ -13,21 +13,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var titleScreen = SKSpriteNode(imageNamed:"spr_title")
     
     func createBackground() {
-//        let textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
-//        let bodyTexture = textureAtlas.textureNamed("background-game")
-//        let background = SKSpriteNode(
-//            texture: bodyTexture,
-//            color: UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0),
-//            size:CGSize(width: self.frame.width, height: self.frame.height)
-//        )
-//        background.zPosition = 1
-//        background.anchorPoint = CGPoint(x:0, y: 1)
-//        background.position = CGPoint(x: 0, y: self.frame.height)
-//        self.addChild(background)
-//        self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
-        self.backgroundColor = UIColor(patternImage: UIImage(named: "game-bg.png")!)
-//        self.view.backgroundColor = [UIColor, colorWithPatternImage,:[UIImage imageNamed:@"bg"]];
-        
+        let background = Background(textureName: "game-bg", frameWidth: self.frame.width, frameHeight: self.frame.height)
+        self.addChild(background.sprite)
+        self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
     }
     
     func createPreviousGuessesTab(frameWidth: CGFloat, frameHeight: CGFloat) {
