@@ -25,6 +25,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    
+//    override func viewDidLoad() {
+//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+//        backgroundImage.image = UIImage(named: "bg.png")
+//        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+//        self.view.insertSubview(backgroundImage, at: 0)
+//    }
+
     override var shouldAutorotate: Bool {
         return true
     }
