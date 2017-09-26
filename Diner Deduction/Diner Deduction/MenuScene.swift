@@ -3,10 +3,6 @@ import GameKit
 
 class MenuScene: SKScene, GKGameCenterControllerDelegate {
     
-    struct ZPosition {
-        static let Logo: CGFloat = 1
-    }
-    
     let textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"MenuScreen")
     var startButton = SKSpriteNode()
     
@@ -21,7 +17,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         let logo = SKSpriteNode(imageNamed: "logo")
         logo.size = CGSize(width: 300, height: 227)
         logo.position = CGPoint(x: self.frame.midX, y: self.frame.midY+20 )
-        logo.zPosition = ZPosition.Logo
+        logo.zPosition = 1
         self.addChild(logo)
     }
     
@@ -32,12 +28,14 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             size: CGSize(width: 190, height: 50),
             position: CGPoint(x: self.frame.midX, y: self.frame.midY-90 )
         )
+        startButton.name = "start-button"
         self.addChild(startButton)
     }
     
     func addTextToStartButton() {
         let startButtonText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         startButtonText.text = "Start Game"
+        startButtonText.name = "start-button"
         startButtonText.verticalAlignmentMode = .center
         startButtonText.position = CGPoint(x: 0, y: 0)
         startButtonText.zPosition = 5
@@ -60,46 +58,20 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         createLogo()
         createStartButton()
         addTextToStartButton()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(startGame), name:Notification.Name("StartButtonPressed"),  object: nil)
-    }
-    
-    func startGame() {
-        print("Game Started")
-        self.view?.presentScene(GameScene(size: self.size))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in (touches) {
             let positionInScene = touch.location(in: self)
             let touchedNode = atPoint(positionInScene)
-            if touchedNode is Button {
-                let button = touchedNode as! GameSprite
-                button.onTouch()
+            if touchedNode.name == "start-button" {
                 self.view?.presentScene(GameScene(size: self.size))
             }
         }
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in (touches) {
-//            // Find the location of the touch:
-//            let location = touch.location(in: self)
-//            // Locate the node at this location:
-//            let nodeTouched = atPoint(location)
-//            if nodeTouched.name == "StartBtn" {
-//                // Player touched the start text or button node
-//                // Switch to an instance of the GameScene:
-//                self.view?.presentScene(GameScene(size: self.size))
-//            }
-//        }
-//    }
-
-    
     // This hides the game center when the user taps 'done'
-    func gameCenterViewControllerDidFinish
-        (_ gameCenterViewController:
-        GKGameCenterViewController) {
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
 }

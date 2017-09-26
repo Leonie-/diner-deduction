@@ -15,7 +15,6 @@ class Button: SKSpriteNode, GameSprite {
     }
     
     func onTouch() {
-        print("Button Touched")
         NotificationCenter.default.post(name:Notification.Name(self.action), object: nil)
     }
     

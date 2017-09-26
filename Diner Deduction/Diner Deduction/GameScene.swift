@@ -10,8 +10,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     static var notificationBar: NotificationBar? = nil
     static var previousGuesses: PreviousGuesses? = nil
     
-    var titleScreen = SKSpriteNode(imageNamed:"spr_title")
-    
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
         let background = Background(textureName: "game-bg", frameSize: frameSize)

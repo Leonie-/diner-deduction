@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1ECB9F4AEB052BFEC319A660 /* Pods_Diner_Deduction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E6E1555F882AD927F2B28 /* Pods_Diner_Deduction.framework */; };
 		32202E961F655D29008C967A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202E951F655D29008C967A /* Ingredient.swift */; };
-		32202E981F655EF8008C967A /* Sprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202E971F655EF8008C967A /* Sprite.swift */; };
 		32202E9E1F657348008C967A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 32202E9D1F657348008C967A /* Podfile */; };
 		32202EA01F658128008C967A /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202E9F1F658128008C967A /* GameSprite.swift */; };
 		32202EA21F65A074008C967A /* GameSpriteNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202EA11F65A074008C967A /* GameSpriteNull.swift */; };
@@ -17,7 +16,6 @@
 		326E62861F7AA09E003F52BA /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E62851F7AA09E003F52BA /* Background.swift */; };
 		326E62881F7AA671003F52BA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E62871F7AA671003F52BA /* MenuScene.swift */; };
 		326E628A1F7AAF37003F52BA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E62891F7AAF37003F52BA /* Button.swift */; };
-		32C06CF11F71A91A003E71E8 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C06CF01F71A91A003E71E8 /* SubmitButton.swift */; };
 		32C06CF91F71D4D1003E71E8 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C06CF81F71D4D1003E71E8 /* Customer.swift */; };
 		32DBD9531F769332003BA20F /* ArrayShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBD9521F769332003BA20F /* ArrayShuffler.swift */; };
 		32DBD9551F76D41A003BA20F /* NotificationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBD9541F76D41A003BA20F /* NotificationBar.swift */; };
@@ -57,7 +55,6 @@
 		111DC9E5298B98B50F0CAE9B /* Pods-Diner Deduction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diner Deduction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diner Deduction/Pods-Diner Deduction.debug.xcconfig"; sourceTree = "<group>"; };
 		31345DA4F4DA600272456B0B /* Pods_Diner_DeductionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diner_DeductionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32202E951F655D29008C967A /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
-		32202E971F655EF8008C967A /* Sprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sprite.swift; sourceTree = "<group>"; };
 		32202E9D1F657348008C967A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		32202E9F1F658128008C967A /* GameSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
 		32202EA11F65A074008C967A /* GameSpriteNull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSpriteNull.swift; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 		326E62851F7AA09E003F52BA /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		326E62871F7AA671003F52BA /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		326E62891F7AAF37003F52BA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		32C06CF01F71A91A003E71E8 /* SubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		32C06CF81F71D4D1003E71E8 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		32DBD9521F769332003BA20F /* ArrayShuffler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayShuffler.swift; sourceTree = "<group>"; };
 		32DBD9541F76D41A003BA20F /* NotificationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBar.swift; sourceTree = "<group>"; };
@@ -167,8 +163,6 @@
 				32DBD9541F76D41A003BA20F /* NotificationBar.swift */,
 				324BD99E1F67E66A003E1E3C /* Pizza.swift */,
 				32DBD9561F77270A003BA20F /* PreviousGuesses.swift */,
-				32202E971F655EF8008C967A /* Sprite.swift */,
-				32C06CF01F71A91A003E71E8 /* SubmitButton.swift */,
 				326E62871F7AA671003F52BA /* MenuScene.swift */,
 				326E62891F7AAF37003F52BA /* Button.swift */,
 			);
@@ -522,14 +516,12 @@
 				326E62861F7AA09E003F52BA /* Background.swift in Sources */,
 				32E739F21F4839B000140FC4 /* GameScene.swift in Sources */,
 				326E628A1F7AAF37003F52BA /* Button.swift in Sources */,
-				32C06CF11F71A91A003E71E8 /* SubmitButton.swift in Sources */,
 				32202E961F655D29008C967A /* Ingredient.swift in Sources */,
 				32DBD9551F76D41A003BA20F /* NotificationBar.swift in Sources */,
 				32202EA01F658128008C967A /* GameSprite.swift in Sources */,
 				32DBD9571F77270A003BA20F /* PreviousGuesses.swift in Sources */,
 				32E739F41F4839B000140FC4 /* GameViewController.swift in Sources */,
 				324BD99F1F67E66A003E1E3C /* Pizza.swift in Sources */,
-				32202E981F655EF8008C967A /* Sprite.swift in Sources */,
 				32C06CF91F71D4D1003E71E8 /* Customer.swift in Sources */,
 				326E62881F7AA671003F52BA /* MenuScene.swift in Sources */,
 				32202EA21F65A074008C967A /* GameSpriteNull.swift in Sources */,
