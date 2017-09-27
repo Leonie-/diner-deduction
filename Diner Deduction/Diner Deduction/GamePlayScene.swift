@@ -11,6 +11,11 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     static var notificationBar: NotificationBar? = nil
     static var previousGuesses: PreviousGuesses? = nil
     
+    var countDownText: SKLabelNode!
+    var gameTimer: Timer!
+    var gameLength: Int = 60
+    var secondsLeft: Int = 60
+    
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
         let background = Background(textureName: "game-bg", frameSize: frameSize)
@@ -27,12 +32,12 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(countDownBox)
         
-        let countDownText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
-        countDownText.text = "60"
+        countDownText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         countDownText.fontSize = 45
+        countDownText.text = String(secondsLeft)
         countDownText.horizontalAlignmentMode = .right
         countDownText.position = CGPoint(x:-15, y:-45)
-
+        
         countDownBox.addChild(countDownText)
     }
     
@@ -99,6 +104,8 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         createBackground()
         GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
         
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
+        
         createCountDownNode()
         createPreviousGuessesTab(frameWidth: self.frame.width, frameHeight: self.frame.height)
         createNotificationBar(totalIngredients: totalIngredients)
@@ -114,11 +121,22 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(whenGameLost), name:Notification.Name("GameLost"),  object: nil)
     }
     
+    func updateCountDown() {
+        secondsLeft -= 1
+        countDownText.text = String(secondsLeft)
+        
+        if secondsLeft == 0 {
+            NotificationCenter.default.post(name:Notification.Name("GameLost"), object: nil)
+        }
+    }
+    
     func whenGameWon() {
+        gameTimer.invalidate()
         self.view?.presentScene(GameWonScene(size: self.size))
     }
     
     func whenGameLost() {
+        gameTimer.invalidate()
         self.view?.presentScene(GameLostScene(size: self.size))
     }
     
