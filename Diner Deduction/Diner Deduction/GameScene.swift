@@ -89,6 +89,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Handle contact in the scene
         self.physicsWorld.contactDelegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(whenGameWon), name:Notification.Name("GameWon"),  object: nil)
+    }
+    
+    func whenGameWon() {
+        self.view?.presentScene(CompletionScene(size: self.size))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

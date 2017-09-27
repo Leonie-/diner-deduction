@@ -10,7 +10,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
         let background = Background(textureName: "menu-bg", frameSize: frameSize )
         self.addChild(background.sprite)
-        self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
+        self.backgroundColor = UIColor(red:0.60, green:0.50, blue:0.69, alpha:1.0)
     }
     
     func createLogo() {
@@ -66,6 +66,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             let touchedNode = atPoint(positionInScene)
             if touchedNode.name == "start-button" {
                 self.view?.presentScene(GameScene(size: self.size))
+//                self.view?.presentScene(CompletionScene(size: self.size))
             }
         }
     }
