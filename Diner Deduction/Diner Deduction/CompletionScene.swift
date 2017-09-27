@@ -98,7 +98,6 @@ class CompletionScene: SKScene, GKGameCenterControllerDelegate {
         }
     }
     
-    // This hides the game center when the user taps 'done'
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }

@@ -5,6 +5,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
     
     let textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"MenuScreen")
     var startButton = SKSpriteNode()
+    var quitButton = SKSpriteNode()
     
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
@@ -15,7 +16,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
     
     func createLogo() {
         let logo = SKSpriteNode(imageNamed: "logo")
-        logo.size = CGSize(width: 300, height: 227)
+        logo.size = CGSize(width: 390, height: 295)
         logo.position = CGPoint(x: self.frame.midX, y: self.frame.midY+20 )
         logo.zPosition = 1
         self.addChild(logo)
@@ -26,28 +27,39 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             imageName: "blue-btn",
             notificationAction: "StartButtonPressed",
             size: CGSize(width: 190, height: 50),
-            position: CGPoint(x: self.frame.midX, y: self.frame.midY-90 )
+            position: CGPoint(x: self.frame.midX, y: self.frame.midY-120 )
         )
         startButton.name = "start-button"
         self.addChild(startButton)
     }
     
-    func addTextToStartButton() {
-        let startButtonText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
-        startButtonText.text = "Start Game"
-        startButtonText.name = "start-button"
-        startButtonText.verticalAlignmentMode = .center
-        startButtonText.position = CGPoint(x: 0, y: 0)
-        startButtonText.zPosition = 5
-        startButtonText.fontSize = 30
+    func createQuitButton() {
+        let quitButton = SKSpriteNode(imageNamed: "quit-btn")
+        quitButton.size = CGSize(width: 53, height: 53)
+        quitButton.anchorPoint = CGPoint(x:1, y: 1)
+        quitButton.position = CGPoint(x: self.frame.width-15, y: self.frame.height-15 )
+        quitButton.zPosition = 4;
+        quitButton.name = "quit-button"
+        self.addChild(quitButton)
+    }
     
-        let pulseAction = SKAction.sequence([
-            SKAction.fadeAlpha(to: 0.6, duration: 0.8),
-            SKAction.fadeAlpha(to: 1, duration: 0.8),
-        ])
-        startButtonText.run(SKAction.repeatForever(pulseAction))
-
-        startButton.addChild(startButtonText)
+    func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool) {
+        let textNode = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        textNode.text = text
+        textNode.name = name
+        textNode.verticalAlignmentMode = .center
+        textNode.position = CGPoint(x: 0, y: 0)
+        textNode.zPosition = 5
+        textNode.fontSize = 30
+        
+        if (addPulse) {
+            let pulse = SKAction.sequence([
+                SKAction.fadeAlpha(to: 0.6, duration: 0.8),
+                SKAction.fadeAlpha(to: 1, duration: 0.8),
+                ])
+            textNode.run(SKAction.repeatForever(pulse))
+        }
+        sprite.addChild(textNode)
     }
     
     override func didMove(to view: SKView) {
@@ -56,8 +68,9 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         
         createBackground()
         createLogo()
+        createQuitButton()
         createStartButton()
-        addTextToStartButton()
+        addTextToSprite(sprite: startButton, text: "Start game", name: "start-button", addPulse: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,12 +79,13 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             let touchedNode = atPoint(positionInScene)
             if touchedNode.name == "start-button" {
                 self.view?.presentScene(GameScene(size: self.size))
-//                self.view?.presentScene(CompletionScene(size: self.size))
+            }
+            if touchedNode.name == "quit-button" {
+                UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
             }
         }
     }
     
-    // This hides the game center when the user taps 'done'
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
