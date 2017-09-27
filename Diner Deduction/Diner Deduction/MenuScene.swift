@@ -78,7 +78,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             let positionInScene = touch.location(in: self)
             let touchedNode = atPoint(positionInScene)
             if touchedNode.name == "start-button" {
-                self.view?.presentScene(GameScene(size: self.size))
+                self.view?.presentScene(GamePlayScene(size: self.size))
             }
             if touchedNode.name == "quit-button" {
                 UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)

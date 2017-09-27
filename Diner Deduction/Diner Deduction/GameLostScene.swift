@@ -1,7 +1,8 @@
-import SpriteKit
 import GameKit
+import SpriteKit
+import SpriteKitEasingSwift
 
-class CompletionScene: SKScene, GKGameCenterControllerDelegate {
+class GameLostScene: SKScene, GKGameCenterControllerDelegate {
     
     let textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"GameItems")
     
@@ -22,12 +23,6 @@ class CompletionScene: SKScene, GKGameCenterControllerDelegate {
         summaryPanel.position = CGPoint(x: self.frame.midX, y: self.frame.midY+75 )
         summaryPanel.zPosition = 2;
         self.addChild(summaryPanel)
-    }
-    
-    func createSparkles() {
-        let sparkles = SKEmitterNode(fileNamed: "Sparkles.sks")
-        sparkles?.particlePosition = CGPoint(x: self.frame.midX, y: self.frame.midY )
-        self.addChild(sparkles!)
     }
     
     func createPlayAgainButton() {
@@ -52,7 +47,25 @@ class CompletionScene: SKScene, GKGameCenterControllerDelegate {
         self.addChild(returnToMenuButton)
     }
     
-    func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool) {
+    func addTextDropDown(textNode: SKLabelNode) {
+        textNode.run(SKEase.move(
+            easeFunction: .curveTypeBounce,
+            easeType: EaseType.easeTypeInOut,
+            time: 0.6,
+            from: CGPoint(x: 0, y: 40),
+            to: textNode.position
+        ))
+    }
+    
+    func addTextPulse(textNode: SKLabelNode) {
+        let pulse = SKAction.sequence([
+            SKAction.fadeAlpha(to: 0.6, duration: 0.8),
+            SKAction.fadeAlpha(to: 1, duration: 0.8),
+            ])
+        textNode.run(SKAction.repeatForever(pulse))
+    }
+    
+    func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool, dropDown: Bool) {
         let textNode = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         textNode.text = text
         textNode.name = name
@@ -61,12 +74,12 @@ class CompletionScene: SKScene, GKGameCenterControllerDelegate {
         textNode.zPosition = 5
         textNode.fontSize = 30
         
+        if (dropDown) {
+            addTextDropDown(textNode: textNode)
+        }
+        
         if (addPulse) {
-            let pulse = SKAction.sequence([
-                SKAction.fadeAlpha(to: 0.6, duration: 0.8),
-                SKAction.fadeAlpha(to: 1, duration: 0.8),
-            ])
-            textNode.run(SKAction.repeatForever(pulse))
+            addTextPulse(textNode: textNode)
         }
         sprite.addChild(textNode)
     }
@@ -74,15 +87,14 @@ class CompletionScene: SKScene, GKGameCenterControllerDelegate {
     override func didMove(to view: SKView) {
         //position to lower left
         self.anchorPoint = .zero
-    
+        
         createBackground()
         createSummaryPanel()
-        createSparkles()
         createPlayAgainButton()
         createReturnToMenuButton()
-        addTextToSprite(sprite: summaryPanel, text: "Yes! You completed the pizza in time", name: "panel", addPulse: false)
-        addTextToSprite(sprite: playAgainButton, text: "Play again", name: "play-again-button", addPulse: false)
-        addTextToSprite(sprite: returnToMenuButton, text: "Return to menu", name: "return-to-menu-button", addPulse: false)
+        addTextToSprite(sprite: summaryPanel, text: "Oh no! You ran out of time.", name: "panel", addPulse: false, dropDown: true)
+        addTextToSprite(sprite: playAgainButton, text: "Play again", name: "play-again-button", addPulse: true, dropDown: false)
+        addTextToSprite(sprite: returnToMenuButton, text: "Return to menu", name: "return-to-menu-button", addPulse: false, dropDown: false)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -90,7 +102,7 @@ class CompletionScene: SKScene, GKGameCenterControllerDelegate {
             let positionInScene = touch.location(in: self)
             let touchedNode = atPoint(positionInScene)
             if touchedNode.name == "play-again-button" {
-                self.view?.presentScene(GameScene(size: self.size))
+                self.view?.presentScene(GamePlayScene(size: self.size))
             }
             if touchedNode.name == "return-to-menu-button" {
                 self.view?.presentScene(MenuScene(size: self.size))
@@ -102,5 +114,6 @@ class CompletionScene: SKScene, GKGameCenterControllerDelegate {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
 }
+
 
 

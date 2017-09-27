@@ -3,7 +3,7 @@ import SpriteKit
 import GameplayKit
 import SpriteKitEasingSwift
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     
     private var selectedNode: GameSprite = GameSpriteNull()
     static var customer: Customer? = nil
@@ -18,15 +18,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createPreviousGuessesTab(frameWidth: CGFloat, frameHeight: CGFloat) {
-        GameScene.previousGuesses = PreviousGuesses(frameWidth: self.frame.width, frameHeight: self.frame.height)
-        self.addChild((GameScene.previousGuesses?.label)!)
-        self.addChild((GameScene.previousGuesses?.tab)!)
+        GamePlayScene.previousGuesses = PreviousGuesses(frameWidth: self.frame.width, frameHeight: self.frame.height)
+        self.addChild((GamePlayScene.previousGuesses?.label)!)
+        self.addChild((GamePlayScene.previousGuesses?.tab)!)
     }
     
     func createNotificationBar(totalIngredients: Int) {
-        GameScene.notificationBar = NotificationBar(frameWidth: self.frame.width, frameHeight: self.frame.height, totalIngredients: totalIngredients)
-        self.addChild((GameScene.notificationBar?.bar)!)
-        self.addChild((GameScene.notificationBar?.message)!)
+        GamePlayScene.notificationBar = NotificationBar(frameWidth: self.frame.width, frameHeight: self.frame.height, totalIngredients: totalIngredients)
+        self.addChild((GamePlayScene.notificationBar?.bar)!)
+        self.addChild((GamePlayScene.notificationBar?.message)!)
         
     }
     
@@ -79,7 +79,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ];
 
         createBackground()
-        GameScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
+        GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
         
         createPreviousGuessesTab(frameWidth: self.frame.width, frameHeight: self.frame.height)
         createNotificationBar(totalIngredients: totalIngredients)
@@ -91,10 +91,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(whenGameWon), name:Notification.Name("GameWon"),  object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(whenGameLost), name:Notification.Name("GameLost"),  object: nil)
     }
     
     func whenGameWon() {
-        self.view?.presentScene(CompletionScene(size: self.size))
+        self.view?.presentScene(GameWonScene(size: self.size))
+    }
+    
+    func whenGameLost() {
+        self.view?.presentScene(GameLostScene(size: self.size))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

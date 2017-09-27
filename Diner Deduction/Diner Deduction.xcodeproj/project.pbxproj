@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1ECB9F4AEB052BFEC319A660 /* Pods_Diner_Deduction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E6E1555F882AD927F2B28 /* Pods_Diner_Deduction.framework */; };
-		321F116C1F7BE54700F8E312 /* CompletionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F116B1F7BE54700F8E312 /* CompletionScene.swift */; };
+		321F116C1F7BE54700F8E312 /* GameWonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F116B1F7BE54700F8E312 /* GameWonScene.swift */; };
 		321F11721F7C047A00F8E312 /* Sparkles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 321F11711F7C047A00F8E312 /* Sparkles.sks */; };
+		321F11761F7C2FDE00F8E312 /* GameLostScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F11751F7C2FDE00F8E312 /* GameLostScene.swift */; };
 		32202E961F655D29008C967A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202E951F655D29008C967A /* Ingredient.swift */; };
 		32202E9E1F657348008C967A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 32202E9D1F657348008C967A /* Podfile */; };
 		32202EA01F658128008C967A /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32202E9F1F658128008C967A /* GameSprite.swift */; };
@@ -25,7 +26,7 @@
 		32E739EC1F4839B000140FC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E739EB1F4839B000140FC4 /* AppDelegate.swift */; };
 		32E739EE1F4839B000140FC4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E739ED1F4839B000140FC4 /* GameScene.sks */; };
 		32E739F01F4839B000140FC4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32E739EF1F4839B000140FC4 /* Actions.sks */; };
-		32E739F21F4839B000140FC4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E739F11F4839B000140FC4 /* GameScene.swift */; };
+		32E739F21F4839B000140FC4 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E739F11F4839B000140FC4 /* GamePlayScene.swift */; };
 		32E739F41F4839B000140FC4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E739F31F4839B000140FC4 /* GameViewController.swift */; };
 		32E739F71F4839B000140FC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E739F51F4839B000140FC4 /* Main.storyboard */; };
 		32E739F91F4839B000140FC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E739F81F4839B000140FC4 /* Assets.xcassets */; };
@@ -56,8 +57,9 @@
 /* Begin PBXFileReference section */
 		111DC9E5298B98B50F0CAE9B /* Pods-Diner Deduction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diner Deduction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diner Deduction/Pods-Diner Deduction.debug.xcconfig"; sourceTree = "<group>"; };
 		31345DA4F4DA600272456B0B /* Pods_Diner_DeductionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diner_DeductionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		321F116B1F7BE54700F8E312 /* CompletionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionScene.swift; sourceTree = "<group>"; };
+		321F116B1F7BE54700F8E312 /* GameWonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWonScene.swift; sourceTree = "<group>"; };
 		321F11711F7C047A00F8E312 /* Sparkles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Sparkles.sks; sourceTree = "<group>"; };
+		321F11751F7C2FDE00F8E312 /* GameLostScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLostScene.swift; sourceTree = "<group>"; };
 		32202E951F655D29008C967A /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		32202E9D1F657348008C967A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		32202E9F1F658128008C967A /* GameSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		32E739EB1F4839B000140FC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E739ED1F4839B000140FC4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		32E739EF1F4839B000140FC4 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		32E739F11F4839B000140FC4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		32E739F11F4839B000140FC4 /* GamePlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
 		32E739F31F4839B000140FC4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		32E739F61F4839B000140FC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32E739F81F4839B000140FC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,10 +157,10 @@
 				32E739F81F4839B000140FC4 /* Assets.xcassets */,
 				326E62851F7AA09E003F52BA /* Background.swift */,
 				326E62891F7AAF37003F52BA /* Button.swift */,
-				321F116B1F7BE54700F8E312 /* CompletionScene.swift */,
+				321F116B1F7BE54700F8E312 /* GameWonScene.swift */,
 				32C06CF81F71D4D1003E71E8 /* Customer.swift */,
 				32E739ED1F4839B000140FC4 /* GameScene.sks */,
-				32E739F11F4839B000140FC4 /* GameScene.swift */,
+				32E739F11F4839B000140FC4 /* GamePlayScene.swift */,
 				32202E9F1F658128008C967A /* GameSprite.swift */,
 				32202EA11F65A074008C967A /* GameSpriteNull.swift */,
 				32E739F31F4839B000140FC4 /* GameViewController.swift */,
@@ -171,6 +173,7 @@
 				324BD99E1F67E66A003E1E3C /* Pizza.swift */,
 				32DBD9561F77270A003BA20F /* PreviousGuesses.swift */,
 				321F11711F7C047A00F8E312 /* Sparkles.sks */,
+				321F11751F7C2FDE00F8E312 /* GameLostScene.swift */,
 			);
 			path = "Diner Deduction";
 			sourceTree = "<group>";
@@ -521,9 +524,10 @@
 			files = (
 				32DBD9531F769332003BA20F /* ArrayShuffler.swift in Sources */,
 				326E62861F7AA09E003F52BA /* Background.swift in Sources */,
-				32E739F21F4839B000140FC4 /* GameScene.swift in Sources */,
+				32E739F21F4839B000140FC4 /* GamePlayScene.swift in Sources */,
+				321F11761F7C2FDE00F8E312 /* GameLostScene.swift in Sources */,
 				326E628A1F7AAF37003F52BA /* Button.swift in Sources */,
-				321F116C1F7BE54700F8E312 /* CompletionScene.swift in Sources */,
+				321F116C1F7BE54700F8E312 /* GameWonScene.swift in Sources */,
 				32202E961F655D29008C967A /* Ingredient.swift in Sources */,
 				32DBD9551F76D41A003BA20F /* NotificationBar.swift in Sources */,
 				32202EA01F658128008C967A /* GameSprite.swift in Sources */,
