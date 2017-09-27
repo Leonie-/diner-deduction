@@ -6,15 +6,14 @@ import SpriteKitEasingSwift
 class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     
-    private var selectedNode: GameSprite = GameSpriteNull()
-    static var customer: Customer? = nil
-    static var notificationBar: NotificationBar? = nil
-    static var previousGuesses: PreviousGuesses? = nil
+    private var selectedNode: GameSprite!
+    static var customer: Customer!
+    static var notificationBar: NotificationBar!
+    static var previousGuesses: PreviousGuesses!
     
     var countDownText: SKLabelNode!
-    var gameTimer: Timer!
-    var gameLength: Int = 60
-    var secondsLeft: Int = 60
+    var timer: Timer!
+    var secondsLeft = 60
     
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
@@ -34,9 +33,10 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         
         countDownText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         countDownText.fontSize = 45
-        countDownText.text = String(secondsLeft)
-        countDownText.horizontalAlignmentMode = .right
-        countDownText.position = CGPoint(x:-15, y:-45)
+        countDownText.text = timeToString(time: TimeInterval(secondsLeft))
+        countDownText.zPosition = 7;
+        countDownText.horizontalAlignmentMode = .center
+        countDownText.position = CGPoint(x:-42, y:-45)
         
         countDownBox.addChild(countDownText)
     }
@@ -104,7 +104,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         createBackground()
         GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
         
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCountDown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
         createCountDownNode()
         createPreviousGuessesTab(frameWidth: self.frame.width, frameHeight: self.frame.height)
@@ -121,22 +121,32 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(whenGameLost), name:Notification.Name("GameLost"),  object: nil)
     }
     
-    func updateCountDown() {
-        secondsLeft -= 1
-        countDownText.text = String(secondsLeft)
-        
-        if secondsLeft == 0 {
+    func timeToString(time: TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
+    
+    func updateTimer() {
+
+        if secondsLeft < 1 {
+            timer.invalidate()
             NotificationCenter.default.post(name:Notification.Name("GameLost"), object: nil)
+        }
+        else {
+            secondsLeft -= 1
+            countDownText.text = timeToString(time: TimeInterval(secondsLeft))
+            countDownText.text = String(secondsLeft)
         }
     }
     
     func whenGameWon() {
-        gameTimer.invalidate()
         self.view?.presentScene(GameWonScene(size: self.size))
     }
     
     func whenGameLost() {
-        gameTimer.invalidate()
+        timer.invalidate()
         self.view?.presentScene(GameLostScene(size: self.size))
     }
     
