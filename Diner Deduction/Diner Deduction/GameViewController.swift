@@ -8,8 +8,8 @@ class GameViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        let menuScene = MenuScene()
-//        let menuScene = GamePlayScene()
+//        let menuScene = MenuScene()
+        let menuScene = GamePlayScene()
 //        let menuScene = GameWonScene()
 //        let menuScene = GameLostScene()
         let view = self.view as! SKView

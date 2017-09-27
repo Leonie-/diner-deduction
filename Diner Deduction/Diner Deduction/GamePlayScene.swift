@@ -4,6 +4,7 @@ import GameplayKit
 import SpriteKitEasingSwift
 
 class GamePlayScene: SKScene, SKPhysicsContactDelegate {
+    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     
     private var selectedNode: GameSprite = GameSpriteNull()
     static var customer: Customer? = nil
@@ -17,6 +18,24 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
     }
     
+    func createCountDownNode() {
+        let countDownBox = SKSpriteNode(imageNamed: "countdown-box")
+        countDownBox.size = CGSize(width: 84, height: 56)
+        countDownBox.anchorPoint = CGPoint(x:1, y: 1)
+        countDownBox.position = CGPoint(x: self.frame.width-5, y: self.frame.height-5 )
+        countDownBox.zPosition = 5;
+        
+        self.addChild(countDownBox)
+        
+        let countDownText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        countDownText.text = "60"
+        countDownText.fontSize = 45
+        countDownText.horizontalAlignmentMode = .right
+        countDownText.position = CGPoint(x:-15, y:-45)
+
+        countDownBox.addChild(countDownText)
+    }
+    
     func createPreviousGuessesTab(frameWidth: CGFloat, frameHeight: CGFloat) {
         GamePlayScene.previousGuesses = PreviousGuesses(frameWidth: self.frame.width, frameHeight: self.frame.height)
         self.addChild((GamePlayScene.previousGuesses?.label)!)
@@ -27,7 +46,6 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         GamePlayScene.notificationBar = NotificationBar(frameWidth: self.frame.width, frameHeight: self.frame.height, totalIngredients: totalIngredients)
         self.addChild((GamePlayScene.notificationBar?.bar)!)
         self.addChild((GamePlayScene.notificationBar?.message)!)
-        
     }
     
     func createPizza(totalIngredients: Int) {
@@ -81,11 +99,13 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         createBackground()
         GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
         
+        createCountDownNode()
         createPreviousGuessesTab(frameWidth: self.frame.width, frameHeight: self.frame.height)
         createNotificationBar(totalIngredients: totalIngredients)
         createPizza(totalIngredients: totalIngredients)
         createIngredients(ingredients: ingredients)
         createSubmitButton()
+
         
         //Handle contact in the scene
         self.physicsWorld.contactDelegate = self
