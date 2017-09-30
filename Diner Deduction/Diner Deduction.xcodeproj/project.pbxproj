@@ -20,6 +20,7 @@
 		326E62881F7AA671003F52BA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E62871F7AA671003F52BA /* MenuScene.swift */; };
 		326E628A1F7AAF37003F52BA /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326E62891F7AAF37003F52BA /* Button.swift */; };
 		32C06CF91F71D4D1003E71E8 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C06CF81F71D4D1003E71E8 /* Customer.swift */; };
+		32C9675A1F7FC7BB00E2B141 /* SpriteKitEasingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C9675B1F7FC7BB00E2B141 /* SpriteKitEasingSwift.framework */; };
 		32DBD9531F769332003BA20F /* ArrayShuffler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBD9521F769332003BA20F /* ArrayShuffler.swift */; };
 		32DBD9551F76D41A003BA20F /* NotificationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBD9541F76D41A003BA20F /* NotificationBar.swift */; };
 		32DBD9571F77270A003BA20F /* PreviousGuesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBD9561F77270A003BA20F /* PreviousGuesses.swift */; };
@@ -69,6 +70,7 @@
 		326E62871F7AA671003F52BA /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		326E62891F7AAF37003F52BA /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		32C06CF81F71D4D1003E71E8 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		32C9675B1F7FC7BB00E2B141 /* SpriteKitEasingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SpriteKitEasingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DBD9521F769332003BA20F /* ArrayShuffler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayShuffler.swift; sourceTree = "<group>"; };
 		32DBD9541F76D41A003BA20F /* NotificationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBar.swift; sourceTree = "<group>"; };
 		32DBD9561F77270A003BA20F /* PreviousGuesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousGuesses.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C9675A1F7FC7BB00E2B141 /* SpriteKitEasingSwift.framework in Frameworks */,
 				1ECB9F4AEB052BFEC319A660 /* Pods_Diner_Deduction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +215,7 @@
 		3E276E1A8960FA68D22CCBD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32C9675B1F7FC7BB00E2B141 /* SpriteKitEasingSwift.framework */,
 				C33E6E1555F882AD927F2B28 /* Pods_Diner_Deduction.framework */,
 				3AE092256254E3DC1ADDB47E /* Pods_Diner_DeductionTests.framework */,
 				31345DA4F4DA600272456B0B /* Pods_Diner_DeductionUITests.framework */,
@@ -692,11 +696,15 @@
 			baseConfigurationReference = 111DC9E5298B98B50F0CAE9B /* Pods-Diner Deduction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F28SRH2BQ;
 				INFOPLIST_FILE = "Diner Deduction/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leonie.Diner-Deduction";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -706,11 +714,15 @@
 			baseConfigurationReference = 4B2C368A7A413CE506E6BF35 /* Pods-Diner Deduction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9F28SRH2BQ;
 				INFOPLIST_FILE = "Diner Deduction/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "leonie.Diner-Deduction";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

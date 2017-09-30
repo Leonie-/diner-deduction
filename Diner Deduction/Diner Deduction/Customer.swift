@@ -4,7 +4,7 @@ import SpriteKit
 class Customer {
     private var correctIngredients: Set<String>
     
-    init(ingredients: Array<(String,CGFloat)>, totalIngredients: Int, arrayShuffler: ArrayShufflerProtocol) {
+    init(ingredients: Array<(String,CGFloat,CGFloat)>, totalIngredients: Int, arrayShuffler: ArrayShufflerProtocol) {
         
         let totalIngredients = totalIngredients - 1
         
@@ -12,7 +12,7 @@ class Customer {
             print("Number to select was longer than the total list of ingredients")
         }
         
-        func getIngredientType(type:String, offsetX:CGFloat) -> String {
+        func getIngredientType(type:String, offsetX:CGFloat, offsetY:CGFloat) -> String {
             return type
         }
         
@@ -33,8 +33,11 @@ class Customer {
                 NotificationCenter.default.post(name:Notification.Name("GameWon"), object: nil)
             }
             else {
-                let itemsCorrect:Int = ingredientsToCheck.intersection(correctIngredients).count
-                NotificationCenter.default.post(name:Notification.Name("GameFailed"), object: nil, userInfo: ["numberOfItemsCorrect": itemsCorrect])
+                let itemsCorrect:Set<String> = ingredientsToCheck.intersection(correctIngredients)
+                NotificationCenter.default.post(name:Notification.Name("GameFailed"), object: nil, userInfo: [
+                    "numberOfItemsCorrect": itemsCorrect.count,
+                    "itemsGuessed": ingredientsToCheck
+                ])
             }
         }
     }

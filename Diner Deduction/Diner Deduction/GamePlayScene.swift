@@ -13,7 +13,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     
     var countDownText: SKLabelNode!
     var timer: Timer!
-    var secondsLeft = 60
+    var secondsLeft = 59
     
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
@@ -62,19 +62,19 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(pizza)
     }
 
-    func createIngredients(ingredients: Array<(String,CGFloat)>) {
-        for (type, offsetX) in ingredients {
-            createIngredient(ingredient: type, offsetX: offsetX)
+    func createIngredients(ingredients: Array<(String,CGFloat,CGFloat)>) {
+        for (type, offsetX, offsetY) in ingredients {
+            createIngredient(ingredient: type, offsetX: offsetX, offsetY: offsetY)
         }
     }
     
-    func createIngredient(ingredient: String, offsetX: CGFloat) {
+    func createIngredient(ingredient: String, offsetX: CGFloat, offsetY: CGFloat) {
         let ingredient = Ingredient(
             name: ingredient,
             image: ingredient,
             size: CGSize(width:50, height:50),
             positionX: offsetX,
-            positionY: 40
+            positionY: offsetY
         )
         self.addChild(ingredient)
     }
@@ -95,10 +95,10 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         
         let totalIngredients = 3
         let ingredients = [
-            (type: "tomato", offsetX: 150 as CGFloat),
-            (type: "olive", offsetX: 250 as CGFloat),
-            (type: "mushroom", offsetX: 350 as CGFloat),
-            (type: "pepperoni", offsetX: 450 as CGFloat)
+            (type: "tomato", offsetX: 140 as CGFloat, offsetY: 250 as CGFloat),
+            (type: "olive", offsetX: 140 as CGFloat, offsetY: 180 as CGFloat),
+            (type: "mushroom", offsetX: 550 as CGFloat, offsetY: 250 as CGFloat),
+            (type: "pepperoni", offsetX: 550 as CGFloat, offsetY: 180 as CGFloat)
         ];
 
         createBackground()
@@ -132,7 +132,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
 
         if secondsLeft < 1 {
             timer.invalidate()
-            NotificationCenter.default.post(name:Notification.Name("GameLost"), object: nil)
+//            NotificationCenter.default.post(name:Notification.Name("GameLost"), object: nil)
         }
         else {
             secondsLeft -= 1

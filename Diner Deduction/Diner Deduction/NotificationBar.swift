@@ -1,6 +1,5 @@
 
 import SpriteKit
-import SpriteKitEasingSwift
 
 class NotificationBar {
     
@@ -31,9 +30,10 @@ class NotificationBar {
         message.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         message.zPosition = 5;
         message.text = messageDictionary["Default"]
-        message.fontSize = 25
-        message.position = CGPoint(x:40, y: frameHeight - 45)
+        message.fontSize = 22
+        message.position = CGPoint(x:20, y: frameHeight - 40)
         messagePositionLower = CGPoint(x:40, y: frameHeight - 55)
+        pulseMessage()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("GameWon"),  object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("GameFailed"),  object: nil)
@@ -41,7 +41,15 @@ class NotificationBar {
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("TooManyIngredients"),  object: nil)
     }
     
-   @objc func updateMessage(_ notification: Notification) {
+    func pulseMessage() {
+        let pulse = SKAction.sequence([
+            SKAction.fadeAlpha(to: 0.6, duration: 0.4),
+            SKAction.fadeAlpha(to: 1, duration: 0.4),
+        ])
+        message.run(SKAction.repeat(pulse, count: 3))
+    }
+    
+    @objc func updateMessage(_ notification: Notification) {
         let newMessage = String(describing: notification.name.rawValue)
         if let numberOfItemsCorrect = notification.userInfo?["numberOfItemsCorrect"] as? Int {
             message.text = "No! I only like \(numberOfItemsCorrect) of those items!"
@@ -49,13 +57,7 @@ class NotificationBar {
         else {
             message.text = messageDictionary[newMessage]
         }
-        message.run(SKEase.move(
-            easeFunction: .curveTypeBounce,
-            easeType: EaseType.easeTypeIn,
-            time: 0.2,
-            from: messagePositionLower,
-            to: message.position
-        ))
+        pulseMessage()
     }
     
 }
