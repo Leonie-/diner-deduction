@@ -45,26 +45,53 @@ class PreviousGuesses {
         }
     }
     
-    func createPizzaTry(position: CGPoint, itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
+    func slideUpTryBox() {
+        
+    }
+    
+    func createPizzaTry(itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
+        
+        let tryBoxOffScreenPosition = CGPoint(x: 20, y: -300)
+        let tryBox = SKSpriteNode(color: UIColor.blue, size:CGSize(width: 90, height: 110) )
+        tryBox.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 90, height: 100))
+        tryBox.physicsBody!.isDynamic = false
+        tryBox.physicsBody!.affectedByGravity = false
+        tryBox.physicsBody!.categoryBitMask = 0
+        tryBox.physicsBody!.collisionBitMask = 0
+        tryBox.anchorPoint = CGPoint(x:0, y: 0)
+        tryBox.position = tryBoxOffScreenPosition
+        tryBox.zPosition = 5
+
         let pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 70, height: 70) )
         pizza.anchorPoint = CGPoint(x:0, y: 0)
-        pizza.position = position
+        pizza.position = CGPoint(x: 10, y: 10)
         pizza.zPosition = 6;
     
-        section.addChild(pizza)
+        tryBox.addChild(pizza)
         
         addIngredientsToPizzaTry(pizza: pizza, itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
         
         let label = SKLabelNode(fontNamed: "Arial")
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        label.zPosition = 5;
+        label.zPosition = 7;
         label.text = "\(numberOfItemsCorrect) right"
         label.fontSize = 18
-        label.position = CGPoint(x:10, y: 85)
+        label.position = CGPoint(x:20, y: 90)
         
-        section.addChild(label)
+        tryBox.addChild(label)
+        
+        section.addChild(tryBox)
+        
+        tryBox.run(SKEase.move(
+            easeFunction: .curveTypeQuintic,
+            easeType: EaseType.easeTypeOut,
+            time: 0.8,
+            from: tryBoxOffScreenPosition,
+            to: CGPoint(x: 10, y: 0)
+        ))
         
     }
+
     
     @objc func updatePreviousTries(_ notification: Notification) {
         let itemsGuessed = notification.userInfo?["itemsGuessed"] as? Set<String>
@@ -73,10 +100,10 @@ class PreviousGuesses {
         previousTries += 1
         
         if previousTries > 1 {
-            createPizzaTry(position: pizzaTryPositions[2]!, itemsGuessed: itemsGuessed!, numberOfItemsCorrect: numberOfItemsCorrect!)
+            createPizzaTry(itemsGuessed: itemsGuessed!, numberOfItemsCorrect: numberOfItemsCorrect!)
         }
         else if previousTries > 0 {
-            createPizzaTry(position: pizzaTryPositions[1]!, itemsGuessed: itemsGuessed!, numberOfItemsCorrect: numberOfItemsCorrect!)
+            createPizzaTry(itemsGuessed: itemsGuessed!, numberOfItemsCorrect: numberOfItemsCorrect!)
         }
         
     }
