@@ -59,10 +59,19 @@ class PreviousGuesses {
             ingredientNumber += 1
         }
         
+        label = SKLabelNode(fontNamed: "Arial")
+        label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        label.zPosition = 5;
+        label.text = "Previous tries:"
+        label.fontSize = 18
+        label.position = CGPoint(x:10, y: 85)
+
+        
     }
     
     @objc func updatePreviousTries(_ notification: Notification) {
         let itemsGuessed = notification.userInfo?["itemsGuessed"] as? Set<String>
+        let numberOfItemsCorrect = notification.userInfo?["numberOfItemsCorrect"] as? Int
         
         previousTries += 1
         
