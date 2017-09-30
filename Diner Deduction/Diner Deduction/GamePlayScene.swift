@@ -43,8 +43,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     
     func createPreviousGuessesTab(frameWidth: CGFloat, frameHeight: CGFloat) {
         GamePlayScene.previousGuesses = PreviousGuesses(frameWidth: self.frame.width, frameHeight: self.frame.height)
-        self.addChild((GamePlayScene.previousGuesses?.label)!)
-        self.addChild((GamePlayScene.previousGuesses?.tab)!)
+        self.addChild((GamePlayScene.previousGuesses?.section)!)
     }
     
     func createNotificationBar(totalIngredients: Int) {
