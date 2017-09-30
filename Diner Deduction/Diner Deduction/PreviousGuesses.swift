@@ -12,13 +12,13 @@ class PreviousGuesses {
     var previousTries = 0;
     
     var pizzaTryPositions: [Int: CGPoint] = [
-        1: CGPoint(x: 10, y: 10),
+        1: CGPoint(x: 120, y: 10),
         2: CGPoint(x: 10, y: 10)
     ]
     var ingredientPositions: [Int: CGPoint] = [
-        1: CGPoint(x: 12, y: 12),
-        2: CGPoint(x: 22, y: 22),
-        3: CGPoint(x: 25, y: 12)
+        1: CGPoint(x: 9, y: 19),
+        2: CGPoint(x: 25, y: 40),
+        3: CGPoint(x: 35, y: 13)
     ]
     
     init(frameWidth: CGFloat, frameHeight: CGFloat) {
@@ -62,10 +62,8 @@ class PreviousGuesses {
     }
     
     @objc func updatePreviousTries(_ notification: Notification) {
-        
         let itemsGuessed = notification.userInfo?["itemsGuessed"] as? Set<String>
         
-        print("Items Guessed", itemsGuessed!)
         previousTries += 1
         
         if previousTries > 1 {
