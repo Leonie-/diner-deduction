@@ -122,10 +122,9 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func timeToString(time: TimeInterval) -> String {
-        let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
-        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        return String(format:"%02i:%02i", minutes, seconds)
     }
     
     func updateTimer() {
@@ -154,6 +153,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         for touch in (touches) {
     		let positionInScene = touch.location(in: self)
             let touchedNode = self.atPoint(positionInScene)
+            
             if touchedNode is GameSprite {
                 selectedNode = touchedNode as! GameSprite
                 selectedNode.onTouch()

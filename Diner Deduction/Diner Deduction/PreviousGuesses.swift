@@ -71,7 +71,7 @@ class PreviousGuesses {
     
     @objc func updatePreviousTries(_ notification: Notification) {
         let itemsGuessed = notification.userInfo?["itemsGuessed"] as? Set<String>
-        let numberOfItemsCorrect = notification.userInfo?["numberOfItemsCorrect"] as? Int
+//        let numberOfItemsCorrect = notification.userInfo?["numberOfItemsCorrect"] as? Int
         
         previousTries += 1
         
