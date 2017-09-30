@@ -61,7 +61,7 @@ class GameLostScene: SKScene, GKGameCenterControllerDelegate {
         let pulse = SKAction.sequence([
             SKAction.fadeAlpha(to: 0.6, duration: 0.8),
             SKAction.fadeAlpha(to: 1, duration: 0.8),
-            ])
+        ])
         textNode.run(SKAction.repeatForever(pulse))
     }
     
