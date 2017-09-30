@@ -33,16 +33,6 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         self.addChild(startButton)
     }
     
-    func createQuitButton() {
-        let quitButton = SKSpriteNode(imageNamed: "quit-btn")
-        quitButton.size = CGSize(width: 53, height: 53)
-        quitButton.anchorPoint = CGPoint(x:1, y: 1)
-        quitButton.position = CGPoint(x: self.frame.width-15, y: self.frame.height-15 )
-        quitButton.zPosition = 4;
-        quitButton.name = "quit-button"
-        self.addChild(quitButton)
-    }
-    
     func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool) {
         let textNode = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         textNode.text = text
@@ -68,7 +58,6 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         
         createBackground()
         createLogo()
-        createQuitButton()
         createStartButton()
         addTextToSprite(sprite: startButton, text: "Start game", name: "start-button", addPulse: true)
     }
@@ -79,9 +68,6 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             let touchedNode = atPoint(positionInScene)
             if touchedNode.name == "start-button" {
                 self.view?.presentScene(GamePlayScene(size: self.size))
-            }
-            if touchedNode.name == "quit-button" {
-                UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
             }
         }
     }
