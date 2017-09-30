@@ -13,7 +13,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         
         self.name = name
         self.size = size
-        self.zPosition = 3
+        self.zPosition = 4
         self.position = CGPoint(x: positionX, y: positionY)
         self.originalPosition = CGPoint(x: positionX, y: positionY)
         
@@ -41,6 +41,12 @@ class Ingredient : SKSpriteNode, GameSprite {
         ))
     }
     
+    func triggerCloudPuff() {
+        let cloudPuff = SKEmitterNode(fileNamed: "CloudPuff.sks")
+//        cloudPuff?.particlePosition = self.position
+        self.addChild(cloudPuff!)
+    }
+    
     func onTouch() {}
     
     func onDrag(touch: UITouch) {
@@ -61,6 +67,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         else {
             for body : AnyObject in bodies! {
                 if body.node??.name == "pizza" {
+                    triggerCloudPuff()
                     NotificationCenter.default.post(name:Notification.Name("IngredientAdded"), object: nil, userInfo: ["ingredient": self.name!])
                     break
                 }
