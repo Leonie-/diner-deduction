@@ -5,8 +5,6 @@ import SpriteKitEasingSwift
 class PreviousGuess: SKSpriteNode {
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     var ingredientsTextureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Ingredients")
-    var pizza = SKSpriteNode(color: UIColor.clear, size:CGSize(width: 70, height: 70))
-    var spriteOffScreenPosition = CGPoint(x: 10, y: -300)
 
     private var ingredientPositions: [Int: CGPoint] = [
         1: CGPoint(x: 9, y: 19),
@@ -24,11 +22,13 @@ class PreviousGuess: SKSpriteNode {
         self.addChild(label)
     }
     
-    func addPizzaSprite() {
-        pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 70, height: 70) )
+    func addPizzaSprite(itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
+        let pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 70, height: 70) )
         pizza.anchorPoint = CGPoint(x:0, y: 0)
         pizza.position = CGPoint(x: 10, y: 10)
         pizza.zPosition = 6
+        
+        addIngredientsToPizzaSprite(pizza: pizza, itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
         self.addChild(pizza)
     }
     
@@ -57,12 +57,12 @@ class PreviousGuess: SKSpriteNode {
     }
     
     init(itemsGuessed: Set<String>, numberOfItemsCorrect: Int, xPosition: CGFloat) {
+        let size = CGSize(width: 90, height: 110)
+        let spriteOffScreenPosition = CGPoint(x: xPosition, y: -300)
         
-        super.init(texture: SKTexture(imageNamed: "olive"), color: UIColor.clear, size: CGSize(width: 90, height: 110))
-
-        spriteOffScreenPosition = CGPoint(x: xPosition, y: -300)
+        super.init(texture: SKTexture(imageNamed: "olive"), color: UIColor.clear, size: size)
         
-        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 90, height: 100))
+        self.physicsBody = SKPhysicsBody(rectangleOf: size)
         self.physicsBody!.isDynamic = false
         self.physicsBody!.affectedByGravity = false
         self.physicsBody!.categoryBitMask = 0
@@ -72,8 +72,7 @@ class PreviousGuess: SKSpriteNode {
         self.zPosition = 5
         
         addLabel(numberOfItemsCorrect: numberOfItemsCorrect)
-        addPizzaSprite()
-        addIngredientsToPizzaSprite(pizza: pizza, itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
+        addPizzaSprite(itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
         slideUpBox(xPosition: xPosition, spriteOffScreenPosition: spriteOffScreenPosition)
     }
     

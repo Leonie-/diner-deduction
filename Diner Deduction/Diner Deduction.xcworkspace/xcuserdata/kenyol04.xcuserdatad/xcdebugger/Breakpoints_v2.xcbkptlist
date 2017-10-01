@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Diner Deduction/PreviousGuess.swift"
-            timestampString = "528536282.108677"
+            timestampString = "528537281.630431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "init(itemsGuessed:numberOfItemsCorrect:xPosition:)"
             landmarkType = "7">
          </BreakpointContent>
