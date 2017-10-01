@@ -44,8 +44,8 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         
         if (addPulse) {
             let pulse = SKAction.sequence([
-                SKAction.fadeAlpha(to: 0.6, duration: 0.8),
-                SKAction.fadeAlpha(to: 1, duration: 0.8),
+                SKAction.fadeAlpha(to: 0.6, duration: 0.6),
+                SKAction.fadeAlpha(to: 1, duration: 0.6),
                 ])
             textNode.run(SKAction.repeatForever(pulse))
         }

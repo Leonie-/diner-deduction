@@ -43,11 +43,11 @@ class Ingredient : SKSpriteNode, GameSprite {
     
     func triggerCloudPuff() {
         let cloudPuff = SKEmitterNode(fileNamed: "CloudPuff.sks")
-        let addEmitterAction = SKAction.run({self.addChild(cloudPuff!)})
-        let cloudPuffDuration = CGFloat((cloudPuff?.numParticlesToEmit)!) * (cloudPuff?.particleLifetime)!
-        let wait = SKAction.wait(forDuration: TimeInterval(cloudPuffDuration - 0.5))
-        let removeEmitter = SKAction.run({cloudPuff?.removeFromParent(); print("Emitter removed")})
-        let sequence = SKAction.sequence([addEmitterAction, wait, removeEmitter])
+        let addEmitterAction = SKAction.run({ self.addChild(cloudPuff!) })
+        let cloudPuffDuration = CGFloat( (cloudPuff?.numParticlesToEmit)!) * (cloudPuff?.particleLifetime)!
+        let wait = SKAction.wait(forDuration: TimeInterval(cloudPuffDuration - 0.4))
+        let removeEmitter = SKAction.run({ cloudPuff?.removeFromParent() })
+        let sequence = SKAction.sequence([ addEmitterAction, wait, removeEmitter ])
         
         self.run(sequence)
     }

@@ -41,8 +41,8 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         countDownBox.addChild(countDownText)
     }
     
-    func createPreviousGuessesTab(frameWidth: CGFloat, frameHeight: CGFloat) {
-        GamePlayScene.previousGuesses = PreviousGuesses(frameWidth: self.frame.width, frameHeight: self.frame.height)
+    func createPreviousGuesses() {
+        GamePlayScene.previousGuesses = PreviousGuesses()
         self.addChild((GamePlayScene.previousGuesses?.section)!)
     }
     
@@ -106,7 +106,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
         createCountDownNode()
-        createPreviousGuessesTab(frameWidth: self.frame.width, frameHeight: self.frame.height)
+        createPreviousGuesses()
         createNotificationBar(totalIngredients: totalIngredients)
         createPizza(totalIngredients: totalIngredients)
         createIngredients(ingredients: ingredients)
