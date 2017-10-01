@@ -52,37 +52,48 @@ class GameWonScene: SKScene, GKGameCenterControllerDelegate {
         self.addChild(returnToMenuButton)
     }
     
-    func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool) {
+    func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, position: CGPoint) {
         let textNode = SKLabelNode(fontNamed: "Arial-BoldMT")
         textNode.text = text
         textNode.name = name
         textNode.verticalAlignmentMode = .center
-        textNode.position = CGPoint(x: 0, y: 0)
+        textNode.position = position
         textNode.zPosition = 5
-        textNode.fontSize = 30
-        
-        if (addPulse) {
-            let pulse = SKAction.sequence([
-                SKAction.fadeAlpha(to: 0.6, duration: 0.8),
-                SKAction.fadeAlpha(to: 1, duration: 0.8),
-            ])
-            textNode.run(SKAction.repeatForever(pulse))
-        }
+        textNode.fontSize = 28
         sprite.addChild(textNode)
+    }
+    
+    func addTextToSummaryPanel() {
+        var panelText1 = "You got it right immediately!"
+        var panelText2 = "Well done."
+        
+        if let totalGuesses = self.userData?["numberOfGuesses"] as! Int! {
+            if totalGuesses > 3 {
+                panelText1 = "Hmm. You completed the pizza in \(totalGuesses)"
+                panelText2 = "tries. Maybe you need more practice?"
+            }
+            else if totalGuesses > 1 {
+                panelText1 = "Yes! You completed the pizza"
+                panelText2 = "in \(totalGuesses) guesses."
+            }
+            
+        }
+        addTextToSprite(sprite: summaryPanel, text: panelText1, name: "summary-panel", position: CGPoint(x: 0, y: 20))
+        addTextToSprite(sprite: summaryPanel, text: panelText2, name: "summary-panel", position: CGPoint(x: 0, y: -20))
     }
     
     override func didMove(to view: SKView) {
         //position to lower left
         self.anchorPoint = .zero
-    
+        
         createBackground()
         createSummaryPanel()
         createSparkles()
         createPlayAgainButton()
         createReturnToMenuButton()
-        addTextToSprite(sprite: summaryPanel, text: "Yes! You completed the pizza in time", name: "panel", addPulse: false)
-        addTextToSprite(sprite: playAgainButton, text: "Play again", name: "play-again-button", addPulse: false)
-        addTextToSprite(sprite: returnToMenuButton, text: "Return to menu", name: "return-to-menu-button", addPulse: false)
+        addTextToSummaryPanel()
+        addTextToSprite(sprite: playAgainButton, text: "Play again", name: "play-again-button", position: CGPoint(x: 0, y: 0) )
+        addTextToSprite(sprite: returnToMenuButton, text: "Return to menu", name: "return-to-menu-button", position: CGPoint(x: 0, y: 0))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -122,7 +122,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     func updateTimer() {
         if secondsLeft < 1 {
             timer.invalidate()
-//            self.view?.presentScene(GameLostScene(size: self.size))
+            self.view?.presentScene(GameLostScene(size: self.size))
         }
         else {
             secondsLeft -= 1
@@ -131,7 +131,10 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func whenGameWon() {
-        self.view?.presentScene(GameWonScene(size: self.size))
+        let gameWonScene = GameWonScene(size: self.size)
+        gameWonScene.userData = NSMutableDictionary()
+        gameWonScene.userData?["numberOfGuesses"] = GamePlayScene.previousGuesses.total
+        self.view?.presentScene(gameWonScene)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

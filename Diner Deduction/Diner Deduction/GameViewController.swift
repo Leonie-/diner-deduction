@@ -1,23 +1,22 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        let menuScene = MenuScene()
         let view = self.view as! SKView
         
         // Ignore drawing order of child nodes to increase performance
         view.ignoresSiblingOrder = true
         
-        // For debugging purposes
+        // For debugging purposes - remove before publishing
         view.showsFPS = true
         view.showsNodeCount = true
         
+        let menuScene = MenuScene()
         menuScene.size = view.bounds.size
         view.presentScene(menuScene)
         
@@ -42,6 +41,4 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    
 }

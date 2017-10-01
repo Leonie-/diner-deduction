@@ -6,6 +6,7 @@ class PreviousGuesses {
     
     public var section: SKSpriteNode
     var previousGuesses: Array<PreviousGuess> = []
+    var total: Int = 1;
     
     init() {
         section = SKSpriteNode(color: UIColor.clear, size:CGSize(width: 200, height: 110) )
@@ -45,6 +46,7 @@ class PreviousGuesses {
         
         moveExistingGuessesAlong()
         displayNewGuess(itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect!)
+        total += 1
     }
 }
 
