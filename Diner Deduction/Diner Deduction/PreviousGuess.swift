@@ -7,9 +7,9 @@ class PreviousGuess: SKSpriteNode {
     private var ingredientsTextureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Ingredients")
 
     private var ingredientPositions: [Int: CGPoint] = [
-        1: CGPoint(x: 9, y: 19),
-        2: CGPoint(x: 25, y: 40),
-        3: CGPoint(x: 35, y: 13)
+        1: CGPoint(x: 13, y: 19),
+        2: CGPoint(x: 28, y: 42),
+        3: CGPoint(x: 38, y: 18)
     ]
     
     private func addLabel(numberOfItemsCorrect: Int) {
@@ -17,15 +17,15 @@ class PreviousGuess: SKSpriteNode {
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         label.zPosition = 7
         label.text = "\(numberOfItemsCorrect) right"
-        label.fontSize = 18
-        label.position = CGPoint(x:13, y: 80)
+        label.fontSize = 17
+        label.position = CGPoint(x:25, y: 81)
         self.addChild(label)
     }
     
     private func addPizzaSprite(itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
-        let pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 70, height: 70) )
+        let pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 75, height: 75) )
         pizza.anchorPoint = CGPoint(x:0, y: 0)
-        pizza.position = CGPoint(x: 5, y: 5)
+        pizza.position = CGPoint(x: 13, y: 3)
         pizza.zPosition = 6
         
         addIngredientsToPizzaSprite(pizza: pizza, itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
@@ -57,7 +57,7 @@ class PreviousGuess: SKSpriteNode {
     }
     
     func moveAlong() {
-        let positionToMoveTo = CGPoint(x: self.position.x-85, y: 0)
+        let positionToMoveTo = CGPoint(x: self.position.x-105, y: 0)
         self.run(SKEase.move(
             easeFunction: .curveTypeQuintic,
             easeType: EaseType.easeTypeOut,
@@ -68,8 +68,8 @@ class PreviousGuess: SKSpriteNode {
     }
 
     init(itemsGuessed: Set<String>, numberOfItemsCorrect: Int, xPosition: CGFloat) {
-        let size = CGSize(width: 80, height: 100)
-        let spriteOffScreenPosition = CGPoint(x: xPosition, y: -300)
+        let size = CGSize(width: 100, height: 98)
+        let spriteOffScreenPosition = CGPoint(x: xPosition, y:-200)
         
         super.init(texture: textureAtlas.textureNamed("guess-box"), color: UIColor.clear, size: size)
         

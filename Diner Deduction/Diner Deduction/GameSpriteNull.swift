@@ -13,7 +13,6 @@ class GameSpriteNull : SKSpriteNode, GameSprite {
     
     func onDrop() {}
     
-    
     // Satisfy the NSCoder required init:
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

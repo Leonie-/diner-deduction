@@ -28,8 +28,7 @@ class PreviousGuesses {
     }
     
     func displayNewGuess(itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
-        let xPosition: CGFloat = (previousGuesses.isEmpty) ? 5 : (previousGuesses.count == 1) ? 90 : 175
-        
+        let xPosition: CGFloat = (previousGuesses.isEmpty) ? 5 : (previousGuesses.count == 1) ? 110 : 215
         let pizzaGuess = PreviousGuess(
             itemsGuessed: itemsGuessed,
             numberOfItemsCorrect: numberOfItemsCorrect,

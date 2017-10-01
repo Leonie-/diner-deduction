@@ -29,8 +29,6 @@ class IngredientsListGenerator {
             ))
             ingredientCount += 1
         }
-        
-        print("The chosen ingredients are...", generate)
     }
     
 }

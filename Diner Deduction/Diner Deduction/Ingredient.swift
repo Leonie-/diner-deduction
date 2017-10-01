@@ -45,6 +45,8 @@ class Ingredient : SKSpriteNode, GameSprite {
         let cloudPuff = SKEmitterNode(fileNamed: "CloudPuff.sks")
         let addEmitterAction = SKAction.run({ self.addChild(cloudPuff!) })
         let cloudPuffDuration = CGFloat( (cloudPuff?.numParticlesToEmit)!) * (cloudPuff?.particleLifetime)!
+        
+        //wait for emitter to finish then destroy it for performance reasons
         let wait = SKAction.wait(forDuration: TimeInterval(cloudPuffDuration - 0.4))
         let removeEmitter = SKAction.run({ cloudPuff?.removeFromParent() })
         let sequence = SKAction.sequence([ addEmitterAction, wait, removeEmitter ])

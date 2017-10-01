@@ -9,10 +9,8 @@ class GameViewController: UIViewController {
         super.viewWillLayoutSubviews()
 
         let menuScene = MenuScene()
-//        let menuScene = GamePlayScene()
-//        let menuScene = GameWonScene()
-//        let menuScene = GameLostScene()
         let view = self.view as! SKView
+        
         // Ignore drawing order of child nodes to increase performance
         view.ignoresSiblingOrder = true
         

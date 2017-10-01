@@ -97,7 +97,6 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         
         createBackground()
         GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
-        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
         createCountDownDisplay()
@@ -123,7 +122,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     func updateTimer() {
         if secondsLeft < 1 {
             timer.invalidate()
-            self.view?.presentScene(GameLostScene(size: self.size))
+//            self.view?.presentScene(GameLostScene(size: self.size))
         }
         else {
             secondsLeft -= 1
