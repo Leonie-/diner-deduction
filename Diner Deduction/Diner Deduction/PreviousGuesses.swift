@@ -8,7 +8,7 @@ class PreviousGuesses {
     var previousGuesses: Array<PreviousGuess>!
     
     init() {
-        section = SKSpriteNode(color: UIColor.gray, size:CGSize(width: 240, height: 110) )
+        section = SKSpriteNode(color: UIColor.clear, size:CGSize(width: 200, height: 110) )
         section.anchorPoint = CGPoint(x:0, y: 0)
         section.position = CGPoint(x: 0, y: 0)
         section.zPosition = 4;
@@ -22,7 +22,7 @@ class PreviousGuesses {
         var xPosition: CGFloat = 10
         
         if previousGuesses?.isEmpty == false {
-            xPosition = 100
+            xPosition = 110
         }
         
         let pizzaGuess = PreviousGuess(
@@ -30,7 +30,7 @@ class PreviousGuesses {
             numberOfItemsCorrect: numberOfItemsCorrect!,
             xPosition: xPosition
         )
-        section.addChild(pizzaGuess.sprite)
+        section.addChild(pizzaGuess)
         
         if (previousGuesses?.append(pizzaGuess)) == nil {
            previousGuesses = [pizzaGuess]

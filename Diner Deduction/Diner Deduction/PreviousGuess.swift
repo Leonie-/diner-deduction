@@ -2,62 +2,37 @@
 import SpriteKit
 import SpriteKitEasingSwift
 
-class PreviousGuess {
+class PreviousGuess: SKSpriteNode {
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     var ingredientsTextureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Ingredients")
-    var sprite:SKSpriteNode
-    
-    var ingredientPositions: [Int: CGPoint] = [
+    var pizza = SKSpriteNode(color: UIColor.clear, size:CGSize(width: 70, height: 70))
+    var spriteOffScreenPosition = CGPoint(x: 10, y: -300)
+
+    private var ingredientPositions: [Int: CGPoint] = [
         1: CGPoint(x: 9, y: 19),
         2: CGPoint(x: 25, y: 40),
         3: CGPoint(x: 35, y: 13)
     ]
     
-    init(itemsGuessed: Set<String>, numberOfItemsCorrect: Int, xPosition: CGFloat) {
-        
-        let spriteOffScreenPosition = CGPoint(x: xPosition, y: -300)
-        sprite = SKSpriteNode(color: UIColor.blue, size:CGSize(width: 90, height: 110) )
-        sprite.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 90, height: 100))
-        sprite.physicsBody!.isDynamic = false
-        sprite.physicsBody!.affectedByGravity = false
-        sprite.physicsBody!.categoryBitMask = 0
-        sprite.physicsBody!.collisionBitMask = 0
-        sprite.anchorPoint = CGPoint(x:0, y: 0)
-        sprite.position = spriteOffScreenPosition
-        sprite.zPosition = 5
-        
-        let pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 70, height: 70) )
-        pizza.anchorPoint = CGPoint(x:0, y: 0)
-        pizza.position = CGPoint(x: xPosition, y: 10)
-        pizza.zPosition = 6;
-        
-        sprite.addChild(pizza)
-        
-        addIngredientsToPizzaTry(pizza: pizza, itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
-        
+    func addLabel(numberOfItemsCorrect: Int) {
         let label = SKLabelNode(fontNamed: "Arial")
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        label.zPosition = 7;
+        label.zPosition = 7
         label.text = "\(numberOfItemsCorrect) right"
         label.fontSize = 18
         label.position = CGPoint(x:20, y: 90)
-        
-        sprite.addChild(label)
-        
-//        section.addChild(sprite)
-        
-        sprite.run(SKEase.move(
-            easeFunction: .curveTypeQuintic,
-            easeType: EaseType.easeTypeOut,
-            time: 0.8,
-            from: spriteOffScreenPosition,
-            to: CGPoint(x: 10, y: 0)
-        ))
-
+        self.addChild(label)
     }
     
-    func addIngredientsToPizzaTry(pizza: SKSpriteNode, itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
-        
+    func addPizzaSprite() {
+        pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 70, height: 70) )
+        pizza.anchorPoint = CGPoint(x:0, y: 0)
+        pizza.position = CGPoint(x: 10, y: 10)
+        pizza.zPosition = 6
+        self.addChild(pizza)
+    }
+    
+    func addIngredientsToPizzaSprite(pizza: SKSpriteNode, itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
         var ingredientNumber = 1
         
         for ingredient in itemsGuessed as Set<String> {
@@ -71,8 +46,39 @@ class PreviousGuess {
         }
     }
     
-    func slideUpguessBox() {
+    func slideUpBox(xPosition: CGFloat, spriteOffScreenPosition: CGPoint) {
+        self.run(SKEase.move(
+            easeFunction: .curveTypeQuintic,
+            easeType: EaseType.easeTypeOut,
+            time: 0.8,
+            from: spriteOffScreenPosition,
+            to: CGPoint(x: xPosition, y: 0)
+        ))
+    }
+    
+    init(itemsGuessed: Set<String>, numberOfItemsCorrect: Int, xPosition: CGFloat) {
         
+        super.init(texture: SKTexture(imageNamed: "olive"), color: UIColor.clear, size: CGSize(width: 90, height: 110))
+
+        spriteOffScreenPosition = CGPoint(x: xPosition, y: -300)
+        
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 90, height: 100))
+        self.physicsBody!.isDynamic = false
+        self.physicsBody!.affectedByGravity = false
+        self.physicsBody!.categoryBitMask = 0
+        self.physicsBody!.collisionBitMask = 0
+        self.anchorPoint = CGPoint(x:0, y: 0)
+        self.position = spriteOffScreenPosition
+        self.zPosition = 5
+        
+        addLabel(numberOfItemsCorrect: numberOfItemsCorrect)
+        addPizzaSprite()
+        addIngredientsToPizzaSprite(pizza: pizza, itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
+        slideUpBox(xPosition: xPosition, spriteOffScreenPosition: spriteOffScreenPosition)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 
 }
