@@ -66,7 +66,7 @@ class GameLostScene: SKScene, GKGameCenterControllerDelegate {
     }
     
     func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool, dropDown: Bool) {
-        let textNode = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        let textNode = SKLabelNode(fontNamed: "Arial-BoldMT")
         textNode.text = text
         textNode.name = name
         textNode.verticalAlignmentMode = .center

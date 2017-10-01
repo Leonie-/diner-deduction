@@ -18,7 +18,7 @@ class GameWonScene: SKScene, GKGameCenterControllerDelegate {
     
     func createSummaryPanel() {
         let panelTexture = textureAtlas.textureNamed("panel")
-        summaryPanel = SKSpriteNode(texture: panelTexture, color: UIColor.gray, size:CGSize(width: 520, height: 130) )
+        summaryPanel = SKSpriteNode(texture: panelTexture, color: UIColor.gray, size:CGSize(width: 540, height: 130) )
         summaryPanel.position = CGPoint(x: self.frame.midX, y: self.frame.midY+75 )
         summaryPanel.zPosition = 2;
         self.addChild(summaryPanel)
@@ -53,7 +53,7 @@ class GameWonScene: SKScene, GKGameCenterControllerDelegate {
     }
     
     func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool) {
-        let textNode = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        let textNode = SKLabelNode(fontNamed: "Arial-BoldMT")
         textNode.text = text
         textNode.name = name
         textNode.verticalAlignmentMode = .center

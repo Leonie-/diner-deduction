@@ -31,7 +31,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         
         self.addChild(countDownBox)
         
-        countDownText = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        countDownText = SKLabelNode(fontNamed: "Arial")
         countDownText.fontSize = 45
         countDownText.text = timeToString(time: TimeInterval(secondsLeft))
         countDownText.zPosition = 7;

@@ -34,11 +34,11 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
     }
     
     func addTextToSprite(sprite: SKSpriteNode, text: String, name: String, addPulse: Bool) {
-        let textNode = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
+        let textNode = SKLabelNode(fontNamed: "Arial-BoldMT")
         textNode.text = text
         textNode.name = name
         textNode.verticalAlignmentMode = .center
-        textNode.position = CGPoint(x: 0, y: 0)
+        textNode.position = CGPoint(x: 0, y: -3)
         textNode.zPosition = 5
         textNode.fontSize = 30
         
@@ -46,7 +46,7 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             let pulse = SKAction.sequence([
                 SKAction.fadeAlpha(to: 0.6, duration: 0.6),
                 SKAction.fadeAlpha(to: 1, duration: 0.6),
-                ])
+            ])
             textNode.run(SKAction.repeatForever(pulse))
         }
         sprite.addChild(textNode)
