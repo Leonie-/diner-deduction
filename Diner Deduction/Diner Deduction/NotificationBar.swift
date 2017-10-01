@@ -6,7 +6,6 @@ class NotificationBar {
     var bar: SKSpriteNode
     var message: SKLabelNode
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "GameItems")
-    var messagePositionLower: CGPoint
     
     private let messageDictionary:[String: String]
     
@@ -21,7 +20,7 @@ class NotificationBar {
         
         let bodyTexture = textureAtlas.textureNamed("notification-bar-bg")
         
-        bar = SKSpriteNode(texture: bodyTexture, color: UIColor.gray, size:CGSize(width: frameWidth, height: 70) )
+        bar = SKSpriteNode(texture: bodyTexture, color: UIColor.gray, size:CGSize(width: frameWidth, height: 40) )
         bar.anchorPoint = CGPoint(x:0, y: 1)
         bar.position = CGPoint(x: 0, y: frameHeight)
         bar.zPosition = 4;
@@ -31,8 +30,7 @@ class NotificationBar {
         message.zPosition = 5;
         message.text = messageDictionary["Default"]
         message.fontSize = 22
-        message.position = CGPoint(x:20, y: frameHeight - 40)
-        messagePositionLower = CGPoint(x:40, y: frameHeight - 55)
+        message.position = CGPoint(x:20, y: frameHeight - 27)
         pulseMessage()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("GameWon"),  object: nil)

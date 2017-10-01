@@ -13,7 +13,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     
     var countDownText: SKLabelNode!
     var timer: Timer!
-    var secondsLeft = 59
+    var secondsLeft = 60
     
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
@@ -24,19 +24,19 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     
     func createCountDownDisplay() {
         let countDownBox = SKSpriteNode(imageNamed: "countdown-box")
-        countDownBox.size = CGSize(width: 100, height: 56)
+        countDownBox.size = CGSize(width: 105, height: 50)
         countDownBox.anchorPoint = CGPoint(x:1, y: 1)
         countDownBox.position = CGPoint(x: self.frame.width-5, y: self.frame.height-5 )
         countDownBox.zPosition = 5;
         
         self.addChild(countDownBox)
         
-        countDownText = SKLabelNode(fontNamed: "Arial")
+        countDownText = SKLabelNode(fontNamed: "Arial-BoldMT")
         countDownText.fontSize = 35
         countDownText.text = timeToString(time: TimeInterval(secondsLeft))
         countDownText.zPosition = 7;
         countDownText.horizontalAlignmentMode = .center
-        countDownText.position = CGPoint(x:-42, y:-42)
+        countDownText.position = CGPoint(x:-52, y:-38)
         
         countDownBox.addChild(countDownText)
     }
@@ -53,11 +53,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func createPizza(totalIngredients: Int) {
-        let pizza = Pizza(
-            positionX: self.frame.midX,
-            positionY: self.frame.midY,
-            totalIngredients: totalIngredients
-        )
+        let pizza = Pizza( frame: self.frame, totalIngredients: totalIngredients)
         self.addChild(pizza)
     }
 

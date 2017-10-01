@@ -5,15 +5,15 @@ class Pizza : SKSpriteNode, GameSprite {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     private var ingredients = Set<String>()
 
-    init(positionX: CGFloat, positionY: CGFloat, totalIngredients:Int) {
+    init(frame: CGRect, totalIngredients:Int) {
         // Call the init function on the base class (SKSpriteNode)
-        super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 210, height: 210))
-        self.position = CGPoint(x: positionX, y: positionY)
+        super.init(texture: SKTexture(imageNamed: "pizza"), color: UIColor.clear, size: CGSize(width: 215, height: 215))
+        self.position = CGPoint(x: frame.midX, y: frame.midY+20)
         self.zPosition = 2
         self.name = "pizza"
         
         let bodyTexture = textureAtlas.textureNamed("pizza")
-        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: CGSize(width: 105, height: 105))
+        self.physicsBody = SKPhysicsBody(texture: bodyTexture, size: CGSize(width: 110, height: 110))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.categoryBitMask = PhysicsCategory.pizza.rawValue
@@ -40,20 +40,17 @@ class Pizza : SKSpriteNode, GameSprite {
     func addIngredient(_ notification: Notification) {
         if let ingredient = notification.userInfo?["ingredient"] as? String {
             ingredients.insert(ingredient)
-            print("ingredient added", ingredients)
         }
     }
     
     func removeIngredient(_ notification: NSNotification) {
         if let ingredient = notification.userInfo?["ingredient"] as? String {
         	ingredients.remove(ingredient)
-            print("ingredient removed", ingredients)
         }
     }
     
     func removeAllIngredients(_ notification: NSNotification) {
         ingredients.removeAll()
-        print("ALL ingredient cleared", ingredients)
     }
     
     func onTouch() {}
