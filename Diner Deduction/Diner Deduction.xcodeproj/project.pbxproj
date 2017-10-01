@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1ECB9F4AEB052BFEC319A660 /* Pods_Diner_Deduction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33E6E1555F882AD927F2B28 /* Pods_Diner_Deduction.framework */; };
 		3209D4D51F806719001F7A3F /* PreviousGuess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D4D41F806719001F7A3F /* PreviousGuess.swift */; };
+		3209D4D91F813413001F7A3F /* IngredientsListGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209D4D81F813413001F7A3F /* IngredientsListGenerator.swift */; };
 		321F116C1F7BE54700F8E312 /* GameWonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F116B1F7BE54700F8E312 /* GameWonScene.swift */; };
 		321F11721F7C047A00F8E312 /* Sparkles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 321F11711F7C047A00F8E312 /* Sparkles.sks */; };
 		321F11761F7C2FDE00F8E312 /* GameLostScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321F11751F7C2FDE00F8E312 /* GameLostScene.swift */; };
@@ -62,6 +63,7 @@
 		111DC9E5298B98B50F0CAE9B /* Pods-Diner Deduction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diner Deduction.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diner Deduction/Pods-Diner Deduction.debug.xcconfig"; sourceTree = "<group>"; };
 		31345DA4F4DA600272456B0B /* Pods_Diner_DeductionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diner_DeductionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3209D4D41F806719001F7A3F /* PreviousGuess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousGuess.swift; sourceTree = "<group>"; };
+		3209D4D81F813413001F7A3F /* IngredientsListGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsListGenerator.swift; sourceTree = "<group>"; };
 		321F116B1F7BE54700F8E312 /* GameWonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWonScene.swift; sourceTree = "<group>"; };
 		321F11711F7C047A00F8E312 /* Sparkles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Sparkles.sks; sourceTree = "<group>"; };
 		321F11751F7C2FDE00F8E312 /* GameLostScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLostScene.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				32DBD9561F77270A003BA20F /* PreviousGuesses.swift */,
 				321F11711F7C047A00F8E312 /* Sparkles.sks */,
 				3209D4D41F806719001F7A3F /* PreviousGuess.swift */,
+				3209D4D81F813413001F7A3F /* IngredientsListGenerator.swift */,
 			);
 			path = "Diner Deduction";
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				32C06CF91F71D4D1003E71E8 /* Customer.swift in Sources */,
 				326E62881F7AA671003F52BA /* MenuScene.swift in Sources */,
 				32202EA21F65A074008C967A /* GameSpriteNull.swift in Sources */,
+				3209D4D91F813413001F7A3F /* IngredientsListGenerator.swift in Sources */,
 				32E739EC1F4839B000140FC4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

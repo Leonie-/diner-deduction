@@ -89,13 +89,12 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         self.anchorPoint = .zero
         
         let totalIngredients = 3
-        let ingredients = [
-            (type: "tomato", offsetX: 140 as CGFloat, offsetY: 250 as CGFloat),
-            (type: "olive", offsetX: 140 as CGFloat, offsetY: 180 as CGFloat),
-            (type: "mushroom", offsetX: 550 as CGFloat, offsetY: 250 as CGFloat),
-            (type: "pepperoni", offsetX: 550 as CGFloat, offsetY: 180 as CGFloat)
-        ];
-
+        let ingredientsListGenerator = IngredientsListGenerator(
+            totalIngredients: totalIngredients,
+            arrayShuffler: ArrayShuffler()
+        )
+        let ingredients = ingredientsListGenerator.generate
+        
         createBackground()
         GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
         
