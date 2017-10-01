@@ -22,9 +22,9 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         self.backgroundColor = UIColor(red: 0.5216, green: 0.8196, blue: 0.8627, alpha: 1.0)
     }
     
-    func createCountDownNode() {
+    func createCountDownDisplay() {
         let countDownBox = SKSpriteNode(imageNamed: "countdown-box")
-        countDownBox.size = CGSize(width: 84, height: 56)
+        countDownBox.size = CGSize(width: 100, height: 56)
         countDownBox.anchorPoint = CGPoint(x:1, y: 1)
         countDownBox.position = CGPoint(x: self.frame.width-5, y: self.frame.height-5 )
         countDownBox.zPosition = 5;
@@ -32,11 +32,11 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(countDownBox)
         
         countDownText = SKLabelNode(fontNamed: "Arial")
-        countDownText.fontSize = 45
+        countDownText.fontSize = 35
         countDownText.text = timeToString(time: TimeInterval(secondsLeft))
         countDownText.zPosition = 7;
         countDownText.horizontalAlignmentMode = .center
-        countDownText.position = CGPoint(x:-42, y:-45)
+        countDownText.position = CGPoint(x:-42, y:-42)
         
         countDownBox.addChild(countDownText)
     }
@@ -105,7 +105,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
-        createCountDownNode()
+        createCountDownDisplay()
         createPreviousGuesses()
         createNotificationBar(totalIngredients: totalIngredients)
         createPizza(totalIngredients: totalIngredients)
@@ -117,7 +117,6 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(whenGameWon), name:Notification.Name("GameWon"),  object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(whenGameLost), name:Notification.Name("GameLost"),  object: nil)
     }
     
     func timeToString(time: TimeInterval) -> String {
@@ -127,27 +126,20 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func updateTimer() {
-
         if secondsLeft < 1 {
             timer.invalidate()
-//            NotificationCenter.default.post(name:Notification.Name("GameLost"), object: nil)
+            self.view?.presentScene(GameLostScene(size: self.size))
         }
         else {
             secondsLeft -= 1
             countDownText.text = timeToString(time: TimeInterval(secondsLeft))
-            countDownText.text = String(secondsLeft)
         }
     }
     
     func whenGameWon() {
         self.view?.presentScene(GameWonScene(size: self.size))
     }
-    
-    func whenGameLost() {
-        timer.invalidate()
-        self.view?.presentScene(GameLostScene(size: self.size))
-    }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in (touches) {
     		let positionInScene = touch.location(in: self)
@@ -162,18 +154,24 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in (touches) {
-            selectedNode.onDrag(touch: touch)
+            if (selectedNode != nil) {
+                selectedNode.onDrag(touch: touch)
+            }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        selectedNode.onDrop()
-        selectedNode = GameSpriteNull()
+        if (selectedNode != nil) {
+            selectedNode.onDrop()
+            selectedNode = GameSpriteNull()
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        selectedNode.onDrop()
-        selectedNode = GameSpriteNull()
+        if (selectedNode != nil) {
+            selectedNode.onDrop()
+            selectedNode = GameSpriteNull()
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
