@@ -4,11 +4,17 @@ import SpriteKitEasingSwift
 
 class GameLostScene: SKScene, GKGameCenterControllerDelegate {
     
+    var gameSceneDelegate: GameSceneDelegate?
+    
     let textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"GameItems")
     
     private var summaryPanel = SKSpriteNode()
     private var playAgainButton = SKSpriteNode()
     private var returnToMenuButton = SKSpriteNode()
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
     
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
@@ -102,16 +108,20 @@ class GameLostScene: SKScene, GKGameCenterControllerDelegate {
             let positionInScene = touch.location(in: self)
             let touchedNode = atPoint(positionInScene)
             if touchedNode.name == "play-again-button" {
-                self.view?.presentScene(GamePlayScene(size: self.size))
+                self.gameSceneDelegate?.gamePlayScene()
             }
             if touchedNode.name == "return-to-menu-button" {
-                self.view?.presentScene(MenuScene(size: self.size))
+                self.gameSceneDelegate?.menuScene()
             }
         }
     }
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 }
 

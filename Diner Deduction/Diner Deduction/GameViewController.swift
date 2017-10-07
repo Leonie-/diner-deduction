@@ -2,29 +2,54 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameSceneDelegate {
+    
+    var skView: SKView!
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        let view = self.view as! SKView
+        skView = self.view as! SKView
         
         // Ignore drawing order of child nodes to increase performance
-        view.ignoresSiblingOrder = true
+        skView.ignoresSiblingOrder = true
         
         // For debugging purposes - remove before publishing
-        view.showsFPS = true
-        view.showsNodeCount = true
+        // skView.showsFPS = true
+        // skView.showsNodeCount = true
         
-        let menuScene = MenuScene()
-        menuScene.size = view.bounds.size
-        view.presentScene(menuScene)
-        
-//        let musicPath = Bundle.main.path(forResource: "Sound/BackgroundMusic.m4a", ofType: nil)!
-//        let url = URL(fileURLWithPath: musicPath)
-        
+        let menuScene = MenuScene(size: skView.bounds.size)
+        menuScene.scaleMode = .aspectFill
+        skView.presentScene(menuScene)
+        menuScene.gameSceneDelegate = self
     }
-
+    
+    func menuScene() {
+        let menuScene = MenuScene(size: view.bounds.size)
+        skView.presentScene(menuScene)
+        menuScene.gameSceneDelegate = self
+    }
+    
+    func gamePlayScene() {
+        let gamePlayScene = GamePlayScene(size: view.bounds.size)
+        skView.presentScene(gamePlayScene)
+        gamePlayScene.gameSceneDelegate = self
+    }
+    
+    func gameWonScene(previousGuesses: Int) {
+        let gameWonScene = GameWonScene(size: view.bounds.size)
+        gameWonScene.userData = NSMutableDictionary()
+        gameWonScene.userData?["numberOfGuesses"] = previousGuesses
+        skView.presentScene(gameWonScene)
+        gameWonScene.gameSceneDelegate = self
+    }
+    
+    func gameLostScene() {
+        let gameLostScene = GameLostScene(size: view.bounds.size)
+        skView.presentScene(gameLostScene)
+        gameLostScene.gameSceneDelegate = self
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }

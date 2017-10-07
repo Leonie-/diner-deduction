@@ -4,8 +4,10 @@ import GameplayKit
 import SpriteKitEasingSwift
 
 class GamePlayScene: SKScene, SKPhysicsContactDelegate {
-    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     
+    var gameSceneDelegate: GameSceneDelegate?
+    
+    var textureAtlas:SKTextureAtlas = SKTextureAtlas(named: "GameItems")
     private var selectedNode: GameSprite!
     static var customer: Customer!
     static var notificationBar: NotificationBar!
@@ -14,6 +16,39 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     var countDownText: SKLabelNode!
     var timer: Timer!
     var secondsLeft = 60
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+
+    override func didMove(to view: SKView) {
+        //position to lower left
+        self.anchorPoint = .zero
+        
+        let totalIngredients = 3
+        let ingredientsListGenerator = IngredientsListGenerator(
+            totalIngredients: totalIngredients,
+            arrayShuffler: ArrayShuffler()
+        )
+        let ingredients = ingredientsListGenerator.generate
+        
+        createBackground()
+        GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+        createCountDownDisplay()
+        createPreviousGuesses()
+        createNotificationBar(totalIngredients: totalIngredients)
+        createPizza(totalIngredients: totalIngredients)
+        createIngredients(ingredients: ingredients)
+        createSubmitButton()
+
+        
+        //Handle contact in the scene
+        self.physicsWorld.contactDelegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(whenGameWon), name:Notification.Name("GameWon"),  object: nil)
+    }
     
     func createBackground() {
         let frameSize = CGSize(width: self.frame.width, height: self.frame.height)
@@ -56,7 +91,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         let pizza = Pizza( frame: self.frame, totalIngredients: totalIngredients)
         self.addChild(pizza)
     }
-
+    
     func createIngredients(ingredients: Array<(String,CGFloat,CGFloat)>) {
         for (type, offsetX, offsetY) in ingredients {
             createIngredient(ingredient: type, offsetX: offsetX, offsetY: offsetY)
@@ -83,35 +118,6 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
         )
         self.addChild(submitButton)
     }
-
-    override func didMove(to view: SKView) {
-        //position to lower left
-        self.anchorPoint = .zero
-        
-        let totalIngredients = 3
-        let ingredientsListGenerator = IngredientsListGenerator(
-            totalIngredients: totalIngredients,
-            arrayShuffler: ArrayShuffler()
-        )
-        let ingredients = ingredientsListGenerator.generate
-        
-        createBackground()
-        GamePlayScene.customer = Customer(ingredients: ingredients, totalIngredients: totalIngredients, arrayShuffler: ArrayShuffler())
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        
-        createCountDownDisplay()
-        createPreviousGuesses()
-        createNotificationBar(totalIngredients: totalIngredients)
-        createPizza(totalIngredients: totalIngredients)
-        createIngredients(ingredients: ingredients)
-        createSubmitButton()
-
-        
-        //Handle contact in the scene
-        self.physicsWorld.contactDelegate = self
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(whenGameWon), name:Notification.Name("GameWon"),  object: nil)
-    }
     
     func timeToString(time: TimeInterval) -> String {
         let minutes = Int(time) / 60 % 60
@@ -122,7 +128,7 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     func updateTimer() {
         if secondsLeft < 1 {
             timer.invalidate()
-            self.view?.presentScene(GameLostScene(size: self.size))
+            self.gameSceneDelegate?.gameLostScene()
         }
         else {
             secondsLeft -= 1
@@ -131,10 +137,8 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func whenGameWon() {
-        let gameWonScene = GameWonScene(size: self.size)
-        gameWonScene.userData = NSMutableDictionary()
-        gameWonScene.userData?["numberOfGuesses"] = GamePlayScene.previousGuesses.total
-        self.view?.presentScene(gameWonScene)
+        let previousGuesses: Int = GamePlayScene.previousGuesses.total
+        self.gameSceneDelegate?.gameWonScene(previousGuesses: previousGuesses)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -173,6 +177,10 @@ class GamePlayScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
 }

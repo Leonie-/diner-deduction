@@ -3,6 +3,8 @@ import GameKit
 
 class MenuScene: SKScene, GKGameCenterControllerDelegate {
     
+    var gameSceneDelegate: GameSceneDelegate?
+    
     let textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"MenuScreen")
     var startButton = SKSpriteNode()
     var quitButton = SKSpriteNode()
@@ -52,6 +54,10 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
         sprite.addChild(textNode)
     }
     
+    override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
     override func didMove(to view: SKView) {
         //position to lower left
         self.anchorPoint = .zero
@@ -67,13 +73,17 @@ class MenuScene: SKScene, GKGameCenterControllerDelegate {
             let positionInScene = touch.location(in: self)
             let touchedNode = atPoint(positionInScene)
             if touchedNode.name == "start-button" {
-                self.view?.presentScene(GamePlayScene(size: self.size))
+                self.gameSceneDelegate?.gamePlayScene()
             }
         }
     }
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 }
 
