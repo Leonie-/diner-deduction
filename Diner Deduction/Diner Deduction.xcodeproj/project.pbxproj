@@ -34,7 +34,6 @@
 		32E739F41F4839B000140FC4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E739F31F4839B000140FC4 /* GameViewController.swift */; };
 		32E739F71F4839B000140FC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E739F51F4839B000140FC4 /* Main.storyboard */; };
 		32E739F91F4839B000140FC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32E739F81F4839B000140FC4 /* Assets.xcassets */; };
-		32E739FC1F4839B000140FC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E739FA1F4839B000140FC4 /* LaunchScreen.storyboard */; };
 		32E73A071F4839B000140FC4 /* Diner_DeductionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E73A061F4839B000140FC4 /* Diner_DeductionTests.swift */; };
 		32E73A121F4839B000140FC4 /* Diner_DeductionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E73A111F4839B000140FC4 /* Diner_DeductionUITests.swift */; };
 		32FDF0801F801462003BF443 /* CloudPuff.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32FDF07F1F801462003BF443 /* CloudPuff.sks */; };
@@ -90,7 +89,6 @@
 		32E739F31F4839B000140FC4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		32E739F61F4839B000140FC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32E739F81F4839B000140FC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		32E739FB1F4839B000140FC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32E739FD1F4839B000140FC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E73A021F4839B000140FC4 /* Diner DeductionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diner DeductionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E73A061F4839B000140FC4 /* Diner_DeductionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diner_DeductionTests.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				32DBD9561F77270A003BA20F /* PreviousGuesses.swift */,
 				32FDF0831F80148B003BF443 /* Podfile.txt */,
 				32E739F81F4839B000140FC4 /* Assets.xcassets */,
-				32E739FA1F4839B000140FC4 /* LaunchScreen.storyboard */,
 				32E739F51F4839B000140FC4 /* Main.storyboard */,
 			);
 			path = "Diner Deduction";
@@ -365,7 +362,6 @@
 				32E739EE1F4839B000140FC4 /* GameScene.sks in Resources */,
 				32E739F91F4839B000140FC4 /* Assets.xcassets in Resources */,
 				32FDF0801F801462003BF443 /* CloudPuff.sks in Resources */,
-				32E739FC1F4839B000140FC4 /* LaunchScreen.storyboard in Resources */,
 				32E739F01F4839B000140FC4 /* Actions.sks in Resources */,
 				321F11721F7C047A00F8E312 /* Sparkles.sks in Resources */,
 				32FDF0861F80148B003BF443 /* Podfile.txt in Resources */,
@@ -603,14 +599,6 @@
 				32E739F61F4839B000140FC4 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		32E739FA1F4839B000140FC4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32E739FB1F4839B000140FC4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
