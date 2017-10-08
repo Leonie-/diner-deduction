@@ -319,6 +319,7 @@
 <ul>
 <li><code>itemsGuessed</code> is the the scene&rsquo;s frame as a <code>CGRect</code>.</li>
 <li><code>numberOfItemsCorrect</code> is the number of ingredients required for this game (currently this is always 3).</li>
+<li><code>xPosition</code> is the x position of the guess box.</li>
 </ul>
 
                         <a href="Classes/PreviousGuess.html" class="slightly-smaller">See more</a>
@@ -468,9 +469,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Listens for the <q>GameFailed</q> notification and adds a <code><a href="Classes/PreviousGuess.html">PreviousGuess</a></code> to an array of previous guesses. Slides them across the screen when new ones are added, and destroys the oldest when there are more than 3 on the screen at a time.</p>
 
                         <a href="Classes/PreviousGuesses.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">PreviousGuesses</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -562,7 +571,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The Customer selects the correct ingredients from a list of the available ingredients. It listens for the <code>PizzaSubmitted</code> event, compares the submitted ingredients to the correct ingredients, then posts either a <code>GameWon</code> or <code>GameFailed</code> notification.</p>
+                        <p>The Customer selects the correct ingredients from a list of the available ingredients. It listens for the <q>PizzaSubmitted</q> event, compares the submitted ingredients to the correct ingredients, then posts either a <q>GameWon</q> or <q>GameFailed</q> notification. Please note that <q>GameFailed</q> is not the same as <q>GameLost</q> - <q>GameFailed</q> denotes an incorrect guess and the game continues. Only the expired timer posts a <q>GameLost</q> notification.</p>
 <h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
 
 <ul>

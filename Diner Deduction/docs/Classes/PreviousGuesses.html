@@ -111,7 +111,13 @@
         <section>
           <section class="section">
             <h1>PreviousGuesses</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">PreviousGuesses</span></code></pre>
+
+                </div>
+              </div>
+            <p>Listens for the <q>GameFailed</q> notification and adds a <code><a href="../Classes/PreviousGuess.html">PreviousGuess</a></code> to an array of previous guesses. Slides them across the screen when new ones are added, and destroys the oldest when there are more than 3 on the screen at a time.</p>
 
           </section>
           <section class="section task-group-section">
@@ -130,7 +136,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Sprite for the previous guess section.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -156,7 +163,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Array of <code><a href="../Classes/PreviousGuess.html">PreviousGuess</a></code> items.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -182,7 +190,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Keeps track of the total number of guesses.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -208,7 +217,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Creates a sprite for the previous guess section. Adds a listener for the <q>GameFailed</q> state.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -234,7 +244,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Animation to slide the previous guess boxes along and destroy the ones offscreen.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -260,7 +271,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Creates a new <code><a href="../Classes/PreviousGuess.html">PreviousGuess</a></code> and adds it to the array.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -286,7 +298,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Respond to the <q>GameFailed</q> notification by displaying a new previous guess and displaying how many ingredients were correct.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>

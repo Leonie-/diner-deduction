@@ -1,7 +1,7 @@
 
 import SpriteKit
 /**
- The Customer selects the correct ingredients from a list of the available ingredients. It listens for the `PizzaSubmitted` event, compares the submitted ingredients to the correct ingredients, then posts either a `GameWon` or `GameFailed` notification.
+ The Customer selects the correct ingredients from a list of the available ingredients. It listens for the "PizzaSubmitted" event, compares the submitted ingredients to the correct ingredients, then posts either a "GameWon" or "GameFailed" notification. Please note that "GameFailed" is not the same as "GameLost" - "GameFailed" denotes an incorrect guess and the game continues. Only the expired timer posts a "GameLost" notification.
  ### Parameters used on init(): ###
  * `ingredients` is an array of the ingredients available to the customer.
  * `totalIngredients` is the number of ingredients the player needs to be add to make a guess.
