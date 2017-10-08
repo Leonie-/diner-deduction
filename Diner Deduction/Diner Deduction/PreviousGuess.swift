@@ -7,6 +7,7 @@ import SpriteKitEasingSwift
  ### Parameters used on init(): ###
  * `itemsGuessed` is the the scene's frame as a `CGRect`.
  * `numberOfItemsCorrect` is the number of ingredients required for this game (currently this is always 3).
+ * `xPosition` is the x position of the guess box.
  */
 class PreviousGuess: SKSpriteNode {
     /// "GameItems" texture atlas.

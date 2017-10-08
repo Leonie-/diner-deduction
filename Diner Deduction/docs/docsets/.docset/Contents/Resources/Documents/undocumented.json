@@ -13,27 +13,6 @@
       "symbol": "GameViewController.skView",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
-      "line": 78,
-      "symbol": "PreviousGuess.init(itemsGuessed:numberOfItemsCorrect:xPosition:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
-      "line": 99,
-      "symbol": "PreviousGuess.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
-      "line": 5,
-      "symbol": "PreviousGuesses",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/kenyol04/diner-deduction/Diner Deduction"
