@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (5% documented)</p>
+        <p><a href="index.html"> Docs</a> (29% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -129,9 +129,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Pass in an array and it will rearrange the items in the array using a Fisher-Yates Shuffle. This implements an object shuffler on <code>GKRandomSource</code>, which is part of <code>GameKit</code>.</p>
 
                         <a href="Classes/ArrayShuffler.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">ArrayShuffler</span><span class="p">:</span> <span class="kt"><a href="Protocols/ArrayShufflerProtocol.html">ArrayShufflerProtocol</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -153,9 +161,23 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Creates an <code>SKSpriteNode</code> to use as a background. Sets its texture, size, position, z-position and anchorpoint.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>textureName</code> is the name of the asset to fetch from the <q>Backgrounds</q> texture atlas.</li>
+<li><code>frameSize</code> is the size of the parent scene&rsquo;s frame, to ensure the background covers the whole scene.</li>
+</ul>
 
                         <a href="Classes/Background.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Background</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -201,9 +223,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This scene appears when the timer has run out and the player has not guessed the correct combination of ingredients. It has a panel saying, <q>Oh no! You ran out of time</q>, and buttons to either play again, or return to the menu screen.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>size</code> is the size of the view bounds passed in by the <code><a href="Classes/GameViewController.html">GameViewController</a></code>.</li>
+</ul>
 
                         <a href="Classes/GameLostScene.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">GameLostScene</span><span class="p">:</span> <span class="kt">SKScene</span><span class="p">,</span> <span class="kt">GKGameCenterControllerDelegate</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -225,9 +260,25 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Used by all the buttons in the game and menus. Sets position, and texture of the button from the <q>Buttons</q> texture atlas. Handles tap behaviour.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>imageName</code> is the name of the asset to fetch from the <q>Buttons</q> texture atlas.</li>
+<li><code>notificationAction</code> is the name of the notification to call when the button is pressed.</li>
+<li><code>size</code> is the size of the button.</li>
+<li><code>position</code> is where the button is positioned.</li>
+</ul>
 
                         <a href="Classes/Button.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Button</span><span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -369,7 +420,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <h1 id='gameviewcontroller' class='heading'>GameViewController:</h1>
+                        <p>Controls the main game scenes in co-ordination with <code><a href="Protocols/GameSceneDelegate.html">GameSceneDelegate</a></code>.</p>
 
                         <a href="Classes/GameViewController.html" class="slightly-smaller">See more</a>
                       </div>
@@ -425,9 +476,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The Customer selects the correct ingredients from a list of the available ingredients. It listens for the <code>PizzaSubmitted</code> event, compares the submitted ingredients to the correct ingredients, then posts either a <code>GameWon</code> or <code>GameFailed</code> notification.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>ingredients</code> is an array of the ingredients available to the customer.</li>
+<li><code>totalIngredients</code> is the number of ingredients the player needs to be add to make a guess.</li>
+<li><code>arrayShuffler</code> is an instance of the <code><a href="Protocols/ArrayShufflerProtocol.html">ArrayShufflerProtocol</a></code>. It has been dependency injected to make it easier to unit test if automated tests are added at a later date.</li>
+</ul>
 
                         <a href="Classes/Customer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Customer</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -521,9 +587,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The Application Delegate receives application-level messages, and can respond accordingly.</p>
 
                         <a href="Classes/AppDelegate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">AppDelegate</span><span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">UIApplicationDelegate</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
