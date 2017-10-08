@@ -2,13 +2,10 @@
 import UIKit
 import SpriteKit
 
-/**
-    #GameViewController:
-
-*/
+///Controls the main game scenes in co-ordination with `GameSceneDelegate`.
 class GameViewController: UIViewController, GameSceneDelegate {
 
-    var skView: SKView!
+    private var skView: SKView!
     
     /// Controls what game scene we are currently displaying
     override func viewWillLayoutSubviews() {
