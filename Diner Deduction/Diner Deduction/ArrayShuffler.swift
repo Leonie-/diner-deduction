@@ -1,6 +1,6 @@
 import GameKit
 
-/// Protocol for the `ArrayShuffler`
+/// Protocol for the `ArrayShuffler`.
 protocol ArrayShufflerProtocol {
     ///
     func shuffle(array: Array<Any>) -> (Array<Any>)

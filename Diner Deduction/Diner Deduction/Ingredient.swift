@@ -1,7 +1,11 @@
 
 import SpriteKit
 import SpriteKitEasingSwift
-
+/**
+ This scene appears when the player has correctly guessed the ingredients requested by the customer. It has a panel displaying different text depending on the number of guesses it took to win, and a sparkle particle effect in the background. The user has the option of playing again or returning to the menu.
+ ### Parameters used on init(): ###
+ * `size` is the size of the view bounds passed in by the `GameViewController`.
+ */
 class Ingredient : SKSpriteNode, GameSprite {
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"Ingredients")
     var originalPosition:CGPoint = CGPoint(x: 0, y: 0)

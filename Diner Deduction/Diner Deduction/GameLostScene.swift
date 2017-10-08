@@ -10,7 +10,7 @@ import SpriteKitEasingSwift
 class GameLostScene: SKScene, GKGameCenterControllerDelegate {
     ///  Delegate to handle the displaying of game scenes.
     var gameSceneDelegate: GameSceneDelegate?
-    /// `GameItems` texture atlas.
+    /// "GameItems" texture atlas.
     let textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"GameItems")
     /// Summary panel to display the "Oh no! You ran out of time" text.
     private var summaryPanel = SKSpriteNode()
