@@ -14,7 +14,7 @@
     <a title="NotificationBar Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (71% documented)</p>
+        <p><a href="../index.html"> Docs</a> (98% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -111,7 +111,20 @@
         <section>
           <section class="section">
             <h1>NotificationBar</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">NotificationBar</span></code></pre>
+
+                </div>
+              </div>
+            <p>This notification bar sits at top of the screen and displays text to update the player about the game state.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>frameWidth</code> is the width of the scene&rsquo;s frame, so the bar can position itself accordingly.</li>
+<li><code>frameHeight</code> is the height of the scene&rsquo;s frame, so the bar can position itself accordingly.</li>
+<li><code>totalIngredients</code> is the number of ingredients to select for this game (currently this is always 3).</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
@@ -130,8 +143,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sprite for the bar.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">bar</span><span class="p">:</span> <span class="kt">SKSpriteNode</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -149,8 +170,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Text label for the bar.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">SKLabelNode</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -168,8 +197,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p><q>GameItems</q> texture atlas.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">textureAtlas</span><span class="p">:</span> <span class="kt">SKTextureAtlas</span> <span class="o">=</span> <span class="kt">SKTextureAtlas</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"GameItems"</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -187,8 +224,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Dictionary to hold various messages.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="k">let</span> <span class="nv">messageDictionary</span><span class="p">:[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -206,8 +251,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sets up a message dictionary with the various messages. Creates a sprite for the bar with a text label. Listens for various game notifications to update the message text.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">frameWidth</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">frameHeight</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">totalIngredients</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -225,8 +278,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Pulse animation to make the message text more noticable.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">pulseMessage</span><span class="p">()</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -244,8 +305,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Update the label text shown in the notification bar.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">updateMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

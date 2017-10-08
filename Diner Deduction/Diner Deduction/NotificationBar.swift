@@ -1,14 +1,22 @@
 
 import SpriteKit
-
+/**
+ This notification bar sits at top of the screen and displays text to update the player about the game state.
+ ### Parameters used on init(): ###
+ * `frameWidth` is the width of the scene's frame, so the bar can position itself accordingly.
+ * `frameHeight` is the height of the scene's frame, so the bar can position itself accordingly.
+ * `totalIngredients` is the number of ingredients to select for this game (currently this is always 3).
+ */
 class NotificationBar {
-    
+    /// Sprite for the bar.
     var bar: SKSpriteNode
+    /// Text label for the bar.
     var message: SKLabelNode
+    /// "GameItems" texture atlas.
     var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "GameItems")
-    
+    /// Dictionary to hold various messages.
     private let messageDictionary:[String: String]
-    
+    /// Sets up a message dictionary with the various messages. Creates a sprite for the bar with a text label. Listens for various game notifications to update the message text.
     init(frameWidth: CGFloat, frameHeight: CGFloat, totalIngredients: Int) {
         
         messageDictionary = [
@@ -38,7 +46,7 @@ class NotificationBar {
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("NotEnoughIngredients"),  object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateMessage), name:Notification.Name("TooManyIngredients"),  object: nil)
     }
-    
+    /// Pulse animation to make the message text more noticable.
     func pulseMessage() {
         let pulse = SKAction.sequence([
             SKAction.fadeAlpha(to: 0.6, duration: 0.4),
@@ -46,7 +54,7 @@ class NotificationBar {
         ])
         message.run(SKAction.repeat(pulse, count: 3))
     }
-    
+    /// Update the label text shown in the notification bar.
     @objc func updateMessage(_ notification: Notification) {
         let newMessage = String(describing: notification.name.rawValue)
         if let numberOfItemsCorrect = notification.userInfo?["numberOfItemsCorrect"] as? Int {

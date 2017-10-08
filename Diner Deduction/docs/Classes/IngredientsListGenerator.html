@@ -14,7 +14,7 @@
     <a title="IngredientsListGenerator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (71% documented)</p>
+        <p><a href="../index.html"> Docs</a> (98% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -111,7 +111,19 @@
         <section>
           <section class="section">
             <h1>IngredientsListGenerator</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">IngredientsListGenerator</span></code></pre>
+
+                </div>
+              </div>
+            <p>Has a list of all the possible ingredients and all the possible positions for them to be in. Selects a designated number of ingredients from the total list randomly (currently this is always 3), and returns an array of tuples with information about their name, offsetX and offsetY.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>totalIngredients</code> is the number of ingredients to randomly select (currently this is always passed in as 3).</li>
+<li><code>arrayShuffler</code> is an instance of the <code><a href="../Protocols/ArrayShufflerProtocol.html">ArrayShufflerProtocol</a></code>. It has been dependency injected to make it easier to unit test if automated tests are added at a later date.</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
@@ -130,8 +142,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Creates an empty array of tuples to be populated with ingredient data on .init()</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">generate</span><span class="p">:</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span><span class="kt">CGFloat</span><span class="p">,</span><span class="kt">CGFloat</span><span class="p">)</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[]</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -149,8 +169,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Generate an array with ingredient data</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">totalIngredients</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">arrayShuffler</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ArrayShufflerProtocol.html">ArrayShufflerProtocol</a></span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
