@@ -1,0 +1,1251 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 5,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 7,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 9,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 19,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 24,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 28,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/ArrayShuffler.swift",
+      "line": 4,
+      "symbol": "ArrayShufflerProtocol",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/ArrayShuffler.swift",
+      "line": 5,
+      "symbol": "ArrayShufflerProtocol.shuffle(array:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/ArrayShuffler.swift",
+      "line": 8,
+      "symbol": "ArrayShuffler",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/ArrayShuffler.swift",
+      "line": 9,
+      "symbol": "ArrayShuffler.shuffle(array:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Background.swift",
+      "line": 4,
+      "symbol": "Background",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Background.swift",
+      "line": 5,
+      "symbol": "Background.sprite",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Background.swift",
+      "line": 7,
+      "symbol": "Background.init(textureName:frameSize:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 4,
+      "symbol": "Button",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 6,
+      "symbol": "Button.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 7,
+      "symbol": "Button.action",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 9,
+      "symbol": "Button.init(imageName:notificationAction:size:position:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 17,
+      "symbol": "Button.onTouch()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 21,
+      "symbol": "Button.onDrag(touch:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 23,
+      "symbol": "Button.onDrop()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Button.swift",
+      "line": 26,
+      "symbol": "Button.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Customer.swift",
+      "line": 4,
+      "symbol": "Customer",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Customer.swift",
+      "line": 5,
+      "symbol": "Customer.correctIngredients",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Customer.swift",
+      "line": 7,
+      "symbol": "Customer.init(ingredients:totalIngredients:arrayShuffler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Customer.swift",
+      "line": 15,
+      "symbol": "Customer.init(ingredients:totalIngredients:arrayShuffler:).getIngredientType(type:offsetX:offsetY:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Customer.swift",
+      "line": 29,
+      "symbol": "Customer.checkIngredients(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 5,
+      "symbol": "GameLostScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 7,
+      "symbol": "GameLostScene.gameSceneDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 9,
+      "symbol": "GameLostScene.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 11,
+      "symbol": "GameLostScene.summaryPanel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 12,
+      "symbol": "GameLostScene.playAgainButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 13,
+      "symbol": "GameLostScene.returnToMenuButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 15,
+      "symbol": "GameLostScene.init(size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 19,
+      "symbol": "GameLostScene.createBackground()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 26,
+      "symbol": "GameLostScene.createSummaryPanel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 34,
+      "symbol": "GameLostScene.createPlayAgainButton()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 45,
+      "symbol": "GameLostScene.createReturnToMenuButton()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 56,
+      "symbol": "GameLostScene.addTextDropDown(textNode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 66,
+      "symbol": "GameLostScene.addTextPulse(textNode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 74,
+      "symbol": "GameLostScene.addTextToSprite(sprite:text:name:addPulse:dropDown:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 93,
+      "symbol": "GameLostScene.didMove(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 106,
+      "symbol": "GameLostScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 119,
+      "symbol": "GameLostScene.gameCenterViewControllerDidFinish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameLostScene.swift",
+      "line": 123,
+      "symbol": "GameLostScene.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 6,
+      "symbol": "GamePlayScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 8,
+      "symbol": "GamePlayScene.gameSceneDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 10,
+      "symbol": "GamePlayScene.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 11,
+      "symbol": "GamePlayScene.selectedNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 12,
+      "symbol": "GamePlayScene.customer",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 13,
+      "symbol": "GamePlayScene.notificationBar",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 14,
+      "symbol": "GamePlayScene.previousGuesses",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 16,
+      "symbol": "GamePlayScene.countDownText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 17,
+      "symbol": "GamePlayScene.timer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 18,
+      "symbol": "GamePlayScene.secondsLeft",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 20,
+      "symbol": "GamePlayScene.init(size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 24,
+      "symbol": "GamePlayScene.didMove(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 53,
+      "symbol": "GamePlayScene.createBackground()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 60,
+      "symbol": "GamePlayScene.createCountDownDisplay()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 79,
+      "symbol": "GamePlayScene.createPreviousGuesses()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 84,
+      "symbol": "GamePlayScene.createNotificationBar(totalIngredients:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 90,
+      "symbol": "GamePlayScene.createPizza(totalIngredients:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 95,
+      "symbol": "GamePlayScene.createIngredients(ingredients:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 101,
+      "symbol": "GamePlayScene.createIngredient(ingredient:offsetX:offsetY:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 112,
+      "symbol": "GamePlayScene.createSubmitButton()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 122,
+      "symbol": "GamePlayScene.timeToString(time:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 128,
+      "symbol": "GamePlayScene.updateTimer()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 139,
+      "symbol": "GamePlayScene.whenGameWon()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 144,
+      "symbol": "GamePlayScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 156,
+      "symbol": "GamePlayScene.touchesMoved(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 164,
+      "symbol": "GamePlayScene.touchesEnded(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 171,
+      "symbol": "GamePlayScene.touchesCancelled(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 178,
+      "symbol": "GamePlayScene.update(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 182,
+      "symbol": "GamePlayScene.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 188,
+      "symbol": "PhysicsCategory",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 189,
+      "symbol": "PhysicsCategory.ingredient",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GamePlayScene.swift",
+      "line": 190,
+      "symbol": "PhysicsCategory.pizza",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSceneDelegate.swift",
+      "line": 1,
+      "symbol": "GameSceneDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSceneDelegate.swift",
+      "line": 2,
+      "symbol": "GameSceneDelegate.menuScene()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSceneDelegate.swift",
+      "line": 3,
+      "symbol": "GameSceneDelegate.gamePlayScene()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSceneDelegate.swift",
+      "line": 4,
+      "symbol": "GameSceneDelegate.gameWonScene(previousGuesses:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSceneDelegate.swift",
+      "line": 5,
+      "symbol": "GameSceneDelegate.gameLostScene()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSprite.swift",
+      "line": 4,
+      "symbol": "GameSprite",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSprite.swift",
+      "line": 5,
+      "symbol": "GameSprite.onTouch()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSprite.swift",
+      "line": 6,
+      "symbol": "GameSprite.onDrag(touch:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSprite.swift",
+      "line": 7,
+      "symbol": "GameSprite.onDrop()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSpriteNull.swift",
+      "line": 4,
+      "symbol": "GameSpriteNull",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSpriteNull.swift",
+      "line": 6,
+      "symbol": "GameSpriteNull.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSpriteNull.swift",
+      "line": 10,
+      "symbol": "GameSpriteNull.onTouch()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSpriteNull.swift",
+      "line": 12,
+      "symbol": "GameSpriteNull.onDrag(touch:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSpriteNull.swift",
+      "line": 14,
+      "symbol": "GameSpriteNull.onDrop()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameSpriteNull.swift",
+      "line": 17,
+      "symbol": "GameSpriteNull.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameViewController.swift",
+      "line": 11,
+      "symbol": "GameViewController.skView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 4,
+      "symbol": "GameWonScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 6,
+      "symbol": "GameWonScene.gameSceneDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 8,
+      "symbol": "GameWonScene.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 10,
+      "symbol": "GameWonScene.summaryPanel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 11,
+      "symbol": "GameWonScene.playAgainButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 12,
+      "symbol": "GameWonScene.returnToMenuButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 14,
+      "symbol": "GameWonScene.init(size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 18,
+      "symbol": "GameWonScene.didMove(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 32,
+      "symbol": "GameWonScene.createBackground()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 39,
+      "symbol": "GameWonScene.createSummaryPanel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 47,
+      "symbol": "GameWonScene.createSparkles()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 53,
+      "symbol": "GameWonScene.createPlayAgainButton()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 64,
+      "symbol": "GameWonScene.createReturnToMenuButton()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 75,
+      "symbol": "GameWonScene.addTextToSprite(sprite:text:name:position:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 86,
+      "symbol": "GameWonScene.addTextToSummaryPanel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 105,
+      "symbol": "GameWonScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 118,
+      "symbol": "GameWonScene.gameCenterViewControllerDidFinish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/GameWonScene.swift",
+      "line": 122,
+      "symbol": "GameWonScene.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 5,
+      "symbol": "Ingredient",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 6,
+      "symbol": "Ingredient.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 7,
+      "symbol": "Ingredient.originalPosition",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 9,
+      "symbol": "Ingredient.init(name:image:size:positionX:positionY:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 34,
+      "symbol": "Ingredient.springBackToOriginalPosition()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 44,
+      "symbol": "Ingredient.triggerCloudPuff()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 57,
+      "symbol": "Ingredient.onTouch()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 59,
+      "symbol": "Ingredient.onDrag(touch:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 67,
+      "symbol": "Ingredient.onDrop()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Ingredient.swift",
+      "line": 86,
+      "symbol": "Ingredient.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/IngredientsListGenerator.swift",
+      "line": 4,
+      "symbol": "IngredientsListGenerator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/IngredientsListGenerator.swift",
+      "line": 5,
+      "symbol": "IngredientsListGenerator.generate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/IngredientsListGenerator.swift",
+      "line": 7,
+      "symbol": "IngredientsListGenerator.init(totalIngredients:arrayShuffler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 4,
+      "symbol": "MenuScene",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 6,
+      "symbol": "MenuScene.gameSceneDelegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 8,
+      "symbol": "MenuScene.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 9,
+      "symbol": "MenuScene.startButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 10,
+      "symbol": "MenuScene.quitButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 12,
+      "symbol": "MenuScene.createBackground()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 19,
+      "symbol": "MenuScene.createLogo()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 27,
+      "symbol": "MenuScene.createStartButton()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 38,
+      "symbol": "MenuScene.addTextToSprite(sprite:text:name:addPulse:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 57,
+      "symbol": "MenuScene.init(size:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 61,
+      "symbol": "MenuScene.didMove(to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 71,
+      "symbol": "MenuScene.touchesBegan(_:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 81,
+      "symbol": "MenuScene.gameCenterViewControllerDidFinish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/MenuScene.swift",
+      "line": 85,
+      "symbol": "MenuScene.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 4,
+      "symbol": "NotificationBar",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 6,
+      "symbol": "NotificationBar.bar",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 7,
+      "symbol": "NotificationBar.message",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 8,
+      "symbol": "NotificationBar.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 10,
+      "symbol": "NotificationBar.messageDictionary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 12,
+      "symbol": "NotificationBar.init(frameWidth:frameHeight:totalIngredients:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 42,
+      "symbol": "NotificationBar.pulseMessage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/NotificationBar.swift",
+      "line": 50,
+      "symbol": "NotificationBar.updateMessage(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 4,
+      "symbol": "Pizza",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 5,
+      "symbol": "Pizza.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 6,
+      "symbol": "Pizza.ingredients",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 8,
+      "symbol": "Pizza.init(frame:totalIngredients:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 28,
+      "symbol": "Pizza.submitPizza()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 40,
+      "symbol": "Pizza.addIngredient(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 46,
+      "symbol": "Pizza.removeIngredient(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 52,
+      "symbol": "Pizza.removeAllIngredients(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 56,
+      "symbol": "Pizza.onTouch()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 58,
+      "symbol": "Pizza.onDrag(touch:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 60,
+      "symbol": "Pizza.onDrop()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/Pizza.swift",
+      "line": 63,
+      "symbol": "Pizza.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 5,
+      "symbol": "PreviousGuess",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 6,
+      "symbol": "PreviousGuess.textureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 7,
+      "symbol": "PreviousGuess.ingredientsTextureAtlas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 9,
+      "symbol": "PreviousGuess.ingredientPositions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 15,
+      "symbol": "PreviousGuess.addLabel(numberOfItemsCorrect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 25,
+      "symbol": "PreviousGuess.addPizzaSprite(itemsGuessed:numberOfItemsCorrect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 35,
+      "symbol": "PreviousGuess.addIngredientsToPizzaSprite(pizza:itemsGuessed:numberOfItemsCorrect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 49,
+      "symbol": "PreviousGuess.slideUp(xPosition:spriteOffScreenPosition:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 59,
+      "symbol": "PreviousGuess.moveAlong()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 70,
+      "symbol": "PreviousGuess.init(itemsGuessed:numberOfItemsCorrect:xPosition:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuess.swift",
+      "line": 91,
+      "symbol": "PreviousGuess.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 5,
+      "symbol": "PreviousGuesses",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 7,
+      "symbol": "PreviousGuesses.section",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 8,
+      "symbol": "PreviousGuesses.previousGuesses",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 9,
+      "symbol": "PreviousGuesses.total",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 11,
+      "symbol": "PreviousGuesses.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 20,
+      "symbol": "PreviousGuesses.moveExistingGuessesAlong()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 31,
+      "symbol": "PreviousGuesses.displayNewGuess(itemsGuessed:numberOfItemsCorrect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kenyol04/diner-deduction/Diner Deduction/Diner Deduction/PreviousGuesses.swift",
+      "line": 43,
+      "symbol": "PreviousGuesses.updatePreviousGuesses(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/kenyol04/diner-deduction/Diner Deduction"
+}
