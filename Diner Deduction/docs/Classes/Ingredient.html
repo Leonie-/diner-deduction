@@ -14,7 +14,7 @@
     <a title="Ingredient Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (71% documented)</p>
+        <p><a href="../index.html"> Docs</a> (98% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -117,11 +117,15 @@
 
                 </div>
               </div>
-            <p>This scene appears when the player has correctly guessed the ingredients requested by the customer. It has a panel displaying different text depending on the number of guesses it took to win, and a sparkle particle effect in the background. The user has the option of playing again or returning to the menu.</p>
+            <p>This class creates an ingredient sprite with a physics body for collision detection with the <code><a href="../Classes/Pizza.html">Pizza</a></code>. It also handles touch behaviour and animations for the ingredient.</p>
 <h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
 
 <ul>
-<li><code>size</code> is the size of the view bounds passed in by the <code><a href="../Classes/GameViewController.html">GameViewController</a></code>.</li>
+<li><code>name</code> is the name of the ingredient.</li>
+<li><code>image</code> is the name of the ingredient&rsquo;s image.</li>
+<li><code>size</code> is the size of the ingredient.</li>
+<li><code>positionX</code> is the x position of the ingredient.</li>
+<li><code>positionY</code> is the y position of the ingredient.</li>
 </ul>
 
           </section>
@@ -141,14 +145,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p><q>Ingredients</q> texture atlas.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Ingredient</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">textureAtlas</span><span class="p">:</span><span class="kt">SKTextureAtlas</span> <span class="o">=</span> <span class="kt">SKTextureAtlas</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span><span class="s">"Ingredients"</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -168,14 +172,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sets up a default position for the ingredient (this will be set properly on init).</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Ingredient</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">originalPosition</span><span class="p">:</span><span class="kt">CGPoint</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -195,14 +199,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sets up the ingredient sprite with its position and adds a physics body to it. Listens for a <q>GameFailed</q> notification to spring an item back to its original position.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Ingredient</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">,</span> <span class="nv">positionX</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">positionY</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -222,14 +226,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Animation to make an ingredient spring back to its original position.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Ingredient</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">springBackToOriginalPosition</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -249,14 +253,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Triggers a small cloud puff animation underneath the ingredient. Destroys the emitter after a short duration for performance reasons.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Ingredient</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">triggerCloudPuff</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -266,9 +270,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP15Diner_Deduction10GameSprite7onTouchFT_T_"></a>
+                    <a name="/s:FC15Diner_Deduction10Ingredient7onTouchFT_T_"></a>
                     <a name="//apple_ref/swift/Method/onTouch()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP15Diner_Deduction10GameSprite7onTouchFT_T_">onTouch()</a>
+                    <a class="token" href="#/s:FC15Diner_Deduction10Ingredient7onTouchFT_T_">onTouch()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -276,7 +280,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Handles tap behaviour. Not used.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -292,9 +297,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP15Diner_Deduction10GameSprite6onDragFT5touchCSo7UITouch_T_"></a>
+                    <a name="/s:FC15Diner_Deduction10Ingredient6onDragFT5touchCSo7UITouch_T_"></a>
                     <a name="//apple_ref/swift/Method/onDrag(touch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP15Diner_Deduction10GameSprite6onDragFT5touchCSo7UITouch_T_">onDrag(touch:)</a>
+                    <a class="token" href="#/s:FC15Diner_Deduction10Ingredient6onDragFT5touchCSo7UITouch_T_">onDrag(touch:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -302,7 +307,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Handles drag behaviour. Moves the ingredient sprite to its new location.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -318,9 +324,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP15Diner_Deduction10GameSprite6onDropFT_T_"></a>
+                    <a name="/s:FC15Diner_Deduction10Ingredient6onDropFT_T_"></a>
                     <a name="//apple_ref/swift/Method/onDrop()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP15Diner_Deduction10GameSprite6onDropFT_T_">onDrop()</a>
+                    <a class="token" href="#/s:FC15Diner_Deduction10Ingredient6onDropFT_T_">onDrop()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -328,7 +334,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Handles drop behaviour. Detects collision with the pizza,and either places the item on the pizza with a cloud puff animation, or springs the item back to its original position. Posts notifications about whether an ingredient has been removed or addded to the pizza.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -354,14 +361,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Satisfy the <code>NSCoder</code> required init, as this class inherits from others.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Ingredient</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+                          <pre class="highlight"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

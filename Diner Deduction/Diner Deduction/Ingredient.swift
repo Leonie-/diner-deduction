@@ -2,14 +2,20 @@
 import SpriteKit
 import SpriteKitEasingSwift
 /**
- This scene appears when the player has correctly guessed the ingredients requested by the customer. It has a panel displaying different text depending on the number of guesses it took to win, and a sparkle particle effect in the background. The user has the option of playing again or returning to the menu.
+ This class creates an ingredient sprite with a physics body for collision detection with the `Pizza`. It also handles touch behaviour and animations for the ingredient.
  ### Parameters used on init(): ###
- * `size` is the size of the view bounds passed in by the `GameViewController`.
+ * `name` is the name of the ingredient.
+ * `image` is the name of the ingredient's image.
+ * `size` is the size of the ingredient.
+ * `positionX` is the x position of the ingredient.
+ * `positionY` is the y position of the ingredient.
  */
 class Ingredient : SKSpriteNode, GameSprite {
+    /// "Ingredients" texture atlas.
     var textureAtlas:SKTextureAtlas = SKTextureAtlas(named:"Ingredients")
+    /// Sets up a default position for the ingredient (this will be set properly on init).
     var originalPosition:CGPoint = CGPoint(x: 0, y: 0)
-
+    /// Sets up the ingredient sprite with its position and adds a physics body to it. Listens for a "GameFailed" notification to spring an item back to its original position.
     init(name: String, image: String, size: CGSize, positionX: CGFloat, positionY: CGFloat) {
 
         // Call the init function on the base class (SKSpriteNode)
@@ -34,7 +40,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         NotificationCenter.default.addObserver(self, selector: #selector(springBackToOriginalPosition), name:Notification.Name("GameFailed"),  object: nil)
     
     }
-    
+    /// Animation to make an ingredient spring back to its original position.
     func springBackToOriginalPosition() {
         self.run(SKEase.move(
             easeFunction: .curveTypeElastic,
@@ -44,7 +50,7 @@ class Ingredient : SKSpriteNode, GameSprite {
             to: self.originalPosition
         ))
     }
-    
+    /// Triggers a small cloud puff animation underneath the ingredient. Destroys the emitter after a short duration for performance reasons.
     func triggerCloudPuff() {
         let cloudPuff = SKEmitterNode(fileNamed: "CloudPuff.sks")
         let addEmitterAction = SKAction.run({ self.addChild(cloudPuff!) })
@@ -58,8 +64,9 @@ class Ingredient : SKSpriteNode, GameSprite {
         self.run(sequence)
     }
     
+    /// Handles tap behaviour. Not used.
     func onTouch() {}
-    
+    /// Handles drag behaviour. Moves the ingredient sprite to its new location.
     func onDrag(touch: UITouch) {
         let currentPosition = touch.location(in: self)
         let previousPosition = touch.previousLocation(in: self)
@@ -67,7 +74,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         
         self.position = CGPoint(x: self.position.x + positionToMoveTo.x, y: self.position.y + positionToMoveTo.y)
     }
-    
+    /// Handles drop behaviour. Detects collision with the pizza,and either places the item on the pizza with a cloud puff animation, or springs the item back to its original position. Posts notifications about whether an ingredient has been removed or addded to the pizza.
     func onDrop() {
         let bodies = self.physicsBody?.allContactedBodies()
         if (bodies?.isEmpty)! {
@@ -86,7 +93,7 @@ class Ingredient : SKSpriteNode, GameSprite {
         }
     }
     
-    // Satisfy the NSCoder required init:
+    /// Satisfy the `NSCoder` required init, as this class inherits from others.
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

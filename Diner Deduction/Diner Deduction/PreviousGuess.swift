@@ -2,16 +2,24 @@
 import SpriteKit
 import SpriteKitEasingSwift
 
+/**
+ Creates a previous guess box displaying a pizza with the guessed ingredients and a label showing how many were right. Animates it by sliding it up onto the screen.
+ ### Parameters used on init(): ###
+ * `itemsGuessed` is the the scene's frame as a `CGRect`.
+ * `numberOfItemsCorrect` is the number of ingredients required for this game (currently this is always 3).
+ */
 class PreviousGuess: SKSpriteNode {
+    /// "GameItems" texture atlas.
     private var textureAtlas: SKTextureAtlas = SKTextureAtlas(named: "GameItems")
+    /// "Ingredients" texture atlas.
     private var ingredientsTextureAtlas: SKTextureAtlas = SKTextureAtlas(named: "Ingredients")
-
+    /// Dictionary of fixed positions for the ingredients.
     private var ingredientPositions: [Int: CGPoint] = [
         1: CGPoint(x: 13, y: 19),
         2: CGPoint(x: 28, y: 42),
         3: CGPoint(x: 38, y: 18)
     ]
-    
+    /// Adds a label to the guess box.
     private func addLabel(numberOfItemsCorrect: Int) {
         let label = SKLabelNode(fontNamed: "Arial")
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -21,7 +29,7 @@ class PreviousGuess: SKSpriteNode {
         label.position = CGPoint(x:25, y: 81)
         self.addChild(label)
     }
-    
+    /// Adds a pizza sprite to the guess box.
     private func addPizzaSprite(itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
         let pizza = SKSpriteNode(texture: textureAtlas.textureNamed("pizza"), color: UIColor.gray, size:CGSize(width: 75, height: 75) )
         pizza.anchorPoint = CGPoint(x:0, y: 0)
@@ -31,7 +39,7 @@ class PreviousGuess: SKSpriteNode {
         addIngredientsToPizzaSprite(pizza: pizza, itemsGuessed: itemsGuessed, numberOfItemsCorrect: numberOfItemsCorrect)
         self.addChild(pizza)
     }
-    
+    /// Adds a ingredient sprites to the guess box.
     private func addIngredientsToPizzaSprite(pizza: SKSpriteNode, itemsGuessed: Set<String>, numberOfItemsCorrect: Int) {
         var ingredientNumber = 1
         
@@ -45,7 +53,7 @@ class PreviousGuess: SKSpriteNode {
             ingredientNumber += 1
         }
     }
-    
+    /// Side up animation for the guess box
     private func slideUp(xPosition: CGFloat, spriteOffScreenPosition: CGPoint) {
         self.run(SKEase.move(
             easeFunction: .curveTypeQuintic,
@@ -55,7 +63,7 @@ class PreviousGuess: SKSpriteNode {
             to: CGPoint(x: xPosition, y: 0)
         ))
     }
-    
+    /// Move along animation for the guess box.
     func moveAlong() {
         let positionToMoveTo = CGPoint(x: self.position.x-105, y: 0)
         self.run(SKEase.move(
@@ -66,7 +74,7 @@ class PreviousGuess: SKSpriteNode {
             to: positionToMoveTo
         ))
     }
-
+    /// Creates a guess box sprite with a physics body. Adds a pizza with ingredient guesses and a label. Triggers the slide up animation.
     init(itemsGuessed: Set<String>, numberOfItemsCorrect: Int, xPosition: CGFloat) {
         let size = CGSize(width: 100, height: 98)
         let spriteOffScreenPosition = CGPoint(x: xPosition, y:-200)
@@ -87,7 +95,7 @@ class PreviousGuess: SKSpriteNode {
         slideUp(xPosition: xPosition, spriteOffScreenPosition: spriteOffScreenPosition)
 
     }
-    
+    /// Satisfy the `NSCoder` required init, as this class inherits from others.
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

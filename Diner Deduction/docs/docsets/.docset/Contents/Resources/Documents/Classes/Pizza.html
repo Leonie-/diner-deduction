@@ -14,7 +14,7 @@
     <a title="Pizza Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (71% documented)</p>
+        <p><a href="../index.html"> Docs</a> (98% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -111,7 +111,19 @@
         <section>
           <section class="section">
             <h1>Pizza</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Pizza</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="../Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>This class creates a pizza sprite with a physics body for collision detection with the various instances of <code><a href="../Classes/Ingredient.html">Ingredient</a></code>. It keeps track of what ingredients have been added to it, and listens for various game events.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>frame</code> is the the scene&rsquo;s frame as a <code>CGRect</code>.</li>
+<li><code>totalIngredients</code> is the number of ingredients required for this game (currently this is always 3).</li>
+</ul>
 
           </section>
           <section class="section task-group-section">
@@ -130,8 +142,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p><q>GameItems</q> texture atlas.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">textureAtlas</span><span class="p">:</span><span class="kt">SKTextureAtlas</span> <span class="o">=</span> <span class="kt">SKTextureAtlas</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"GameItems"</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -149,8 +169,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Set of ingredients added to the pizza.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">ingredients</span> <span class="o">=</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span><span class="p">()</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -168,8 +196,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Sets up the pizza sprite and adds a physics body to it. Listens for various game events.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">,</span> <span class="nv">totalIngredients</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -187,8 +223,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Checks the number of ingredients added to the pizza and posts a relevant notification.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">submitPizza</span><span class="p">()</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -206,8 +250,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Adds an ingredient to the list.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">addIngredient</span><span class="p">(</span><span class="n">_</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">Notification</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -225,8 +277,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Removes and ingredient from the list.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeIngredient</span><span class="p">(</span><span class="n">_</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -244,8 +304,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Clears all ingredients from the list.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeAllIngredients</span><span class="p">(</span><span class="n">_</span> <span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -253,9 +321,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP15Diner_Deduction10GameSprite7onTouchFT_T_"></a>
+                    <a name="/s:FC15Diner_Deduction5Pizza7onTouchFT_T_"></a>
                     <a name="//apple_ref/swift/Method/onTouch()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP15Diner_Deduction10GameSprite7onTouchFT_T_">onTouch()</a>
+                    <a class="token" href="#/s:FC15Diner_Deduction5Pizza7onTouchFT_T_">onTouch()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -263,7 +331,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Handle tap behaviour. Currently not used.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -279,9 +348,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP15Diner_Deduction10GameSprite6onDragFT5touchCSo7UITouch_T_"></a>
+                    <a name="/s:FC15Diner_Deduction5Pizza6onDragFT5touchCSo7UITouch_T_"></a>
                     <a name="//apple_ref/swift/Method/onDrag(touch:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP15Diner_Deduction10GameSprite6onDragFT5touchCSo7UITouch_T_">onDrag(touch:)</a>
+                    <a class="token" href="#/s:FC15Diner_Deduction5Pizza6onDragFT5touchCSo7UITouch_T_">onDrag(touch:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -289,7 +358,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Handle drag behaviour. Currently not used.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -305,9 +375,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP15Diner_Deduction10GameSprite6onDropFT_T_"></a>
+                    <a name="/s:FC15Diner_Deduction5Pizza6onDropFT_T_"></a>
                     <a name="//apple_ref/swift/Method/onDrop()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP15Diner_Deduction10GameSprite6onDropFT_T_">onDrop()</a>
+                    <a class="token" href="#/s:FC15Diner_Deduction5Pizza6onDropFT_T_">onDrop()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -315,7 +385,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Handle drop behaviour. Currently not used.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -341,8 +412,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Satisfy the <code>NSCoder</code> required init, as this class inherits from others.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

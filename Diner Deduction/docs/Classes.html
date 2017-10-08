@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (71% documented)</p>
+        <p><a href="index.html"> Docs</a> (98% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -313,9 +313,23 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Creates a previous guess box displaying a pizza with the guessed ingredients and a label showing how many were right. Animates it by sliding it up onto the screen.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>itemsGuessed</code> is the the scene&rsquo;s frame as a <code>CGRect</code>.</li>
+<li><code>numberOfItemsCorrect</code> is the number of ingredients required for this game (currently this is always 3).</li>
+</ul>
 
                         <a href="Classes/PreviousGuess.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">PreviousGuess</span><span class="p">:</span> <span class="kt">SKSpriteNode</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -374,11 +388,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This scene appears when the player has correctly guessed the ingredients requested by the customer. It has a panel displaying different text depending on the number of guesses it took to win, and a sparkle particle effect in the background. The user has the option of playing again or returning to the menu.</p>
+                        <p>This class creates an ingredient sprite with a physics body for collision detection with the <code><a href="Classes/Pizza.html">Pizza</a></code>. It also handles touch behaviour and animations for the ingredient.</p>
 <h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
 
 <ul>
-<li><code>size</code> is the size of the view bounds passed in by the <code><a href="Classes/GameViewController.html">GameViewController</a></code>.</li>
+<li><code>name</code> is the name of the ingredient.</li>
+<li><code>image</code> is the name of the ingredient&rsquo;s image.</li>
+<li><code>size</code> is the size of the ingredient.</li>
+<li><code>positionX</code> is the x position of the ingredient.</li>
+<li><code>positionY</code> is the y position of the ingredient.</li>
 </ul>
 
                         <a href="Classes/Ingredient.html" class="slightly-smaller">See more</a>
@@ -411,9 +429,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This notification bar sits at top of the screen and displays text to update the player about the game state.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>frameWidth</code> is the width of the scene&rsquo;s frame, so the bar can position itself accordingly.</li>
+<li><code>frameHeight</code> is the height of the scene&rsquo;s frame, so the bar can position itself accordingly.</li>
+<li><code>totalIngredients</code> is the number of ingredients to select for this game (currently this is always 3).</li>
+</ul>
 
                         <a href="Classes/NotificationBar.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">NotificationBar</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -491,9 +524,23 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This class creates a pizza sprite with a physics body for collision detection with the various instances of <code><a href="Classes/Ingredient.html">Ingredient</a></code>. It keeps track of what ingredients have been added to it, and listens for various game events.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>frame</code> is the the scene&rsquo;s frame as a <code>CGRect</code>.</li>
+<li><code>totalIngredients</code> is the number of ingredients required for this game (currently this is always 3).</li>
+</ul>
 
                         <a href="Classes/Pizza.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Pizza</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -554,9 +601,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This scene appears when game initially loads, or when the <code><a href="Classes/GameViewController.html">GameViewController</a></code> switches to this scene.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>size</code> is the size of the view bounds passed in by the <code><a href="Classes/GameViewController.html">GameViewController</a></code>.</li>
+</ul>
 
                         <a href="Classes/MenuScene.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">MenuScene</span><span class="p">:</span> <span class="kt">SKScene</span><span class="p">,</span> <span class="kt">GKGameCenterControllerDelegate</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -610,9 +670,23 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Has a list of all the possible ingredients and all the possible positions for them to be in. Selects a designated number of ingredients from the total list randomly (currently this is always 3), and returns an array of tuples with information about their name, offsetX and offsetY.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>totalIngredients</code> is the number of ingredients to randomly select (currently this is always passed in as 3).</li>
+<li><code>arrayShuffler</code> is an instance of the <code><a href="Protocols/ArrayShufflerProtocol.html">ArrayShufflerProtocol</a></code>. It has been dependency injected to make it easier to unit test if automated tests are added at a later date.</li>
+</ul>
 
                         <a href="Classes/IngredientsListGenerator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">IngredientsListGenerator</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
