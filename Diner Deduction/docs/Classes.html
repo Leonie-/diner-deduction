@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (29% documented)</p>
+        <p><a href="index.html"> Docs</a> (71% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -199,9 +199,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The main gameplay scene sets up a new game and starts the timer. It gets the Model for the game from the <code><a href="Classes/IngredientsListGenerator.html">IngredientsListGenerator</a></code> and the <code><a href="Classes/Customer.html">Customer</a></code>. It displays all the View elements for the game: a notification bar with information, the countdown timer, the ingredients, a pizza to drag the ingredients onto, a submit button, and previous guesses (if any have been made).</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>size</code> is the size of the view bounds passed in by the <code><a href="Classes/GameViewController.html">GameViewController</a></code>.</li>
+</ul>
 
                         <a href="Classes/GamePlayScene.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">GamePlayScene</span><span class="p">:</span> <span class="kt">SKScene</span><span class="p">,</span> <span class="kt">SKPhysicsContactDelegate</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -324,9 +337,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This scene appears when the player has correctly guessed the ingredients requested by the customer. It has a panel displaying different text depending on the number of guesses it took to win, and a sparkle particle effect in the background. The user has the option of playing again or returning to the menu.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>size</code> is the size of the view bounds passed in by the <code><a href="Classes/GameViewController.html">GameViewController</a></code>.</li>
+</ul>
 
                         <a href="Classes/GameWonScene.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">GameWonScene</span><span class="p">:</span> <span class="kt">SKScene</span><span class="p">,</span> <span class="kt">GKGameCenterControllerDelegate</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -348,9 +374,22 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This scene appears when the player has correctly guessed the ingredients requested by the customer. It has a panel displaying different text depending on the number of guesses it took to win, and a sparkle particle effect in the background. The user has the option of playing again or returning to the menu.</p>
+<h3 id='parameters-used-on-init' class='heading'>Parameters used on init():</h3>
+
+<ul>
+<li><code>size</code> is the size of the view bounds passed in by the <code><a href="Classes/GameViewController.html">GameViewController</a></code>.</li>
+</ul>
 
                         <a href="Classes/Ingredient.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">Ingredient</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -539,9 +578,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Null version of <code><a href="Protocols/GameSprite.html">GameSprite</a></code>. This is needed so that the <code>selectedNode</code> in <code><a href="Classes/GamePlayScene.html">GamePlayScene</a></code> always conforms to the <code><a href="Protocols/GameSprite.html">GameSprite</a></code> protocol. It is an null object for when the player taps something other than an instance of <code><a href="Protocols/GameSprite.html">GameSprite</a></code> (such as the background).</p>
 
                         <a href="Classes/GameSpriteNull.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">class</span> <span class="kt">GameSpriteNull</span> <span class="p">:</span> <span class="kt">SKSpriteNode</span><span class="p">,</span> <span class="kt"><a href="Protocols/GameSprite.html">GameSprite</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
